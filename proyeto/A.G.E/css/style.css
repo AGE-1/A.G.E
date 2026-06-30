@@ -1,0 +1,246 @@
+/* con esto se resetean los estilos de la pagina completa */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* contenedor principal, con z index 2 para que qiede abajo, mientras mas bajito, es menor la capa */
+.contenedor-principal {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+/* este es el contenedor del login */
+.contenedor-principal2 {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+}
+/* este es el contenedor de la sección negra, el clip-path es con lo que se le da la forma a la seccion, z index 1 para que esté por debajo */
+.seccion-negra {
+    width: 55%;
+    height: 100%;
+    background-color: #0d0f12;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: ellipse(95% 100% at 0% 50%);
+    padding-right: 10%;
+    z-index: 1;
+}
+/* seccion negra del login, lo del margin en negativo es para poder alinearlo junto con el login flotante */
+.seccion-negra2 {
+    width: 100%;
+    height: 100%;
+    background-color: #0d0f12;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: ellipse(100% 54% at 50% 100%);
+    padding-right: 10%;
+    z-index: 1;
+    margin-right: -46%;
+}
+
+.contenido {
+    max-width: 400px;
+    font-family: 'Arial', sans-serif;
+}
+/* el nombre y presentacion de la empresa. */
+.contenido h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 30px 0;
+}
+/* esto es para darle el estilo a las mayusculas del nombre, en este caso negritas en las mayusculas */
+.contenido h1 span {
+    font-size: 3rem;
+    display: inline-block;
+    font-weight: bold;
+}
+/* el boton del inicio */
+.btn-trabaja {
+    background-color: #4273f6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+}
+/* esto es para la animacion del boton del principio */
+.btn {
+    transition: 0.17s ease-in;
+}
+
+.btn:hover {
+    transform:scale(1.06);
+}
+/* aqui es donde esta la imagen de la derecha en la pagina de presentacion */
+.seccion-derecha {
+    flex: 1;
+    height: 100%;
+    background: wheat url(../image/principal.jpg);
+    margin-left: -120px;
+}
+
+/* el logo AGE, los estilos */
+.logo {
+    max-width: 90%;
+    margin-top: -100px;
+    margin-left: -70px;
+    padding-top: 0;
+    overflow: hidden;
+}
+
+/* este es el contenedor donde se encuentra el login */
+.login {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    margin-right: -56%;
+    gap: 10px;
+    padding-bottom: 30px;
+    max-width: 30%;
+} 
+/* aqui se le dan unos estilos al input del login, se podria usar tambien en los demas input */
+.login input {
+    padding: 12px 14px;
+    width: 100%;
+    border: 1px solid #d7ddbb;
+    border-radius: 7px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    outline: none;
+    background: #fff;
+}
+/* el contenedor pero del login, en este caso creo que no haria falta hacerlo para cada pagina, nomas ponerle la misma clase */
+.contenedor-principal2 {
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* el boton de login, a diferencia del que esta en el incio, este es un boton con input y no un enlace */
+.botonlog {
+    display: flex;
+    padding: 10px;
+    background-color: #4273f6;
+    justify-content: center;
+    border-radius: 8px;
+    margin-top: -15px;
+    width: 100%;
+    border: none;
+}
+/* este lo que hace es cambiar la fuente y el tamanio del contenido del boton */
+.login button {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+}
+/* dice boton iniciar porque es el form que se llama asi, se le esta aplicando al <form> */
+.botoniniciar {
+    transition: 0.17s ease-in;
+}
+
+.botoniniciar:hover {
+    transform: scale(1.1,1.1);
+}
+/* aca dice forgot, como lo dice son los enlaces de recuperacion, olvido su contrasenia y regresar, ambos. */
+.forgot {
+    display: flex;
+    justify-content: space-between;
+}
+/* este le da el estilos a los enlaces de ese div */
+.forgot a{
+    font-size: 10px;
+    text-decoration: underline;
+    color: blue;
+}
+/* lo mismo aca, pero este es el enlace de crear una cuenta. */
+.creacuenta a{
+    display: flex;
+    justify-content: end;
+    font-size: 10px;
+    text-decoration: underline;
+    color: blue;
+    margin-top: -25px;
+}
+/* aca esta el responsive, seria bueno no tocarlo mucho porque se puede daniar completo esto. */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column;
+    }
+
+    .seccion-negra {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        padding-right: 0;
+    }
+
+    .seccion-derecha {
+        display: none;
+    }
+
+    .login {
+        width: 80%;
+        margin-right: 0;
+    }
+
+    .logo {
+        max-width: 70%;
+        margin-top: -50px;
+        margin-left: -30px;
+    }
+}
+
+@media (min-width: 800px) {
+    .contenido {
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .login {
+        width: 68%;
+        justify-content: center;
+        margin-left: -20%;
+    }
+
+    .seccion-negra2 {
+        margin-left: -84%;
+    }
+}
+
+@media (min-width: 800px) {
+    .login {
+        width: 50%;
+        margin-left: -10%;
+    }
+
+    .seccion-negra2 {
+        margin-left: -10%;
+    }
+}
+
