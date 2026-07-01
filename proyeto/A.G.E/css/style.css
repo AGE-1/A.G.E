@@ -75,7 +75,7 @@
     background-color: #4273f6;
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 16px 24px;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
@@ -85,6 +85,7 @@
 /* esto es para la animacion del boton del principio */
 .btn {
     transition: 0.17s ease-in;
+    padding: 20px;
 }
 
 .btn:hover {
