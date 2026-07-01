@@ -1,2 +1,2 @@
 # A.G.E
-Proyecto administracion y gestion de empresas
+Proyecto Administración y Gestión de Empresas
