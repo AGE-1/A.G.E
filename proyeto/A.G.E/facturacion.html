@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturación</title>
+</head>
+<body>
+    
+        <h1>Facturación</h1>
+        
+        <div class="selectcliente">
+            <label for="cliente">Seleccionar cliente:</label>
+            <select name="cliente" id="cliente">
+                <option value="">Seleccione un cliente</option>
+                <option value="1">Cliente 1</option>
+                <option value="2">Cliente 2</option>
+                <option value="3">Cliente 3</option>
+                <option value="4">Cliente 4</option>
+                <option value="5">Cliente 5</option>
+            </select>
+        </div>
+        <hr>
+
+        <div class="configfactura">
+
+        <select name="producto" id="producto">
+            <option value="">producto</option>
+            <option value="1">Producto 1</option>
+            <option value="2">Producto 2</option>
+            <option value="3">Producto 3</option>
+        </select>
+        <div class="descripcion">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion">
+        </div>
+
+        <select name="cantidad" id="cantidad">
+            <option value="">cantidad</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+        <select name="precio" id="precio">
+            <option value="">precio</option>
+            <option value="1">10.00</option>
+            <option value="2">20.00</option>
+            <option value="3">30.00</option>
+        </select>
+
+        <h5>descuento:
+            <p>aca va in innerhtml</p> 
+        </h5>
+
+        <h5>total:
+            <p>aca va in innerhtml</p>
+
+        <hr>
+        </div>
+
+        <div class="contenedor-principal">
+        <aside class="navlateral">
+        <div class="nav">
+            <nav>
+                <img src="#" alt="Logo de la empresa" class="logonav">
+                <a href="#">Dashboard</a>
+                <a href="#">Notificaciones</a>
+                <a href="#">Configuración</a>
+                <a href="#">Clientes</a>
+                <a href="#">Facturación</a>
+                <a href="#">Empleados</a>
+                <a href="#">Inventario</a>
+                <a href="#">Producción</a>
+                <a href="#">Estadísticas</a>
+                <a href="#">Personal</a>
+            </nav>
+        </aside>
+        <div class="tabla-lista-facturas">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Descripción</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Descuento</th>
+                            <th>Total</th>
+                        </tr>
+                    </tbody>
+                    <tbody id="factura-body">
+                         <tr>
+                            <th>Producto</th>
+                            <th>Descripción</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Descuento</th>
+                            <th>Total</th>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+
+        <aside class="totalfactura">
+            <h5>Subtotal: <span id="subtotal">0.00</span></h5>
+            <h5>Impuesto: <span id="impuesto">0.00</span></h5>
+            <h5>Total: <span id="total">0.00</span></h5>
+        </aside>
+
+        <div class="botonesfactura">
+            <button id="cancelar-factura">Guardar Borrador</button>
+            <button id="generar-factura">Generar Factura</button>
+        </div>
+        <div class="seccion-abajo">
+            <input type="button" value="compartir">Compartir
+            <input type="button" value="imprimir">Imprimir
+            <input type="button" value="descargar pdf">Descargar PDF
+            <input type="button" value="Nuevo registro">Nuevo registro
+        </div>
+        <br>
+        <footer>
+            &copy; 2026 A.G.E. Todos los derechos reservados.
+        </footer>
+    </div>
+</body>
+</html>
