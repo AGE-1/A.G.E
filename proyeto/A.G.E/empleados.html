@@ -4,32 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empleados</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
 </head>
 <body>
+<div class="contenedor">
     <header class="header-Empleados">
         <h1>Empleados</h1>
-        <div>
+    </header>
+<aside class="navlateral">
+        <div class="nav">
+            <nav>
+            <ul>
+                <img src="image/logoagepequenio.png" alt="Logo de la empresa" class="logonav" width="100">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#">Notificaciones</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="facturacion.html">Facturación</a></li>
+                <li><a href="empleados.html">Empleados</a></li>
+                <li><a href="#">Inventario</a></li>
+                <li><a href="#">Producción</a></li>
+                <li><a href="#">Estadísticas</a></li>
+            </ul>
+            </nav>
+        </aside>
+           <div>
             <input type="search"placeholder="Buscar Empleado">
         </div>
 
         <button><a href="#">Añadir</a></button>
-    </header>
-
-    <nav class="nav-Empleados">
-        <img src="" alt="">
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Notificaciones</a></li>
-            <li><a href="#">Configuracion</a></li>
-            <li><a href="#">Clientes</a></li>
-            <li><a href="#">Facturacion</a></li>
-            <li><a href="#">Empleados</a></li>
-            <li><a href="#">Inventario</a></li>
-            <li><a href="#">Produccion</a></li>
-            <li><a href="#">Estadisticas</a></li>
-            <li><a href="#">Personal</a></li>
-        </ul>
-    </nav>
 
     <div class="contenedor-Empleados">
         <nav class="empleadosp">
@@ -40,7 +45,7 @@
             </ul>
         </nav>
         <!-- Tabla de Empleados -->
-        <table class="tabla-Empleados">
+        <table class="tabla-Empleados" border="1">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -53,7 +58,7 @@
             </thead>
         </table>
     </div>
-
+</div>
     <footer class="footer-Empleados">Derechos reservados por A.G.E&#174;</footer>
 </body>
 </html>
