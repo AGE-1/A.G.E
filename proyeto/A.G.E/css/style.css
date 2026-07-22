@@ -324,3 +324,11 @@ li:hover {
 .nav-Config {
     grid-column: 3 / 5;
 }
+
+
+.footerNav {
+    margin: 5px;
+    text-align: center;
+    font-size: smaller;
+    margin-top: 17px;
+}
