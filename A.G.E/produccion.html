@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producción</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
+</head>
+<body>
+<div class="contenedor">
+    <aside class="navlateral">
+        <div class="nav">
+            <nav>
+            <ul>
+                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="facturacion.html">Facturación</a></li>
+                <li><a href="empleados.html">Empleados</a></li>
+                <li><a href="inventario.html">Inventario</a></li>
+                <li><a href="produccion.html">Producción</a></li>
+                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+            </ul>
+            </nav>
+        </div>
+    </aside>
+    <h1>Producción de Artículos</h1>
+    <div class="selectorden">
+            <label for="orden">Orden NO:</label>
+            <select name="orden" id="orden">
+                <option value="">Seleccione una orden</option>
+                <option value="1">SR-2026-0627</option>
+                <option value="2">SR-2026-0628</option>
+                <option value="3">SR-2026-0629</option>
+                <option value="4">SR-2026-0630</option>
+                <option value="5">SR-2026-0631</option>
+            </select>
+        </div>
+        <hr>
+
+        <div class="tabla-lista-produccion">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Material/Compuesto</th>
+                            <th>Descripción</th>
+                            <th>Cantidad Requerida</th>
+                            <th>Precio Unitario</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="produccion-body">
+                         <tr>
+                            <th>MC-101</th>
+                            <th>Champu(crudo)</th>
+                            <th>100</th>
+                            <th>50.00</th>
+                            <th>500.00</th>
+                        </tr>
+                        <tr>
+                            <th>MC-102</th>
+                            <th>Shampoo(líquido)</th>
+                            <th>50</th>
+                            <th>75.00</th>
+                            <th>3,750.00</th>
+                        </tr>
+                        <tr>
+                            <th>MC-103</th>
+                            <th>Gel de ducha</th>
+                            <th>25</th>
+                            <th>100.00</th>
+                            <th>2,500.00</th>
+                        </tr>
+                        <tr>
+                            <th>MC-104</th>
+                            <th>Crema de afeitar</th>
+                            <th>10</th>
+                            <th>150.00</th>
+                            <th>1,500.00</th>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+
+        <aside class="totalproduccion">
+            <h5>Subtotal: <span id="subtotal">7250.00</span></h5>
+            <h5>Impuestos (15%): <span id="impuesto">1,087.50</span></h5>
+            <h5>TOTAL COSTO ESTIMADO: <span id="total">8,337.50</span></h5>
+        </aside>
+
+        <div class="botonesfactura">
+            <button id="cancelar-Orden">Guardar Borrador de Orden</button>
+            <button id="generar-Orden">Generar Orden de Producción</button>
+        </div>
+        <div class="seccion-abajo">
+            <input type="button" value="compartir">
+            <input type="button" value="imprimir">
+            <input type="button" value="descargar pdf">
+            <input type="button" value="Nuevo registro">
+            <input type="button" value="Guardar y salir">
+            <input type="button" value="Nueva Orden">
+            <input type="button" value="Exportar">
+            <input type="button" value="Compartir Orden">
+        </div>
+        <br>
+        <footer>
+            &copy; 2026 A.G.E. Todos los derechos reservados.
+        </footer>
+    </div>
+</div>
+</body>
+</html>

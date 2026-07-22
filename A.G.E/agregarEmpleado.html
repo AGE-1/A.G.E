@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Empleado</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
+</head>
+<body>
+    <h1 class="tit">Agregar Empleado</h1>
+    <div class="contenedor-principal">
+        <aside class="navlateral">
+        <div class="nav">
+            <nav>
+            <ul>
+                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="facturacion.html">Facturación</a></li>
+                <li><a href="empleados.html">Empleados</a></li>
+                <li><a href="inventario.html">Inventario</a></li>
+                <li><a href="produccion.html">Producción</a></li>
+                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+            </ul>
+            </nav>
+        </aside>
+            <main>
+                <section class="agregar-empleado">
+                    <form>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+
+                        <label for="cedula">Cédula:</label>
+                        <input type="text" id="cedula" name="cedula" placeholder="Cédula" required>
+
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+
+                        <label for="puesto">Puesto:</label>
+                        <select id="puesto" name="puesto" required>
+                            <option value="" selected disabled hidden>Seleccione un puesto</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Gerente">Gerente</option>
+                            <option value="Supervisor">Supervisor</option>
+                            <option value="Cajero">Cajero</option>
+                            <option value="EncAlmacén">Encargado de Almacen</option>
+                            <option value="AuxAlmacén">Auxiliar de Almacen</option>
+                            <option value="Recepcionista">Recepcionista</option>
+                            <option value="Limpieza">Personal de Limpieza</option>
+                        </select>
+
+                        <label for="horario">Horario:</label>
+                        <select name="horario" id="horario" required>
+                            <option value="" disabled selected hidden>Seleccione un Horario</option>
+
+                            <option value="Mañana">Mañana</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Noche">Noche</option>
+                        </select>
+
+                        <input type="button" value="Agregar Empleado">
+                        <input type="reset" value="Limpiar Campos">
+                        <a href="#">Regresar</a>
+                    </form>
+                </section>
+            </main>
+         <footer>
+            &copy; 2026 A.G.E. Todos los derechos reservados.
+        </footer>
+    </div>    
+</body>
+</html>

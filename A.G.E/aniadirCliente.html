@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Cliente</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <aside class="navlateral">
+        <div class="nav">
+            <nav>
+            <ul>
+                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="facturacion.html">Facturación</a></li>
+                <li><a href="empleados.html">Empleados</a></li>
+                <li><a href="inventario.html">Inventario</a></li>
+                <li><a href="produccion.html">Producción</a></li>
+                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+            </ul>
+            </nav>
+        </aside>
+            <main>
+                <section class="agregar-empleado">
+                    <h1>Agregar Cliente</h1>
+                    <form>
+                        <label for="nombre">Nombre cliente:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+
+
+                        <label for="ubi">Ubicacion:</label>
+                        <input type="text" id="ubi">
+
+                        <label for="fecharegistro">Fecha de Registro:</label>
+                        <input type="date" id="fecharegistro">
+
+                        <textarea name="Descripcion" id="Descripcion-cliente" placeholder="Agregar      Descripcion"></textarea>
+
+
+                        <input type="button" value="Agregar Cliente">
+                        <input type="reset" value="Limpiar Campos">
+                        <a href="#">Regresar</a>
+                    </form>
+                </section>
+            </main>
+         <footer>
+            &copy; 2026 A.G.E. Todos los derechos reservados.
+        </footer>
+    </div>    
+</body>
+</html>

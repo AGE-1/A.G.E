@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Empleado</title>
+</head>
+<body>
+    <div class="contenedor-principal">
+        <aside class="navlateral">
+        <div class="nav">
+            <nav>
+            <ul>
+                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="facturacion.html">Facturación</a></li>
+                <li><a href="empleados.html">Empleados</a></li>
+                <li><a href="inventario.html">Inventario</a></li>
+                <li><a href="produccion.html">Producción</a></li>
+                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+            </ul>
+            </nav>
+        </aside>
+        <h1>Empleado</h1>
+        <div class="infoempleado">
+            <img src="" alt="" id="imagen-empleado">
+            <form action="">
+                <label for="NombreEmpleado">Nombre Empleado:</label>
+                <input type="text" id="NombreEmpleado">
+                
+                <label for="tel">Numero Telefonico:</label>
+                <input type="tel" id="tel">
+
+                <label for="mail">Correo Electronico:</label>
+                <input type="email" id="mail">
+
+                <label for="cdl">Identificacion:</label>
+                <input type="number" id="cdl">
+
+                <label for="area">Area:</label>
+                <select name="Area" id="area">
+                    <option value="">Opcion1</option>
+                    <option value="">Opcion2</option>
+                    <option value="">Opcion3</option>
+                </select>
+
+                <label for="horario">Horario:</label>
+                <input type="time" id="horario">
+
+                <label for="Nomina">Nomina:</label>
+                <input type="number" id="Nomina">
+
+                <textarea name="Descripcion" id="Descripcion-Empleado" placeholder="Agregar Descripcion"></textarea>
+            </form>
+
+            <button>Eliminar</button>
+            
+        </div>
+        <footer>Derechos reservados por A.G.E&#174;</footer>
+    </div>
+</body>
+</html>

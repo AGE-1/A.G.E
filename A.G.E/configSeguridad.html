@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
+</head>
+<body>
+    <div class="contenedor">
+    <aside class="navlateral">
+        <div class="nav">
+            <nav>
+            <ul>
+                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="facturacion.html">Facturación</a></li>
+                <li><a href="empleados.html">Empleados</a></li>
+                <li><a href="inventario.html">Inventario</a></li>
+                <li><a href="produccion.html">Producción</a></li>
+                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+            </ul>
+            </nav>
+        </div>
+    </aside>
+    </div>
+
+    <nav>
+        <h1>Configuración</h1>
+        <li><a href="#">Perfil de la empresa</a></li>
+        <li><a href="#">Usuarios</a></li>
+        <li><a href="#">Preferencias</a></li>
+        <li><a href="#">Impuestos</a></li>
+        <li><a href="#">Respaldos</a></li>
+        <li><a href="#">Seguridad</a></li>
+        <li><a href="#">Acerca de AGE</a></li>
+    </nav>
+
+    <section>
+        <label for="autenticacion">Autenticación de Usuarios:</label>
+        <select id="autenticacion" name="autenticacion">
+            <option value="Activada">Activada</option>
+            <option value="Desactivada">Desactivada</option>
+        </select>
+        <label for="contraseña">Contraseña:</label>
+        <select name="contraseña" id="contraseña">
+            <option value="Activada">Requerida</option>
+            <option value="Desactivada">Desactivada</option>
+        </select>
+        <label for="doble-verificacion">Doble verificación:</label>
+        <select name="doble-verificacion" id="doble-verificacion">
+            <option value="Desactivada">Desactivado</option>
+            <option value="Activada">Activado</option>
+        </select>
+        <label for="bloqueo-intento-fallido">Bloqueo por intentos fallidos:</label>
+        <select name="bloqueo-intento-fallido" id="bloqueo-intento-fallido">
+            <option value="1-Intento">1 Intento</option>
+            <option value="2-Intentos">2 Intentos</option>
+            <option value="3-Intentos">3 Intentos</option>
+            <option value="4-Intentos">4 Intentos</option>
+            <option value="5-Intentos">5 Intentos</option>
+        </select>
+        <label for="registro-actividad">Registro de Actividad:</label>
+        <select name="registro-actividad" id="registro-actividad">
+            <option value="Activado">Activado</option>
+            <option value="Desactivado">Desactivado</option>
+        </select>
+    </section>
+
+    <button type="submit">Guardar Cambios</button>
+
+    <footer>
+        &copy; 2026 A.G.E. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
