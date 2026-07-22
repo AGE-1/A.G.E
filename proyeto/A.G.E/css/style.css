@@ -2,13 +2,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 :root {
     --colornegro: #000;
     --colorenlaces: #fff; 
-    --colorazul: #4273f6;
+    --colorazul: #3B82F6;
 }
 /* contenedor principal, con z index 2 para que qiede abajo, mientras mas bajito, es menor la capa */
 .contenedor-principal {
@@ -262,7 +263,6 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     /*grid-template-rows: repeat(12 , 1fr);*/
-    margin-left: 5px;
     width: 100%;
     height: 100%;
 }
@@ -280,6 +280,7 @@
     background-color: var(--colornegro);
     position: fixed;
     height: 100%;
+    width: 12%;
 }
 
 .navlateral a {
@@ -302,7 +303,7 @@ li:hover {
 
 
 .targetas {
-    grid-column: 2 / 12;
+    grid-column: 3 / 12;
 
 }
 
@@ -312,10 +313,14 @@ li:hover {
 }
 
 .logonav {
-    margin: 20px;
+    margin: 25px;
 }
 
 .fa-solid { 
-    color: #4273f6;
+    color:var(--colorenlaces);
     margin-right: 7px;
+}
+
+.nav-Config {
+    grid-column: 3 / 5;
 }

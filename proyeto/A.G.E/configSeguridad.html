@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="contenedor">
+        <h1 class="tit">Configuración</h1>
     <aside class="navlateral">
         <div class="nav">
             <nav>
@@ -27,18 +28,20 @@
             </nav>
         </div>
     </aside>
-    </div>
 
-    <nav>
-        <h1>Configuración</h1>
-        <li><a href="#">Perfil de la empresa</a></li>
-        <li><a href="#">Usuarios</a></li>
-        <li><a href="#">Preferencias</a></li>
-        <li><a href="#">Impuestos</a></li>
-        <li><a href="#">Respaldos</a></li>
-        <li><a href="#">Seguridad</a></li>
-        <li><a href="#">Acerca de AGE</a></li>
-    </nav>
+  <aside class="nav-Config">
+  <nav >
+    <ul>
+      <li><a href="configPerfilEmpresa.html">Perfil de la empresa</a></li>
+      <li><a href="configUsuario.html">Usuarios</a></li>
+      <li><a href="preferencias.html">Preferencias</a></li>
+      <li><a href="configImpuestos.html">Impuestos</a></li>
+      <li><a href="configRespaldos.html">Respaldos</a></li>
+      <li><a href="configSeguridad.html">Seguridad</a></li>
+      <li><a href="configAcercaDe.html">Acerca de AGE</a></li>
+    </ul>
+  </nav>
+</aside>
 
     <section>
         <label for="autenticacion">Autenticación de Usuarios:</label>
@@ -70,11 +73,12 @@
             <option value="Desactivado">Desactivado</option>
         </select>
     </section>
-
-    <button type="submit">Guardar Cambios</button>
-
+    <div class="send">
+        <button type="submit">Guardar Cambios</button>
+    </div>
     <footer>
         &copy; 2026 A.G.E. Todos los derechos reservados.
     </footer>
+</div>
 </body>
 </html>

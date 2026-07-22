@@ -9,144 +9,108 @@
     <link rel="icon" href="./image/Logo A.G.E.png">
 </head>
 <body>
-    <div class="contenedor">
+<div class="contenedor">
+    <h1 class="tit">Facturación</h1>
     <aside class="navlateral">
         <div class="nav">
             <nav>
-            <ul>
-                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="configuracion.html">Configuración</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="facturacion.html">Facturación</a></li>
-                <li><a href="empleados.html">Empleados</a></li>
-                <li><a href="inventario.html">Inventario</a></li>
-                <li><a href="produccion.html">Producción</a></li>
-                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
-            </ul>
+                <ul>
+                    <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="configuracion.html">Configuración</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="facturacion.html">Facturación</a></li>
+                    <li><a href="empleados.html">Empleados</a></li>
+                    <li><a href="inventario.html">Inventario</a></li>
+                    <li><a href="produccion.html">Producción</a></li>
+                    <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+                </ul>
             </nav>
         </div>
-        <h1>Facturación</h1>
      </aside>
-        <div class="selectcliente">
-            <label for="cliente">Seleccionar cliente:</label>
-            <select name="cliente" id="cliente">
-                <option value="">Seleccione un cliente</option>
-                <option value="1">Cliente 1</option>
-                <option value="2">Cliente 2</option>
-                <option value="3">Cliente 3</option>
-                <option value="4">Cliente 4</option>
-                <option value="5">Cliente 5</option>
-            </select>
-        </div>
-        <!--<hr>
-
-        <div class="configfactura">
-
-        <select name="producto" id="producto">
-            <option value="">producto</option>
-            <option value="1">Producto 1</option>
-            <option value="2">Producto 2</option>
-            <option value="3">Producto 3</option>
+    <div class="selectcliente">
+        <label for="cliente">Seleccionar cliente:</label>
+        <select name="cliente" id="cliente">
+            <option value="">Seleccione un cliente</option>
+            <option value="1">Cliente 1</option>
+            <option value="2">Cliente 2</option>
+            <option value="3">Cliente 3</option>
+            <option value="4">Cliente 4</option>
+            <option value="5">Cliente 5</option>
         </select>
-        <div class="descripcion">
-            <label for="descripcion">Descripción:</label>
-            <input type="text" id="descripcion" name="descripcion">
-        </div>
-
-        <select name="cantidad" id="cantidad">
-            <option value="">cantidad</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-
-        <select name="precio" id="precio">
-            <option value="">precio</option>
-            <option value="1">10.00</option>
-            <option value="2">20.00</option>
-            <option value="3">30.00</option>
-        </select> -->
-<!-- 
-        <h5>descuento:
-            <p>aca va in innerhtml</p> 
-        </h5>
-
-        <h5>total:
-            <p>aca va in innerhtml</p>
-
-        <hr>
-        </div> -->
-
-        <div class="tabla-lista-facturas">
-                <table border="1">
-                    <tbody>
-                        <tr>
-                            <th>Producto: <select name="producto" id="producto">
-                                <option value="">Seleccione un producto</option>
-                                <option value="1">Producto 1</option>
-                                <option value="2">Producto 2</option>
-                                <option value="3">Producto 3</option>
-                            </select></th>
-                            <th>Descripción: <input type="text" id="descripcion" name="descripcion" placeholder="Ponga una descripcion"></th>
-                            <th>Cantidad: <input type="text" id="cantidad" name="cantidad" placeholder="Introuduzca una Cantidad"></th>
-                            <th>Precio: <input type="text" id="precio" name="precio" placeholder="Introuduzca un precio"></th>
-                            <th>Descuento: <input type="text" readonly></th>
-                            <th>Total:</th>
-                        </tr>
-                    </tbody>
-                    <tbody id="factura-body">
-                         <tr>
-                            <th colspan="6">Historial</th>
-                        </tr>
-                        <tr>
-                            <th>A123</th>
-                            <th>Servicios Servidos</th>
-                            <th>10</th>
-                            <th>50.00</th>
-                            <th>0%</th>
-                            <th>500.00</th>
-                        </tr>
-                        <tr>
-                            <th>A124</th>
-                            <th>Servicios Servidos</th>
-                            <th>5</th>
-                            <th>30.00</th>
-                            <th>10%</th>
-                            <th>135.00</th>
-                        </tr>
-                        <tr>
-                            <th>A125</th>
-                            <th>Servicios Servidos</th>
-                            <th>2</th>
-                            <th>25.00</th>
-                            <th>5%</th>
-                            <th>47.50</th>
-                        </tr>
-                    </tbody>
-                </table>
-        </div>
-
-        <aside class="totalfactura">
-            <h5>Subtotal: <span id="subtotal">702.50</span></h5>
-            <h5>Impuesto: <span id="impuesto">0.00</span></h5>
-            <h5>Total Factura: <span id="total">702.50</span></h5>
-        </aside>
-
-        <div class="botonesfactura">
-            <button id="cancelar-factura">Guardar Borrador</button>
-            <button id="generar-factura">Generar Factura</button>
-        </div>
-        <div class="seccion-abajo">
-            <input type="button" value="compartir">
-            <input type="button" value="imprimir">
-            <input type="button" value="descargar pdf">
-            <input type="button" value="Nuevo registro">
-        </div>
-        <br>
-        <footer>
-            &copy; 2026 A.G.E. Todos los derechos reservados.
-        </footer>
     </div>
+
+    <div class="tabla-lista-facturas">
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>Producto: 
+                        <select name="producto" id="producto">
+                            <option value="">Seleccione un producto</option>
+                            <option value="1">Producto 1</option>
+                            <option value="2">Producto 2</option>
+                            <option value="3">Producto 3</option>
+                        </select>
+                    </th>
+                    <th>Descripción: <input type="text" id="descripcion" name="descripcion" placeholder="Ponga una descripcion"></th>
+                    <th>Cantidad: <input type="text" id="cantidad" name="cantidad" placeholder="Introuduzca una Cantidad"></th>
+                    <th>Precio: <input type="text" id="precio" name="precio" placeholder="Introuduzca un precio"></th>
+                    <th>Descuento: <input type="text" readonly></th>
+                    <th>Total:</th>
+                </tr>
+            </tbody>
+            <tbody id="factura-body">
+                <tr>
+                    <th colspan="6">Historial</th>
+                </tr>
+                <tr>
+                    <th>A123</th>
+                    <th>Servicios Servidos</th>
+                    <th>10</th>
+                    <th>50.00</th>
+                    <th>0%</th>
+                    <th>500.00</th>
+                </tr>
+                <tr>
+                    <th>A124</th>
+                    <th>Servicios Servidos</th>
+                    <th>5</th>
+                    <th>30.00</th>
+                    <th>10%</th>
+                    <th>135.00</th>
+                </tr>
+                <tr>
+                    <th>A125</th>
+                    <th>Servicios Servidos</th>
+                    <th>2</th>
+                    <th>25.00</th>
+                    <th>5%</th>
+                    <th>47.50</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <aside class="totalfactura">
+        <h5>Subtotal: <span id="subtotal">702.50</span></h5>
+        <h5>Impuesto: <span id="impuesto">0.00</span></h5>
+        <h5>Total Factura: <span id="total">702.50</span></h5>
+    </aside>
+
+    <div class="botonesfactura">
+        <button id="cancelar-factura">Guardar Borrador</button>
+        <button id="generar-factura">Generar Factura</button>
+    </div>
+    <div class="seccion-abajo">
+        <input type="button" value="compartir">
+        <input type="button" value="imprimir">
+        <input type="button" value="descargar pdf">
+        <input type="button" value="Nuevo registro">
+    </div>
+    <br>
+    <footer>
+        &copy; 2026 A.G.E. Todos los derechos reservados.
+    </footer>
+</div>
 </body>
 </html>

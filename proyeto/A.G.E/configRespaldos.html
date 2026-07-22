@@ -1,66 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AGE</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>  
 <body>
   <div class="contenedor">
-  <aside class="navlateral">
-        <div class="nav">
-            <nav>
+    <h1 class="tit">Configuración</h1>
+    <aside class="navlateral">
+      <div class="nav">
+          <nav>
             <ul>
-                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="configuracion.html">Configuración</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="facturacion.html">Facturación</a></li>
-                <li><a href="empleados.html">Empleados</a></li>
-                <li><a href="inventario.html">Inventario</a></li>
-                <li><a href="produccion.html">Producción</a></li>
-                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+              <img src="/image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="configuracion.html">Configuración</a></li>
+              <li><a href="clientes.html">Clientes</a></li>
+              <li><a href="facturacion.html">Facturación</a></li>
+              <li><a href="empleados.html">Empleados</a></li>
+              <li><a href="inventario.html">Inventario</a></li>
+              <li><a href="produccion.html">Producción</a></li>
+              <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
             </ul>
-            </nav>
-        </aside>
-<h1>Configuración</h1>
-<div id="respaldos">
-  <h1>Respaldos</h1>
+          </nav>
+        </div>
+    </aside>
+    <aside class="nav-Config">
+    <nav >
+      <ul>
+        <li><a href="configPerfilEmpresa.html">Perfil de la empresa</a></li>
+        <li><a href="configUsuario.html">Usuarios</a></li>
+        <li><a href="preferencias.html">Preferencias</a></li>
+        <li><a href="configImpuestos.html">Impuestos</a></li>
+        <li><a href="configRespaldos.html">Respaldos</a></li>
+        <li><a href="configSeguridad.html">Seguridad</a></li>
+        <li><a href="configAcercaDe.html">Acerca de AGE</a></li>
+      </ul>
+    </nav>
+    </aside>
 
-  <form>
-    <div>
-      <label for="copia-automatica">Copia automática</label>
-      <input type="text" id="copia-automatica" name="copia-automatica" value="Activada">
+    <div id="respaldos">
+      <h1>Respaldos</h1>
+
+        <form>
+            <label for="copia-automatica">Copia automática</label>
+            <input type="text" id="copia-automatica" name="copia-automatica" value="Activada">
+
+            <label for="frecuencia-respaldo">Frecuencia de respaldo</label>
+            <input type="text" id="frecuencia-respaldo" name="frecuencia-respaldo" value="Diario">
+
+            <label for="ultimo-respaldo">Último respaldo</label>
+            <input type="text" id="ultimo-respaldo" name="ultimo-respaldo" value="28/06/2026 - 12:00 PM">
+        
+            <label for="ubicacion">Ubicación</label>
+            <input type="text" id="ubicacion" name="ubicacion" value="Servidor seguro">
+
+            <label for="mantener-copias">Mantener copias</label>
+            <input type="text" id="mantener-copias" name="mantener-copias" value="Últimos 30 días">
+
+            <label for="restauracion">Restauración</label>
+            <input type="text" id="restauracion" name="restauracion" value="Disponible">
+          
+            <button type="submit">Guardar cambios</button>
+      </form>
     </div>
-
-    <div>
-      <label for="frecuencia-respaldo">Frecuencia de respaldo</label>
-      <input type="text" id="frecuencia-respaldo" name="frecuencia-respaldo" value="Diario">
-    </div>
-
-    <div>
-      <label for="ultimo-respaldo">Último respaldo</label>
-      <input type="text" id="ultimo-respaldo" name="ultimo-respaldo" value="28/06/2026 - 12:00 PM">
-    </div>
-
-    <div>
-      <label for="ubicacion">Ubicación</label>
-      <input type="text" id="ubicacion" name="ubicacion" value="Servidor seguro">
-    </div>
-
-    <div>
-      <label for="mantener-copias">Mantener copias</label>
-      <input type="text" id="mantener-copias" name="mantener-copias" value="Últimos 30 días">
-    </div>
-
-    <div>
-      <label for="restauracion">Restauración</label>
-      <input type="text" id="restauracion" name="restauracion" value="Disponible">
-    </div>
-
-    <button type="submit">Guardar cambios</button>
-  </form>
-</div>
 </div>
 </body>
 </html>
