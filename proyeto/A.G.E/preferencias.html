@@ -9,11 +9,9 @@
   <link rel="icon" href="./image/Logo A.G.E.png">
 </head>
 <body>
-  <div class="contenedor">
-    <h1 class="tit">Configuración</h1>
   <aside class="navlateral">
-      <div class="nav">
-          <nav>
+        <div class="nav">
+            <nav>
             <ul>
                 <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
                 <li><a href="dashboard.html">Dashboard</a></li>
@@ -25,11 +23,11 @@
                 <li><a href="produccion.html">Producción</a></li>
                 <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
             </ul>
-          </nav>
-      </div>
+            </nav>
+        </div>
     </aside>
-<aside class="nav-Config">
-  <nav >
+<aside>
+  <h1>Configuración</h1>
     <ul>
       <li><a href="configPerfilEmpresa.html">Perfil de la empresa</a></li>
       <li><a href="configUsuario.html">Usuarios</a></li>
@@ -39,7 +37,6 @@
       <li><a href="configSeguridad.html">Seguridad</a></li>
       <li><a href="configAcercaDe.html">Acerca de AGE</a></li>
     </ul>
-  </nav>
 </aside>
 
 <section id="preferencias">
@@ -91,7 +88,10 @@
 
     <div>
       <label for="formato-fecha">Formato de fecha</label>
-      <input type="date" name="" id="">
+      <select id="formato-fecha" name="formato-fecha">
+        <option value="dd-mm-aaaa" selected>DD/MM/AAAA</option>
+        <option value="mm-dd-aaaa">MM/DD/AAAA</option>
+      </select>
     </div>
 
     <div>

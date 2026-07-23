@@ -1,81 +1,64 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impuestos</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
-    <link rel="icon" href="./image/Logo A.G.E.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AGE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+  <link rel="icon" href="./image/Logo A.G.E.png">
 </head>
 <body>
-<div class="contenedor">
-  <h1 class="tit">Configuración</h1>
-  <aside class="navlateral">
-    <div class="nav">
-      <nav>
-        <ul>
-          <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
-          <li><a href="dashboard.html">Dashboard</a></li>
-          <li><a href="configuracion.html">Configuración</a></li>
-          <li><a href="clientes.html">Clientes</a></li>
-          <li><a href="facturacion.html">Facturación</a></li>
-          <li><a href="empleados.html">Empleados</a></li>
-          <li><a href="inventario.html">Inventario</a></li>
-          <li><a href="produccion.html">Producción</a></li>
-          <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
-        </ul>
-        <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
-      </nav>
-    </div>
-  </aside>
+  <div class="contenedor">
+        <aside class="navlateral">
+        <div class="nav">
+            <nav>
+            <ul>
+                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="facturacion.html">Facturación</a></li>
+                <li><a href="empleados.html">Empleados</a></li>
+                <li><a href="inventario.html">Inventario</a></li>
+                <li><a href="produccion.html">Producción</a></li>
+                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+            </ul>
+            </nav>
+        </aside>
 
-  <aside class="nav-Config">
-    <nav>
-      <ul>
-        <li><a href="configPerfilEmpresa.html">Perfil de la empresa</a></li>
-        <li><a href="configUsuario.html">Usuarios</a></li>
-        <li><a href="preferencias.html">Preferencias</a></li>
-        <li><a href="configImpuestos.html">Impuestos</a></li>
-        <li><a href="configRespaldos.html">Respaldos</a></li>
-        <li><a href="configSeguridad.html">Seguridad</a></li>
-        <li><a href="configAcercaDe.html">Acerca de AGE</a></li>
-      </ul>
-    </nav>
-  </aside>
-  <div id="impuestos">
+<div id="impuestos">
   <h1>Impuestos</h1>
 
-    <form>
-      <div>
-        <label for="tipo-impuesto">Tipo de impuesto</label>
-        <input type="text" id="tipo-impuesto" name="tipo-impuesto" value="ITBIS">
-      </div>
+  <form>
+    <div>
+      <label for="tipo-impuesto">Tipo de impuesto</label>
+      <input type="text" id="tipo-impuesto" name="tipo-impuesto" value="ITBIS">
+    </div>
 
-      <div>
-        <label for="tasa-impuesto">Tasa de impuesto</label>
-        <input type="text" id="tasa-impuesto" name="tasa-impuesto" value="18%">
-      </div>
+    <div>
+      <label for="tasa-impuesto">Tasa de impuesto</label>
+      <input type="text" id="tasa-impuesto" name="tasa-impuesto" value="18%">
+    </div>
 
-      <div>
-        <label for="impuesto-predeterminado">Impuesto predeterminado</label>
-        <input type="text" id="impuesto-predeterminado" name="impuesto-predeterminado" value="ITBIS General">
-      </div>
+    <div>
+      <label for="impuesto-predeterminado">Impuesto predeterminado</label>
+      <input type="text" id="impuesto-predeterminado" name="impuesto-predeterminado" value="ITBIS General">
+    </div>
 
-      <div>
-        <label for="rnc">Número de identificación fiscal</label>
-        <input type="text" id="rnc" name="identificación-fiscal" value="10914">
-      </div>
+    <div>
+      <label for="rnc">Número de identificación fiscal</label>
+      <input type="text" id="rnc" name="identificación-fiscal" value="10914">
+    </div>
 
-      <div>
-        <label for="comprobantes-fiscales">Comprobantes fiscales</label>
-        <input type="text" id="comprobantes-fiscales" name="comprobantes-fiscales" value="Habilitados">
-      </div>
+    <div>
+      <label for="comprobantes-fiscales">Comprobantes fiscales</label>
+      <input type="text" id="comprobantes-fiscales" name="comprobantes-fiscales" value="Habilitados">
+    </div>
 
-      <button type="submit">Guardar cambios</button>
-    </form>
-  </div>
+    <button type="submit">Guardar cambios</button>
+  </form>
+</div>
 </div>
 </body>
 </html>

@@ -9,11 +9,10 @@
     <link rel="icon" href="./image/Logo A.G.E.png">
 </head>
 <body>
-<div class="contenedor">
-    <h1 class="tit">Agregar Cliente</h1>
-    <aside class="navlateral">
-      <div class="nav">
-          <nav>
+    <div class="contenedor-principal">
+        <aside class="navlateral">
+        <div class="nav">
+            <nav>
             <ul>
                 <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
                 <li><a href="dashboard.html">Dashboard</a></li>
@@ -25,36 +24,40 @@
                 <li><a href="produccion.html">Producción</a></li>
                 <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
             </ul>
-            <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
-          </nav>
-      </div>
-    </aside>
-    <section class="agregar-empleado">
-        <form>
-            <label for="nombre">Nombre cliente:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            </nav>
+        </aside>
+            <main>
+                <section class="agregar-empleado">
+                    <h1>Agregar Cliente</h1>
+                    <form>
+                        <label for="nombre">Nombre cliente:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
 
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
 
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
-
-
-            <label for="ubi">Ubicacion:</label>
-            <input type="text" id="ubi">
-
-            <label for="fecharegistro">Fecha de Registro:</label>
-            <input type="date" id="fecharegistro">
-
-            <textarea name="Descripcion" id="Descripcion-cliente" placeholder="Agregar      Descripcion"></textarea>
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
 
 
-            <input type="button" value="Agregar Cliente">
-            <input type="reset" value="Limpiar Campos">
-            <a href="clientes.html">Regresar</a>
-        </form>
-    </section>
-</div>    
+                        <label for="ubi">Ubicacion:</label>
+                        <input type="text" id="ubi">
+
+                        <label for="fecharegistro">Fecha de Registro:</label>
+                        <input type="date" id="fecharegistro">
+
+                        <textarea name="Descripcion" id="Descripcion-cliente" placeholder="Agregar      Descripcion"></textarea>
+
+
+                        <input type="button" value="Agregar Cliente">
+                        <input type="reset" value="Limpiar Campos">
+                        <a href="#">Regresar</a>
+                    </form>
+                </section>
+            </main>
+         <footer>
+            &copy; 2026 A.G.E. Todos los derechos reservados.
+        </footer>
+    </div>    
 </body>
 </html>
