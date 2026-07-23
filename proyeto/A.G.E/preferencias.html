@@ -7,100 +7,103 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js"></script>
   <link rel="icon" href="./image/Logo A.G.E.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+<div class="contenedor">
+    <h1 class="tit">Configuración</h1>
   <aside class="navlateral">
-        <div class="nav">
-            <nav>
-            <ul>
-                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="configuracion.html">Configuración</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="facturacion.html">Facturación</a></li>
-                <li><a href="empleados.html">Empleados</a></li>
-                <li><a href="inventario.html">Inventario</a></li>
-                <li><a href="produccion.html">Producción</a></li>
-                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
-            </ul>
-            </nav>
-        </div>
-    </aside>
-<aside>
-  <h1>Configuración</h1>
-    <ul>
-      <li><a href="configPerfilEmpresa.html">Perfil de la empresa</a></li>
-      <li><a href="configUsuario.html">Usuarios</a></li>
-      <li><a href="preferencias.html">Preferencias</a></li>
-      <li><a href="configImpuestos.html">Impuestos</a></li>
-      <li><a href="configRespaldos.html">Respaldos</a></li>
-      <li><a href="configSeguridad.html">Seguridad</a></li>
-      <li><a href="configAcercaDe.html">Acerca de AGE</a></li>
-    </ul>
-</aside>
-
-<section id="preferencias">
-  <h1>Preferencias</h1>
-
-  <form>
-    <div>
-      <label for="idioma">Idioma</label>
-      <select id="idioma" name="idioma">
-        <option value="es" selected>Español</option>
-        <option value="en">English</option>
-      </select>
+    <div class="nav">
+        <nav>
+          <ul>
+              <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+              <li><i class="fa-solid fa-house"></i><a href="dashboard.html">Dashboard</a></li>
+              <li class="seleccionadoNav"><i class="fa-solid fa-gear"></i><a href="configuracion.html">Configuración</a></li>
+              <li><i class="fa-solid fa-people-group"></i><a href="clientes.html">Clientes</a></li>
+              <li><i class="fa-solid fa-file-invoice"></i><a href="facturacion.html">Facturación</a></li>
+              <li><i class="fa-solid fa-user-group"></i><a href="empleados.html">Empleados</a></li>
+              <li><i class="fa-solid fa-boxes-stacked"></i><a href="inventario.html">Inventario</a></li>
+              <li><a href="produccion.html">Producción</a></li>
+              <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+          </ul>
+          <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
+        </nav>
     </div>
+  </aside>
+  <aside class="nav-Config">
+    <nav >
+      <ul>
+        <li><a href="configPerfilEmpresa.html">Perfil de la empresa</a></li>
+        <li><a href="configUsuario.html">Usuarios</a></li>
+        <li><a href="#">Preferencias</a></li>
+        <li><a href="configImpuestos.html">Impuestos</a></li>
+        <li><a href="configRespaldos.html">Respaldos</a></li>
+        <li><a href="configSeguridad.html">Seguridad</a></li>
+        <li><a href="configAcercaDe.html">Acerca de AGE</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-    <div>
-      <label for="moneda">Moneda</label>
-      <select id="moneda" name="moneda">
-        <option value="dop" selected>DOP (RD$)</option>
-        <option value="usd">USD ($)</option>
-      </select>
-    </div>
+  <section id="preferencias">
+    <h1>Preferencias</h1>
 
-    <div>
-      <label for="tema">Tema</label>
-      <select id="tema" name="tema">
-        <option value="claro" selected>Claro</option>
-        <option value="oscuro">Oscuro</option>
-      </select>
-    </div>
+    <form>
+      <div>
+        <label for="idioma">Idioma</label>
+        <select id="idioma" name="idioma">
+          <option value="es" selected>Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
 
-    <div>
-      <label for="notificaciones">Notificaciones</label>
-      <input type="checkbox" id="notificaciones" name="notificaciones" checked>
-    </div>
+      <div>
+        <label for="moneda">Moneda</label>
+        <select id="moneda" name="moneda">
+          <option value="dop" selected>DOP (RD$)</option>
+          <option value="usd">USD ($)</option>
+        </select>
+      </div>
 
-    <div>
-      <label for="inicio-automatico">Inicio automático</label>
-      <input type="checkbox" id="inicio-automatico" name="inicio-automatico" checked>
-    </div>
+      <div>
+        <label for="tema">Tema</label>
+        <select id="tema" name="tema">
+          <option value="claro" selected>Claro</option>
+          <option value="oscuro">Oscuro</option>
+        </select>
+      </div>
 
-    <div>
-      <label for="respaldo-automatico">Respaldo automático</label>
-      <select id="respaldo-automatico" name="respaldo-automatico">
-        <option value="diario" selected>Diario</option>
-        <option value="semanal">Semanal</option>
-        <option value="mensual">Mensual</option>
-      </select>
-    </div>
+      <div>
+        <label for="notificaciones">Notificaciones</label>
+        <input type="checkbox" id="notificaciones" name="notificaciones" checked>
+      </div>
 
-    <div>
-      <label for="formato-fecha">Formato de fecha</label>
-      <select id="formato-fecha" name="formato-fecha">
-        <option value="dd-mm-aaaa" selected>DD/MM/AAAA</option>
-        <option value="mm-dd-aaaa">MM/DD/AAAA</option>
-      </select>
-    </div>
+      <div>
+        <label for="inicio-automatico">Inicio automático</label>
+        <input type="checkbox" id="inicio-automatico" name="inicio-automatico" checked>
+      </div>
 
-    <div>
-      <label for="animaciones">Animaciones</label>
-      <input type="checkbox" id="animaciones" name="animaciones" checked>
-    </div>
+      <div>
+        <label for="respaldo-automatico">Respaldo automático</label>
+        <select id="respaldo-automatico" name="respaldo-automatico">
+          <option value="diario" selected>Diario</option>
+          <option value="semanal">Semanal</option>
+          <option value="mensual">Mensual</option>
+        </select>
+      </div>
 
-    <button type="submit">Guardar cambios</button>
-  </form>
-</section>
+      <div>
+        <label for="formato-fecha">Formato de fecha</label>
+        <input type="date" name="" id="">
+      </div>
+
+      <div>
+        <label for="animaciones">Animaciones</label>
+        <input type="checkbox" id="animaciones" name="animaciones" checked>
+      </div>
+
+      <button type="submit">Guardar cambios</button>
+    </form>
+  </section>
+</div>
 </body>
 </html>

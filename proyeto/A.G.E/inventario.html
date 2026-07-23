@@ -8,227 +8,230 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="contenedor">
+        <h1 class="tit">Inventario</h1>
         <aside class="navlateral">
-        <div class="nav">
-            <nav>
-            <ul>
-                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="configuracion.html">Configuración</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="facturacion.html">Facturación</a></li>
-                <li><a href="empleados.html">Empleados</a></li>
-                <li><a href="inventario.html">Inventario</a></li>
-                <li><a href="produccion.html">Producción</a></li>
-                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
-            </ul>
-            </nav>
-        </aside>
-        <main>
-            <header class="topbar">
-                <div class="buscador">
-                    <input type="search" placeholder="Buscar producto, codigo, categoria...">
-                    <button>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
-            </header>
+            <div class="nav">
+                <nav>
+                    <ul>
+                        <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                        <li><i class="fa-solid fa-house"></i><a href="dashboard.html">Dashboard</a></li>
+                        <li><i class="fa-solid fa-gear"></i><a href="configuracion.html"><span>Configuración</span></a></li>
+                        <li><i class="fa-solid fa-people-group"></i><a href="clientes.html">Clientes</a></li>
+                        <li><i class="fa-solid fa-file-invoice"></i><a href="facturacion.html">Facturación</a></li>
+                        <li><i class="fa-solid fa-user-group"></i><a href="empleados.html">Empleados</a></li>
+                        <li class="seleccionadoNav"><i class="fa-solid fa-boxes-stacked"></i><a href="#">Inventario</a></li>
+                        <li><a href="produccion.html">Producción</a></li>
+                        <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+                    </ul>
+                    <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
+                </nav>
+            </div>
+    </aside>
+    <main>
+        <header class="topbar">
+            <div class="buscador">
+                <input type="search" placeholder="Buscar producto, codigo, categoria...">
+                <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </header>
 
-            <section class="encabezado">
-                <div>
-                    <h1>Inventario</h1>
-                    <p>Analisis detallados del estado y movimientos del inventario</p>
-                </div>
+        <section class="encabezado">
+            <div>
+                <p>Analisis detallados del estado y movimientos del inventario</p>
+            </div>
 
+            <select class="tiempo">
+                <option value="dia">Este día</option>
+                <option value="semana">Esta semana</option>
+                <option value="mes">Este mes</option>
+                <option value="año">Este año</option>
+            </select>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <div class="card-header">
+                    <h2> Total de productos</h2>
+                    <div class="icono">
+                    <i class="fa-solid fa-box"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>1,248</p>
+                </div>
+                <div class="card-footer">
+                    <p>94.26% del inventario</p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Productos agotados</h2>
+                    <div class="icono">
+                    <i class="fa-solid fa-box-open"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>28</p>
+                </div>
+                <div class="card-footer">
+                    <p>2.25% del inventario</p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Productos bajo stock</h2>
+                    <div class="icono">
+                    <i class="fa-solid fa-triangle-exclamation""></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>56</p>
+                </div>
+                <div class="card-footer">
+                    <p>4.49% del inventario</p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Productos bajo stock</h2>
+                    <div class="icono">
+                    <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>56</p>
+                </div>
+                <div class="card-footer">
+                    <p>4.49% del inventario</p>
+                </div>
+            </div>
+        
+        <section class="seccion-productos">
+            <div class="contenedor-productos">
+            <div class="titulo-seccion">Productos (1,248)</div>
+                            
+            <table class="tabla-productos">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Stock</th>
+                        <th>Precio</th>
+                        <th>Proveedor</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>PRD-0001</td>
+                        <td>
+                            <div class="celda-producto">
+                                
+                            </div>
+                        </td>
+                        <td></td>
+                        <td class="stock-disponible"></td>
+                        <td></td>
+                        <td></td>
+                        <td><div class="disponible"></div></td>
+                        <td>
+                            <div class="acciones">
+                                <button class="btn-accion btn-ver"><i class="fa-regular fa-eye"></i></button>
+                                <button class="btn-accion btn-editar"><i class="fa-regular fa-pen-to-square"></i></button>
+                                <button class="btn-accion btn-eliminar"><i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>PRD-0002</td>
+                        <td>
+                            <div class="celda-producto">
+                                
+                            </div>
+                        </td>
+                        <td></td>
+                        <td class="stock-bajo"></td>
+                        <td></td>
+                        <td></td>
+                        <td><div class="bajo-stock"> </div></td>
+                        <td>
+                            <div class="acciones">
+                                <button class="btn-accion btn-ver"><i class="fa-regular fa-eye"></i></button>
+                                <button class="btn-accion btn-editar"><i class="fa-regular fa-pen-to-square"></i></button>
+                                <button class="btn-accion btn-eliminar"><i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>PRD-0003</td>
+                        <td>
+                            <div class="celda-producto">
+                            
+                            </div>
+                        </td>
+                        <td></td>
+                        <td class="stock-agotado"></td>
+                        <td></td>
+                        <td></td>
+                        <td><div class="agotado"></div></td>
+                        <td>
+                            <div class="acciones">
+                                <button class="btn-accion btn-ver"><i class="fa-regular fa-eye"></i></button>
+                                <button class="btn-accion btn-editar"><i class="fa-regular fa-pen-to-square"></i></button>
+                                <button class="btn-accion btn-eliminar"><i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <div class="graficoES">
+                <h2>Entradas y Salidas del Inventario</h2>
                 <select class="tiempo">
                     <option value="dia">Este día</option>
                     <option value="semana">Esta semana</option>
                     <option value="mes">Este mes</option>
                     <option value="año">Este año</option>
                 </select>
-            </section>
 
-            <section class="cards">
-                <div class="card">
-                    <div class="card-header">
-                        <h2> Total de productos</h2>
-                        <div class="icono">
-                        <i class="fa-solid fa-box"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>1,248</p>
-                    </div>
-                    <div class="card-footer">
-                        <p>94.26% del inventario</p>
-                </div>
+                <ul class="ES">
+                    <li class="entrada">Entradas</li>
+                    <li class="salida">Salidas</li>
+                </ul>
+                <canvas id="graficoES"></canvas>
+            </div>
 
+            <div class="PPC">
+                <h2>Productos por Categoría</h2>
+                <select class="tiempo">
+                    <option value="dia">Este día</option>
+                    <option value="semana">Esta semana</option>
+                    <option value="mes">Este mes</option>
+                    <option value="año">Este año</option>
+                </select>
 
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Productos agotados</h2>
-                        <div class="icono">
-                        <i class="fa-solid fa-box-open"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>28</p>
-                    </div>
-                    <div class="card-footer">
-                        <p>2.25% del inventario</p>
-                </div>
-
-
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Productos bajo stock</h2>
-                        <div class="icono">
-                        <i class="fa-solid fa-triangle-exclamation""></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>56</p>
-                    </div>
-                    <div class="card-footer">
-                        <p>4.49% del inventario</p>
-                </div>
-
-
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Productos bajo stock</h2>
-                        <div class="icono">
-                        <i class="fa-solid fa-circle-dollar-to-slot"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>56</p>
-                    </div>
-                    <div class="card-footer">
-                        <p>4.49% del inventario</p>
-                    </div>
-                </div>
-            
-            <section class="seccion-productos">
-                <div class="contenedor-productos">
-                <div class="titulo-seccion">Productos (1,248)</div>
-                                
-                <table class="tabla-productos">
-                    <thead>
-                        <tr>
-                            <th>Código</th>
-                            <th>Producto</th>
-                            <th>Categoría</th>
-                            <th>Stock</th>
-                            <th>Precio</th>
-                            <th>Proveedor</th>
-                            <th>Estado</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td>PRD-0001</td>
-                            <td>
-                                <div class="celda-producto">
-                                   
-                                </div>
-                            </td>
-                            <td></td>
-                            <td class="stock-disponible"></td>
-                            <td></td>
-                            <td></td>
-                            <td><div class="disponible"></div></td>
-                            <td>
-                                <div class="acciones">
-                                    <button class="btn-accion btn-ver"><i class="fa-regular fa-eye"></i></button>
-                                    <button class="btn-accion btn-editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                                    <button class="btn-accion btn-eliminar"><i class="fa-regular fa-trash-can"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        
-                        <tr>
-                            <td>PRD-0002</td>
-                            <td>
-                                <div class="celda-producto">
-                                    
-                                </div>
-                            </td>
-                            <td></td>
-                            <td class="stock-bajo"></td>
-                            <td></td>
-                            <td></td>
-                            <td><div class="bajo-stock"> </div></td>
-                            <td>
-                                <div class="acciones">
-                                    <button class="btn-accion btn-ver"><i class="fa-regular fa-eye"></i></button>
-                                    <button class="btn-accion btn-editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                                    <button class="btn-accion btn-eliminar"><i class="fa-regular fa-trash-can"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        
-                        <tr>
-                            <td>PRD-0003</td>
-                            <td>
-                                <div class="celda-producto">
-                                
-                                </div>
-                            </td>
-                            <td></td>
-                            <td class="stock-agotado"></td>
-                            <td></td>
-                            <td></td>
-                            <td><div class="agotado"></div></td>
-                            <td>
-                                <div class="acciones">
-                                    <button class="btn-accion btn-ver"><i class="fa-regular fa-eye"></i></button>
-                                    <button class="btn-accion btn-editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                                    <button class="btn-accion btn-eliminar"><i class="fa-regular fa-trash-can"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section>
-                <div class="graficoES">
-                    <h2>Entradas y Salidas del Inventario</h2>
-                    <select class="tiempo">
-                        <option value="dia">Este día</option>
-                        <option value="semana">Esta semana</option>
-                        <option value="mes">Este mes</option>
-                        <option value="año">Este año</option>
-                    </select>
-
-                    <ul class="ES">
-                        <li class="entrada">Entradas</li>
-                        <li class="salida">Salidas</li>
-                    </ul>
-                    <canvas id="graficoES"></canvas>
-                </div>
-
-                <div class="PPC">
-                    <h2>Productos por Categoría</h2>
-                    <select class="tiempo">
-                        <option value="dia">Este día</option>
-                        <option value="semana">Esta semana</option>
-                        <option value="mes">Este mes</option>
-                        <option value="año">Este año</option>
-                    </select>
-
-                    <canvas id="graficoPPC"></canvas>
-                </div>
-            </section>
-        </main>
-    </div>
+                <canvas id="graficoPPC"></canvas>
+            </div>
+        </section>
+    </main>
+</div>
 </body>
 </html>

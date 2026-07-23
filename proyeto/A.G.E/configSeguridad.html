@@ -7,55 +7,64 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="contenedor">
+<div class="contenedor">
+    <h1 class="tit">Configuración</h1>
     <aside class="navlateral">
         <div class="nav">
             <nav>
-            <ul>
-                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="configuracion.html">Configuración</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="facturacion.html">Facturación</a></li>
-                <li><a href="empleados.html">Empleados</a></li>
-                <li><a href="inventario.html">Inventario</a></li>
-                <li><a href="produccion.html">Producción</a></li>
-                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
-            </ul>
+                <ul>
+                    <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                    <li><i class="fa-solid fa-house"></i><a href="dashboard.html">Dashboard</a></li>
+                    <li class="seleccionadoNav"><i class="fa-solid fa-gear"></i><a href="configuracion.html">Configuración</a></li>
+                    <li><i class="fa-solid fa-people-group"></i><a href="clientes.html">Clientes</a></li>
+                    <li><i class="fa-solid fa-file-invoice"></i><a href="facturacion.html">Facturación</a></li>
+                    <li><i class="fa-solid fa-user-group"></i><a href="empleados.html">Empleados</a></li>
+                    <li><i class="fa-solid fa-boxes-stacked"></i><a href="inventario.html">Inventario</a></li>
+                    <li><a href="produccion.html">Producción</a></li>
+                    <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+                </ul>
+                <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
             </nav>
         </div>
     </aside>
-    </div>
 
-    <nav>
-        <h1>Configuración</h1>
-        <li><a href="#">Perfil de la empresa</a></li>
-        <li><a href="#">Usuarios</a></li>
-        <li><a href="#">Preferencias</a></li>
-        <li><a href="#">Impuestos</a></li>
-        <li><a href="#">Respaldos</a></li>
-        <li><a href="#">Seguridad</a></li>
-        <li><a href="#">Acerca de AGE</a></li>
-    </nav>
+    <aside class="nav-Config">
+        <nav>
+            <ul>
+            <li><a href="configPerfilEmpresa.html">Perfil de la empresa</a></li>
+            <li><a href="configUsuario.html">Usuarios</a></li>
+            <li><a href="preferencias.html">Preferencias</a></li>
+            <li><a href="configImpuestos.html">Impuestos</a></li>
+            <li><a href="configRespaldos.html">Respaldos</a></li>
+            <li><a href="configSeguridad.html">Seguridad</a></li>
+            <li><a href="configAcercaDe.html">Acerca de AGE</a></li>
+            </ul>
+        </nav>
+    </aside>
 
     <section>
+
         <label for="autenticacion">Autenticación de Usuarios:</label>
         <select id="autenticacion" name="autenticacion">
             <option value="Activada">Activada</option>
             <option value="Desactivada">Desactivada</option>
         </select>
+
         <label for="contraseña">Contraseña:</label>
         <select name="contraseña" id="contraseña">
             <option value="Activada">Requerida</option>
             <option value="Desactivada">Desactivada</option>
         </select>
+
         <label for="doble-verificacion">Doble verificación:</label>
         <select name="doble-verificacion" id="doble-verificacion">
             <option value="Desactivada">Desactivado</option>
             <option value="Activada">Activado</option>
         </select>
+
         <label for="bloqueo-intento-fallido">Bloqueo por intentos fallidos:</label>
         <select name="bloqueo-intento-fallido" id="bloqueo-intento-fallido">
             <option value="1-Intento">1 Intento</option>
@@ -64,17 +73,19 @@
             <option value="4-Intentos">4 Intentos</option>
             <option value="5-Intentos">5 Intentos</option>
         </select>
+
         <label for="registro-actividad">Registro de Actividad:</label>
         <select name="registro-actividad" id="registro-actividad">
             <option value="Activado">Activado</option>
             <option value="Desactivado">Desactivado</option>
         </select>
+
     </section>
 
-    <button type="submit">Guardar Cambios</button>
-
-    <footer>
-        &copy; 2026 A.G.E. Todos los derechos reservados.
-    </footer>
+    <div class="send">
+        <button type="submit">Guardar Cambios</button>
+    </div>
+    
+</div>
 </body>
 </html>

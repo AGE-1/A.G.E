@@ -1,64 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Empleado</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="contenedor-principal">
-        <aside class="navlateral">
+<div class="contenedor">
+    <h1>Empleado</h1>
+    <aside class="navlateral">
         <div class="nav">
             <nav>
-            <ul>
-                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="configuracion.html">Configuración</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="facturacion.html">Facturación</a></li>
-                <li><a href="empleados.html">Empleados</a></li>
-                <li><a href="inventario.html">Inventario</a></li>
-                <li><a href="produccion.html">Producción</a></li>
-                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
-            </ul>
+                <ul>
+                    <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><i class="fa-solid fa-gear"></i><a href="configuracion.html">Configuración</a></li>
+                    <li><i class="fa-solid fa-people-group"></i><a href="clientes.html">Clientes</a></li>
+                    <li><i class="fa-solid fa-file-invoice"></i><a href="facturacion.html">Facturación</a></li>
+                    <li class="seleccionadoNav"><i class="fa-solid fa-user-group"></i><a href="empleados.html">Empleados</a></li>
+                    <li><i class="fa-solid fa-boxes-stacked"></i><a href="inventario.html">Inventario</a></li>
+                    <li><a href="produccion.html">Producción</a></li>
+                    <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+                </ul>
+                <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
             </nav>
-        </aside>
-        <h1>Empleado</h1>
-        <div class="infoempleado">
-            <img src="" alt="" id="imagen-empleado">
-            <form action="">
-                <label for="NombreEmpleado">Nombre Empleado:</label>
-                <input type="text" id="NombreEmpleado">
-                
-                <label for="tel">Numero Telefonico:</label>
-                <input type="tel" id="tel">
-
-                <label for="mail">Correo Electronico:</label>
-                <input type="email" id="mail">
-
-                <label for="cdl">Identificacion:</label>
-                <input type="number" id="cdl">
-
-                <label for="area">Area:</label>
-                <select name="Area" id="area">
-                    <option value="">Opcion1</option>
-                    <option value="">Opcion2</option>
-                    <option value="">Opcion3</option>
-                </select>
-
-                <label for="horario">Horario:</label>
-                <input type="time" id="horario">
-
-                <label for="Nomina">Nomina:</label>
-                <input type="number" id="Nomina">
-
-                <textarea name="Descripcion" id="Descripcion-Empleado" placeholder="Agregar Descripcion"></textarea>
-            </form>
-
-            <button>Eliminar</button>
-            
         </div>
-        <footer>Derechos reservados por A.G.E&#174;</footer>
+    </aside>
+    <div class="infoempleado">
+        <img src="" alt="" id="imagen-empleado">
+            <table border="1">
+                <thead><legend>Empleados</legend></thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+                        <th>Área</th>
+                        <th>Horario</th>
+                        <th>Nómina</th>
+                    </tr>
+                    <tr>
+                        <th><hr></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th><hr></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+            </table>
+        <!-- <form action="">
+            <label for="NombreEmpleado">Nombre Empleado:</label>
+            <input type="text" id="NombreEmpleado">
+            
+            <label for="tel">Numero Telefonico:</label>
+            <input type="tel" id="tel">
+
+            <label for="mail">Correo Electronico:</label>
+            <input type="email" id="mail">
+
+            <label for="cdl">Identificacion:</label>
+            <input type="number" id="cdl">
+
+            <label for="area">Area:</label>
+            <select name="Area" id="area">
+                <option value="">Opcion1</option>
+                <option value="">Opcion2</option>
+                <option value="">Opcion3</option>
+            </select>
+
+            <label for="horario">Horario:</label>
+            <input type="time" id="horario">
+
+            <label for="Nomina">Nomina:</label>
+            <input type="number" id="Nomina">
+
+            <textarea name="Descripcion" id="Descripcion-Empleado" placeholder="Agregar Descripcion"></textarea>
+        </form> -->
+
+        <button>Eliminar</button>
+        <button><a href="empleados.html">Atrás</a></button>
     </div>
+</div>
 </body>
 </html>

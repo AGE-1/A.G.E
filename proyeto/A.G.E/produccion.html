@@ -7,27 +7,29 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 <div class="contenedor">
+    <h1>Producción de Artículos</h1>
     <aside class="navlateral">
         <div class="nav">
             <nav>
-            <ul>
-                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="configuracion.html">Configuración</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="facturacion.html">Facturación</a></li>
-                <li><a href="empleados.html">Empleados</a></li>
-                <li><a href="inventario.html">Inventario</a></li>
-                <li><a href="produccion.html">Producción</a></li>
-                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
-            </ul>
+                <ul>
+                    <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                    <li><i class="fa-solid fa-house"></i><a href="dashboard.html">Dashboard</a></li>
+                    <li><i class="fa-solid fa-gear"></i><a href="configuracion.html">Configuración</a></li>
+                    <li><i class="fa-solid fa-people-group"></i><a href="clientes.html">Clientes</a></li>
+                    <li><i class="fa-solid fa-file-invoice"></i><a href="facturacion.html">Facturación</a></li>
+                    <li><i class="fa-solid fa-user-group"></i><a href="empleados.html">Empleados</a></li>
+                    <li><i class="fa-solid fa-boxes-stacked"></i><a href="inventario.html">Inventario</a></li>
+                    <li class="seleccionadoNav"><a href="#">Producción</a></li>
+                    <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+                </ul>
+                <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
             </nav>
         </div>
     </aside>
-    <h1>Producción de Artículos</h1>
     <div class="selectorden">
             <label for="orden">Orden NO:</label>
             <select name="orden" id="orden">
@@ -42,47 +44,47 @@
         <hr>
 
         <div class="tabla-lista-produccion">
-                <table border="1">
-                    <thead>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Material/Compuesto</th>
+                        <th>Descripción</th>
+                        <th>Cantidad Requerida</th>
+                        <th>Precio Unitario</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="produccion-body">
                         <tr>
-                            <th>Material/Compuesto</th>
-                            <th>Descripción</th>
-                            <th>Cantidad Requerida</th>
-                            <th>Precio Unitario</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody id="produccion-body">
-                         <tr>
-                            <th>MC-101</th>
-                            <th>Champu(crudo)</th>
-                            <th>100</th>
-                            <th>50.00</th>
-                            <th>500.00</th>
-                        </tr>
-                        <tr>
-                            <th>MC-102</th>
-                            <th>Shampoo(líquido)</th>
-                            <th>50</th>
-                            <th>75.00</th>
-                            <th>3,750.00</th>
-                        </tr>
-                        <tr>
-                            <th>MC-103</th>
-                            <th>Gel de ducha</th>
-                            <th>25</th>
-                            <th>100.00</th>
-                            <th>2,500.00</th>
-                        </tr>
-                        <tr>
-                            <th>MC-104</th>
-                            <th>Crema de afeitar</th>
-                            <th>10</th>
-                            <th>150.00</th>
-                            <th>1,500.00</th>
-                        </tr>
-                    </tbody>
-                </table>
+                        <th>MC-101</th>
+                        <th>Champu(crudo)</th>
+                        <th>100</th>
+                        <th>50.00</th>
+                        <th>500.00</th>
+                    </tr>
+                    <tr>
+                        <th>MC-102</th>
+                        <th>Shampoo(líquido)</th>
+                        <th>50</th>
+                        <th>75.00</th>
+                        <th>3,750.00</th>
+                    </tr>
+                    <tr>
+                        <th>MC-103</th>
+                        <th>Gel de ducha</th>
+                        <th>25</th>
+                        <th>100.00</th>
+                        <th>2,500.00</th>
+                    </tr>
+                    <tr>
+                        <th>MC-104</th>
+                        <th>Crema de afeitar</th>
+                        <th>10</th>
+                        <th>150.00</th>
+                        <th>1,500.00</th>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <aside class="totalproduccion">

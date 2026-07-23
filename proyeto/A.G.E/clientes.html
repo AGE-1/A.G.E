@@ -7,31 +7,36 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 <div class="contenedor">
+    <h1 class="tit">Clientes</h1>
     <aside class="navlateral">
         <div class="nav">
             <nav>
-            <ul>
-                <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="configuracion.html">Configuración</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="facturacion.html">Facturación</a></li>
-                <li><a href="empleados.html">Empleados</a></li>
-                <li><a href="inventario.html">Inventario</a></li>
-                <li><a href="produccion.html">Producción</a></li>
-                <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
-            </ul>
+                <ul>
+                    <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                    <li><i class="fa-solid fa-house"></i><a href="dashboard.html">Dashboard</a></li>
+                    <li><i class="fa-solid fa-gear"></i><a href="configuracion.html">Configuración</a></li>
+                    <li class="seleccionadoNav"><i class="fa-solid fa-people-group"></i><a href="clientes.html">Clientes</a></li>
+                    <li><i class="fa-solid fa-file-invoice"></i><a href="facturacion.html">Facturación</a></li>
+                    <li><i class="fa-solid fa-user-group"></i><a href="empleados.html">Empleados</a></li>
+                    <li><i class="fa-solid fa-boxes-stacked"></i><a href="inventario.html">Inventario</a></li>
+                    <li><a href="produccion.html">Producción</a></li>
+                    <li><a href="estadisticasGenerales.html">Estadísticas</a></li>
+                </ul>
+                <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
             </nav>
-        </aside>
-        <h1>Clientes</h1>
+        </div>
+    </aside>
         <div>
             <input type="search"placeholder="Buscar cliente">
         </div>
-
-        <button><a href="#aniadirCliente.html">Añadir</a></button>
+        <div class="btn-aniado">
+            <button><a href="aniadirCliente.html">Añadir</a></button>
+            <button><a href="verCliente.html">Ver Clientes</a></button>
+        </div>
     <div class="contenedor-clientes">
         <!-- Crear tabla de clientes -->
         <table class="tabla-clientes" border="1">
@@ -46,8 +51,7 @@
             </tbody>
         </table>
     </div>
-
-    <footer class="footer-clientes">Derechos reservados por A.G.E&#174;</footer>
+    
 </div>
 </body>
 </html>
