@@ -53,12 +53,11 @@
     background-color: var(--colornegro);
     color: white;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    box-sizing: content-box;
     clip-path: ellipse(100% 54% at 50% 100%);
-    padding-right: 10%;
     z-index: 1;
-    margin-right: -46%;
+    margin-right: -34%; 
+    padding-right: 20px;
 }
 
 .contenido {
@@ -120,6 +119,7 @@
 .login {
     display: flex;
     flex-direction: column;
+    box-sizing: content-box;
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 20px;
@@ -127,10 +127,10 @@
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(8px);
     z-index: 10;
-    margin-right: -56%;
+    margin-right: -60%;
     gap: 10px;
     padding-bottom: 30px;
-    max-width: 30%;
+    width: 30%;
 } 
 /* aqui se le dan unos estilos al input del login, se podria usar tambien en los demas input */
 .login input {
@@ -207,42 +207,79 @@
     .login {
         width: 80%;
         margin-right: 0;
+        box-sizing: content-box;
     }
 
     .logo {
         max-width: 70%;
         margin-top: -50px;
         margin-left: -30px;
+        position: fixed;
     }
 }
 /* Este responsive hay que arreglarlo, es el del login, se acomoda bien hasta que llega a tamanio de telefonos. */
-@media (min-width: 800px) {
+@media screen and (max-width: 800px) {
     .contenido {
         margin-left: 20%;
     }
+    
+    .logonav {
+        display: none;
+    }
+
+}
+@media screen and (max-width: 1100px) {
+    .contenido {
+        margin-left: 20%;
+    }
+    .nav ul li a{
+        opacity: 0;
+        width: 1px;
+    }
+    .logonav {
+        display: none;
+    }
+     .login {
+        width: 80%;
+        margin-right: 0;
+        box-sizing: content-box;
+    }
 }
 
-@media (max-width: 768px) {
-    .login {
-        width: 68%;
-        justify-content: center;
-        margin-left: -20%;
+@media screen and (min-width: 850px), (max-width: 1024px)  {
+    .nav {
+        object-fit: fill;
+        width: 100%;
+    }
+     .login {
+        width: 30%;
+        margin-right: 0;
+        box-sizing: content-box;
     }
 
-    .seccion-negra2 {
-        margin-left: -84%;
-    }
 }
 
-@media (min-width: 800px) {
-    .login {
-        width: 50%;
-        margin-left: -10%;
+@media screen and (max-width: 768px) {
+    
+     .login {
+        width: 40%;
+        margin-right: 0;
+        box-sizing: content-box;
     }
+    .seccion-negra2 {
+        /* margin-left: -84%; */
+        position: fixed;
+        width: 1000px;
+    }
+}
+@media screen and (min-width: 400px) {
 
     .seccion-negra2 {
-        margin-left: -10%;
+        /* margin-left: -452px; */
+        position: fixed;
+        width: 2000px;
     }
+    
 }
 
 .inicioreg {
@@ -263,25 +300,27 @@
 .contenedor {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    /*grid-template-rows: repeat(12 , 1fr);*/
+    grid-template-rows: repeat(8 , 1fr);
     width: 100%;
     height: 100%;
 }
 
 
 .tit {
-    display: grid;
-    grid-column: 4/5;
+    /* margin-left: 100%; */
+    grid-column: 1 / 13;
+    grid-row-end: 1;
+    text-align: center;
 }
 
 
 .navlateral {
-    display: grid;
     grid-column: 1 / 2;
     background-color: var(--colornegro);
     position: fixed;
     height: 100%;
     width: 12%;
+    object-fit: contain;
 }
 
 .navlateral a {
@@ -289,14 +328,13 @@
     display: flex;
     justify-content: space-evenly;
     color: var(--colorenlaces);
+    object-fit: contain;
 }
 
 .navlateral li {
-    /* line-height: 3.31; */
     padding: 20px;
     transition: 0.2s;
-    display: flex;
-    /* justify-content: center; */
+    display: flex;  
 }
 
 li:hover {
@@ -354,4 +392,47 @@ li:hover {
 
 .resend {
     margin-bottom: 10px;
+}
+
+.selectcliente {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.tabla-lista-facturas {
+    grid-row: 2;
+    grid-column: 5;
+}
+
+.totalfactura {
+    grid-row: 3;
+    grid-column: 5;
+}
+
+.seccion-abajo {
+    padding: 20px;
+    margin: 20px;
+    grid-column: 5 / 13;
+    grid-row: 5;
+}
+
+.targetas {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.targ {
+    border: 1px solid #ccc;
+    border-radius: 10px;    
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.targe {
+    margin: 16px;
 }
