@@ -11,6 +11,7 @@
     --colorenlaces: #fff; 
     --colorazul: #3B82F6;
     --colorseleccion:  #245cb7;
+    --colorCuentaDash: #00000037;
 }
 /* contenedor principal, con z index 2 para que quede abajo, mientras mas bajito, es menor la capa */
 .contenedor-principal {
@@ -55,9 +56,9 @@
     display: flex;
     box-sizing: content-box;
     clip-path: ellipse(100% 54% at 50% 100%);
-    z-index: 1;
-    margin-right: -34%; 
-    padding-right: 20px;
+    /* z-index: 1; */
+    /* margin-right: -34%;  */
+    /* padding-right: 20px; */
 }
 
 .contenido {
@@ -126,11 +127,12 @@
     padding: 50px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(8px);
-    z-index: 10;
-    margin-right: -60%;
+    z-index: 3;
+    /* margin-right: -60%; */
     gap: 10px;
     padding-bottom: 30px;
-    width: 30%;
+    width: 25%;
+    position: fixed;
 } 
 /* aqui se le dan unos estilos al input del login, se podria usar tambien en los demas input */
 .login input {
@@ -214,7 +216,6 @@
         max-width: 70%;
         margin-top: -50px;
         margin-left: -30px;
-        position: fixed;
     }
 }
 /* Este responsive hay que arreglarlo, es el del login, se acomoda bien hasta que llega a tamanio de telefonos. */
@@ -246,13 +247,13 @@
     }
 }
 
-@media screen and (min-width: 850px), (max-width: 1024px)  {
+@media screen and (min-width: 1920px), (max-width: 1024px)  {
     .nav {
         object-fit: fill;
         width: 100%;
     }
      .login {
-        width: 30%;
+        width: 20%;
         margin-right: 0;
         box-sizing: content-box;
     }
@@ -305,12 +306,11 @@
     height: 100%;
 }
 
-
 .tit {
     /* margin-left: 100%; */
     grid-column: 1 / 13;
     grid-row-end: 1;
-    text-align: center;
+    text-align:center;
 }
 
 
@@ -394,17 +394,19 @@ li:hover {
     margin-bottom: 10px;
 }
 
-.selectcliente {
+.seleccion {
     grid-column: 5;
     grid-row: 1;
+    display: flex;
+    align-items: center;
 }
 
-.tabla-lista-facturas {
+.tabla-listas {
     grid-row: 2;
     grid-column: 5;
 }
 
-.totalfactura {
+.totales {
     grid-row: 3;
     grid-column: 5;
 }
@@ -421,18 +423,139 @@ li:hover {
     grid-row-end: 2;
     margin-top: 10%;
     display: flex;
-    justify-content: space-between;
     gap: 10px;
+    width: 100%;
 }
+
+.targetas2 {
+    grid-column: 3 / 13;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+} 
 
 .targ {
     border: 1px solid #ccc;
     border-radius: 10px;    
-    padding: 10px;
+    /* padding: 0 20px 15px 0; */
     width: 100%;
-    height: 100%;
+    height: 140px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 5px 4px 10px #ccc;
+}
+
+.targ2 {
+    border: 1px solid #ccc;
+    border-radius: 10px;    
+    /* padding: 0 20px 15px 0; */
+    width:330px;
+    height: 140px;   
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    box-shadow: 5px 4px 10px #ccc;
+}
+
+.targ2 a {
+    margin-top: 15px;
+    text-decoration: none;
+    background-color: var(--colorazul);
+    border-radius: 20px;
+    color: var(--colorenlaces);
+    padding: 10px 15px 10px 15px;
+    transition: 0.2s;
+}
+.targ a {
+    margin-top: 15px;
+    text-decoration: none;
+    background-color: var(--colorazul);
+    border-radius: 20px;
+    color: var(--colorenlaces);
+    padding: 10px 15px 10px 15px;
+    transition: 0.2s;
+}
+
+
+.targ a:hover {
+    background-color: var(--colorseleccion);
+}
+.targ2 a:hover {
+    background-color: var(--colorseleccion);
+}
+.botonver {
+    margin-top: 23px;
+    margin-left: 10px;
 }
 
 .targe {
-    margin: 16px;
+    padding: 10px;
+}
+
+.targe2 {
+    padding: 10px;
+}
+
+.tabla-listas-2 {
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.totales2 {
+    grid-row: 3;
+    grid-column: 4;
+}
+
+.seleccionorden {
+    grid-column: 4;
+    display: flex;
+    align-items: center;
+}
+
+.botonesfactura {
+    grid-row: 3;
+    grid-column: 4/5;
+    /* background-color: #000; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.botonesfacturas {
+    grid-column: 5;
+    grid-row: 3;
+    /* background-color: #000; */
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    justify-content: space-between ;
+}
+
+.perfil-dash {
+    grid-column: 10 / 13;
+    grid-row: 1;
+    background-color: var(--colorCuentaDash);
+    max-height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    border-radius: 15px;
+}
+
+.perfil-dash a {
+    text-decoration: none;
+    padding: 10px;
+    color: var(--colornegro);
+}
+
+.perfil-dash h6 {
+    margin-left: -25px;
+    margin-top: 0.7mm;
 }
