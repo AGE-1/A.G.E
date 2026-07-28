@@ -546,9 +546,47 @@ li:hover {
     margin-top: 0.7mm;
 }
 
-/* Estilos Clientes */
+/* Boton de añadir clientes (por si hay alguna redondancia) */
+.btn-aniado{
+    width: 100%;
+    padding: 10px;
+}
 
-.contenedor-clientes {
+.btn-aniado input {
+    background-color: var(--colorazul);
+    color: #fff;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+}
+
+.btn-aniado input:hover {
+    background-color: var(--colorseleccion);
+    transition: 0.1s;
+}
+
+.btn-aniado{
+    grid-column: 12;
+}
+
+.tabla-clientes  {
+    grid-column: 1/12;
+    grid-template-columns: 12;
+    padding: 12px;
+}
+
+.tabla-clientes thead {
+    grid-row: 1;
+    grid-column: 1/12;
+    padding: 12px;
+}
+
+/* -------------------------------- */
+
+/* Aniadir cliente */
+
+.contenedor-aniadircliente {
     background-color: #fff;
     border: 1px solid #ccc;
     /* Seguir una sintaxis de las sombras  */
@@ -560,46 +598,38 @@ li:hover {
     margin: 30px 0px;
     border-radius: 10px ;
     display: grid;
+    grid-template-columns: 12;
 }
 
-.interaccion-cliente{
-    margin: 30px auto auto;
+.agregar-cliente {
+    background-color: #fff;
+    /* Seguir una sintaxis de las sombras  */
+    grid-row: 1;
+    grid-column: 1/12;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px ;
     display: grid;
     grid-template-columns: 12;
-    grid-row: 2;
-    grid-column: 4/12;
-    width: 100%;
 }
 
-hr {
-    grid-row: 4;
-    grid-column: 4/12;
-    width: 1000px;
-    
+.agregar-cliente form {
+    display: grid;
+    grid-template-columns: 12;
+    grid-row: 1/12;
+    grid-column: 1/7;
+    height: 100%;
+    width: 200px;
 }
 
-.buscar-cliente {
-    grid-column: 2/5;
-    padding: 10px;
-}
-
-.buscar-cliente input {
-    border-radius: 8px;
-    padding: 5px;
-    width: 300px;
-}
-
-/* Icono de filtrar */
-.filtericon{
+.nombrelabel {
     grid-column: 1;
-    align-items: center;
-    padding: 12px;
+    grid-row: 1;
 }
 
-.filtericon i{
-    color: #000;
-    width: 100%;
-    font-size: 25px;
+.agregar-cliente form .nombre{
+    grid-column: 2;
+    grid-row: 1;
 }
 
-
+/* -------------------------------- */
