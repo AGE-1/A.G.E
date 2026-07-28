@@ -30,32 +30,35 @@
           </nav>
       </div>
     </aside>
-    <section class="agregar-empleado">
-        <form>
-            <label for="nombre">Nombre cliente:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+    <div class="contenedor-aniadircliente">
+        <section class="agregar-cliente">
+            
+            <form>
+                <label for="nombre" id="nombrelabel">Nombre cliente:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre"   required>
 
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                <label for="telefono" id="telefonolabel">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono"     placeholder="Teléfono" required>
 
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
-
-
-            <label for="ubi">Ubicacion:</label>
-            <input type="text" id="ubi">
-
-            <label for="fecharegistro">Fecha de Registro:</label>
-            <input type="date" id="fecharegistro">
-
-            <textarea name="Descripcion" id="Descripcion-cliente" placeholder="Agregar      Descripcion"></textarea>
+                <label for="correo" id="correolabel">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Correo   electrónico" required>
 
 
-            <input type="button" value="Agregar Cliente">
-            <input type="reset" value="Limpiar Campos">
-            <a href="clientes.html">Regresar</a>
-        </form>
-    </section>
+                <label for="ubi" id="ubilabel">Ubicacion:</label>
+                <input type="text" id="ubi">
+
+                <label for="fecharegistro" id="fecharegistrolabel">Fecha de Registro:</label>
+                <input type="date" id="fecharegistro">
+
+                <textarea name="Descripcion" id="Descripcion-cliente"   placeholder="Agregar Descripcion"></textarea>
+
+
+                <input type="button" value="Agregar Cliente">
+                <input type="reset" value="Limpiar Campos">
+                <a href="clientes.html">Regresar</a>
+            </form>
+        </section>
+    </div>
 </div>    
 </body>
 </html>

@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="contenedor">
-    <h1 class="tit">Producción de Artículos</h1>
+    <h1>Producción de Artículos</h1>
     <aside class="navlateral">
         <div class="nav">
             <nav>
@@ -30,7 +30,7 @@
             </nav>
         </div>
     </aside>
-    <div class="seleccionorden">
+    <div class="selectorden">
             <label for="orden">Orden NO:</label>
             <select name="orden" id="orden">
                 <option value="">Seleccione una orden</option>
@@ -41,8 +41,9 @@
                 <option value="5">SR-2026-0631</option>
             </select>
         </div>
+        <hr>
 
-        <div class="tabla-listas-2">
+        <div class="tabla-lista-produccion">
             <table border="1">
                 <thead>
                     <tr>
@@ -53,7 +54,7 @@
                         <th>Total</th>
                     </tr>
                 </thead>
-                <tbody class="factura-body">
+                <tbody id="produccion-body">
                         <tr>
                         <th>MC-101</th>
                         <th>Champu(crudo)</th>
@@ -86,7 +87,7 @@
             </table>
         </div>
 
-        <aside class="totales2">
+        <aside class="totalproduccion">
             <h5>Subtotal: <span id="subtotal">7250.00</span></h5>
             <h5>Impuestos (15%): <span id="impuesto">1,087.50</span></h5>
             <h5>TOTAL COSTO ESTIMADO: <span id="total">8,337.50</span></h5>
@@ -107,6 +108,9 @@
             <input type="button" value="Compartir Orden">
         </div>
         <br>
+        <footer>
+            &copy; 2026 A.G.E. Todos los derechos reservados.
+        </footer>
     </div>
 </div>
 </body>

@@ -11,7 +11,6 @@
     --colorenlaces: #fff; 
     --colorazul: #3B82F6;
     --colorseleccion:  #245cb7;
-    --colorCuentaDash: #00000037;
 }
 /* contenedor principal, con z index 2 para que quede abajo, mientras mas bajito, es menor la capa */
 .contenedor-principal {
@@ -54,11 +53,12 @@
     background-color: var(--colornegro);
     color: white;
     display: flex;
-    box-sizing: content-box;
+    align-items: center;
+    justify-content: center;
     clip-path: ellipse(100% 54% at 50% 100%);
-    /* z-index: 1; */
-    /* margin-right: -34%;  */
-    /* padding-right: 20px; */
+    padding-right: 10%;
+    z-index: 1;
+    margin-right: -46%;
 }
 
 .contenido {
@@ -120,19 +120,17 @@
 .login {
     display: flex;
     flex-direction: column;
-    box-sizing: content-box;
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 20px;
     padding: 50px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(8px);
-    z-index: 3;
-    /* margin-right: -60%; */
+    z-index: 10;
+    margin-right: -56%;
     gap: 10px;
     padding-bottom: 30px;
-    width: 25%;
-    position: fixed;
+    max-width: 30%;
 } 
 /* aqui se le dan unos estilos al input del login, se podria usar tambien en los demas input */
 .login input {
@@ -209,7 +207,6 @@
     .login {
         width: 80%;
         margin-right: 0;
-        box-sizing: content-box;
     }
 
     .logo {
@@ -219,68 +216,33 @@
     }
 }
 /* Este responsive hay que arreglarlo, es el del login, se acomoda bien hasta que llega a tamanio de telefonos. */
-@media screen and (max-width: 800px) {
+@media (min-width: 800px) {
     .contenido {
         margin-left: 20%;
     }
-    
-    .logonav {
-        display: none;
-    }
-
-}
-@media screen and (max-width: 1100px) {
-    .contenido {
-        margin-left: 20%;
-    }
-    .nav ul li a{
-        opacity: 0;
-        width: 1px;
-    }
-    .logonav {
-        display: none;
-    }
-     .login {
-        width: 80%;
-        margin-right: 0;
-        box-sizing: content-box;
-    }
 }
 
-@media screen and (min-width: 1920px), (max-width: 1024px)  {
-    .nav {
-        object-fit: fill;
-        width: 100%;
+@media (max-width: 768px) {
+    .login {
+        width: 68%;
+        justify-content: center;
+        margin-left: -20%;
     }
-     .login {
-        width: 20%;
-        margin-right: 0;
-        box-sizing: content-box;
-    }
-
-}
-
-@media screen and (max-width: 768px) {
-    
-     .login {
-        width: 40%;
-        margin-right: 0;
-        box-sizing: content-box;
-    }
-    .seccion-negra2 {
-        /* margin-left: -84%; */
-        position: fixed;
-        width: 1000px;
-    }
-}
-@media screen and (min-width: 400px) {
 
     .seccion-negra2 {
-        /* margin-left: -452px; */
-        position: fixed;
-        width: 2000px;
+        margin-left: -84%;
     }
-    
+}
+
+@media (min-width: 800px) {
+    .login {
+        width: 50%;
+        margin-left: -10%;
+    }
+
+    .seccion-negra2 {
+        margin-left: -10%;
+    }
 }
 
 .inicioreg {
@@ -301,29 +263,25 @@
 .contenedor {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(8 , 1fr);
+    /*grid-template-rows: repeat(12 , 1fr);*/
     width: 100%;
     height: 100%;
 }
 
+
 .tit {
-    grid-column: 1 / 13;
-    grid-row-end: 1;
-    text-align:center;
-    background-color:#ededed;
-    line-height: 2;
-    box-shadow: 4px 5px 10px #ccc;  
-    /* border-bottom: solid 1px #ededed; */
+    display: grid;
+    grid-column: 4/5;
 }
 
 
 .navlateral {
+    display: grid;
     grid-column: 1 / 2;
     background-color: var(--colornegro);
     position: fixed;
     height: 100%;
     width: 12%;
-    object-fit: contain;
 }
 
 .navlateral a {
@@ -331,19 +289,25 @@
     display: flex;
     justify-content: space-evenly;
     color: var(--colorenlaces);
-    object-fit: contain;
 }
 
 .navlateral li {
+    /* line-height: 3.31; */
     padding: 20px;
     transition: 0.2s;
-    display: flex;  
+    display: flex;
+    /* justify-content: center; */
 }
 
 li:hover {
     background-color: var(--colorazul);
 }
 
+
+.targetas {
+    grid-column: 3 / 12;
+
+}
 
 .pie {
     display: flex;
@@ -392,157 +356,152 @@ li:hover {
     margin-bottom: 10px;
 }
 
-.seleccion {
-    grid-column: 5;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-}
+/* Estilos Clientes */
 
-.tabla-listas {
-    grid-row: 2;
-    grid-column: 5;
-}
-
-.totales {
-    grid-row: 3;
-    grid-column: 5;
-}
-
-.seccion-abajo {
-    padding: 20px;
-    margin: 20px;
-    grid-column: 5 / 13;
-    grid-row: 5;
-}
-
-.targetas {
-    grid-template-columns: repeat(3, 1fr);
-    grid-column: 3 / 12;
-    grid-row: 1 / 4;
-    margin-top: 10%;
-    display: grid;
-    gap: 10px;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.targ:hover {
-    transform: scale(1.04);
-    box-shadow: 5px 10px 10px #ccc;
-}
-
-.targ {
-    grid-template-rows: repeat(3, 1fr);
+.contenedor-clientes {
+    background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 23px;    
-    padding: 0 20px 15px 0;
+    /* Seguir una sintaxis de las sombras  */
+    box-shadow:  6px 8px 10px #ccc;
+    grid-row: 5;
+    grid-column: 4/12;
     width: 100%;
     height: 100%;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    flex-wrap: wrap;
-    box-shadow: 5px 4px 10px #ccc;
-    transition: 0.3s;
+    margin: 30px 0px;
+    border-radius: 10px ;
+    display: grid;
 }
 
-
-.targ a {
-    margin-top: 15px;
-    text-decoration: none;
-    background-color: var(--colorazul);
-    border-radius: 20px;
-    color: var(--colorenlaces);
-    padding: 10px 15px 10px 15px;
-    transition: 0.2s;
-}
-
-
-.targ a:hover {
-    background-color: var(--colorseleccion);
-}
-
-.botonver {
-    z-index: 3;
-    /* margin-top: 50px;
-    margin-bottom: -45px; */
-    margin-left: 10px;
-}
-
-.targe {
-    padding: 10px;
-}
-
-.tittarge {
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-
-.tabla-listas-2 {
+.interaccion-cliente{
+    margin: 30px auto auto;
+    display: grid;
+    grid-template-columns: 12;
     grid-row: 2;
-    grid-column: 4;
+    grid-column: 4/12;
+    width: 100%;
 }
 
-.totales2 {
-    grid-row: 3;
-    grid-column: 4;
+hr {
+    grid-row: 4;
+    grid-column: 4/12;
+    width: 1000px;
+    
 }
 
-.seleccionorden {
-    grid-column: 4;
-    display: flex;
-    align-items: center;
-}
-
-.botonesfactura {
-    grid-row: 3;
-    grid-column: 4/5;
-    /* background-color: #000; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.botonesfacturas {
-    grid-column: 5;
-    grid-row: 3;
-    /* background-color: #000; */
-    display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    justify-content: space-between ;
-}
-
-.perfil-dash {
-    grid-column: 10 / 13;
-    grid-row: 1;
-    /* background-color: var(--colorCuentaDash); */
-    max-height: 70px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 10px;
-    border-radius: 15px;
-    margin-top: -20%;
-}
-
-.perfil-dash a {
-    text-decoration: none;
+.buscar-cliente {
+    grid-column: 2/5;
     padding: 10px;
-    color: var(--colornegro);
-    transition: 0.3s;
 }
 
-.perfil-dash a:hover {
-    transform: scale(1.03);
+.buscar-cliente input {
+    border-radius: 8px;
+    padding: 5px;
+    width: 300px;
 }
 
-.perfil-dash h6 {
-    margin-left: -25px;
-    margin-top: 0.7mm;
+/* Icono de filtrar */
+.filtericon{
+    grid-column: 1;
+    align-items: center;
+    padding: 12px;
 }
+
+.filtericon i{
+    color: #000;
+    width: 100%;
+    font-size: 25px;
+}
+
+
+/* Boton de añadir clientes (por si hay alguna redondancia) */
+.btn-aniado{
+    width: 100%;
+    padding: 10px;
+}
+
+.btn-aniado input {
+    background-color: var(--colorazul);
+    color: #fff;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+}
+
+.btn-aniado input:hover {
+    background-color: var(--colorseleccion);
+    transition: 0.1s;
+}
+
+.btn-aniado{
+    grid-column: 12;
+}
+
+.tabla-clientes  {
+    grid-column: 1/12;
+    grid-template-columns: 12;
+    padding: 12px;
+}
+
+.tabla-clientes thead {
+    grid-row: 1;
+    grid-column: 1/12;
+    padding: 12px;
+}
+
+/* -------------------------------- */
+
+/* Aniadir cliente */
+
+.contenedor-aniadircliente {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    /* Seguir una sintaxis de las sombras  */
+    box-shadow:  6px 8px 10px #ccc;
+    grid-row: 5;
+    grid-column: 4/12;
+    width: 100%;
+    height: 100%;
+    margin: 30px 0px;
+    border-radius: 10px ;
+    display: grid;
+    grid-template-columns: 12;
+}
+
+.agregar-cliente {
+    background-color: #fff;
+    /* Seguir una sintaxis de las sombras  */
+    grid-row: 1;
+    grid-column: 1/12;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px ;
+    display: grid;
+    grid-template-columns: 12;
+}
+
+.agregar-cliente form {
+    display: grid;
+    grid-template-columns: 12;
+    grid-row: 1/12;
+    grid-column: 1/7;
+    height: 100%;
+    width: 200px;
+}
+
+.nombrelabel {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.agregar-cliente form .nombre{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* -------------------------------- */
+
+
+
+
 
