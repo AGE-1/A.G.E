@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
             </nav>
         </div>
      </aside>
-    <div class="selectcliente">
+    <div class="seleccion">
         <label for="cliente">Seleccionar cliente:</label>
         <select name="cliente" id="cliente">
             <option value="">Seleccione un cliente</option>
@@ -42,7 +42,7 @@
         </select>
     </div>
 
-    <div class="tabla-lista-facturas">
+    <div class="tabla-listas">
         <table border="1">
             <tbody>
                 <tr>
@@ -61,7 +61,7 @@
                     <th>Total:</th>
                 </tr>
             </tbody>
-            <tbody id="factura-body">
+            <tbody class="factura-body">
                 <tr>
                     <th colspan="6">Historial</th>
                 </tr>
@@ -93,22 +93,22 @@
         </table>
     </div>
 
-    <aside class="totalfactura">
+    <aside class="totales">
         <h5>Subtotal: <span id="subtotal">702.50</span></h5>
         <h5>Impuesto: <span id="impuesto">0.00</span></h5>
         <h5>Total Factura: <span id="total">702.50</span></h5>
     </aside>
 
-    <div class="botonesfactura">
+    <div class="botonesfacturas">
         <button id="cancelar-factura">Guardar Borrador</button>
         <button id="generar-factura">Generar Factura</button>
     </div>
-    <div class="seccion-abajo">
+    <aside class="seccion-abajo">
         <input type="button" value="compartir">
         <input type="button" value="imprimir">
         <input type="button" value="descargar pdf">
         <input type="button" value="Nuevo registro">
-    </div>
+    </aside>
     <br>
 </div>
 </body>
