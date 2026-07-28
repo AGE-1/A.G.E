@@ -310,6 +310,10 @@
     grid-column: 1 / 13;
     grid-row-end: 1;
     text-align:center;
+    background-color:#ededed;
+    line-height: 2;
+    box-shadow: 4px 5px 10px #ccc;  
+    /* border-bottom: solid 1px #ededed; */
 }
 
 
@@ -420,6 +424,8 @@ li:hover {
     display: grid;
     gap: 10px;
     width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .targ:hover {
@@ -430,12 +436,13 @@ li:hover {
 .targ {
     grid-template-rows: repeat(3, 1fr);
     border: 1px solid #ccc;
-    border-radius: 10px;    
+    border-radius: 23px;    
     padding: 0 20px 15px 0;
     width: 100%;
     height: 100%;
     text-align: left;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     flex-wrap: wrap;
     box-shadow: 5px 4px 10px #ccc;
@@ -459,12 +466,20 @@ li:hover {
 }
 
 .botonver {
-    margin-top: 23px;
+    z-index: 3;
+    /* margin-top: 50px;
+    margin-bottom: -45px; */
     margin-left: 10px;
 }
 
 .targe {
     padding: 10px;
+    margin: 10px;
+}
+
+.tittarge {
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 
@@ -506,13 +521,14 @@ li:hover {
 .perfil-dash {
     grid-column: 10 / 13;
     grid-row: 1;
-    background-color: var(--colorCuentaDash);
+    /* background-color: var(--colorCuentaDash); */
     max-height: 70px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 10px;
     border-radius: 15px;
+    margin-top: -20%;
 }
 
 .perfil-dash a {
@@ -530,3 +546,4 @@ li:hover {
     margin-left: -25px;
     margin-top: 0.7mm;
 }
+
