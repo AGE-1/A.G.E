@@ -189,6 +189,9 @@
     justify-content: end;
     margin-top: -25px;
 }
+
+/* --------------------------------------------------- RESPONSIVE --------------------------------------------------------------------------- */
+/* para pantallas pequeñas, ahi dice con un máximo de 595 pixeles de ancho, osea toda pantalla que sea menor a eso de ancho, se aplicará eso */
 @media screen and (max-width: 595px) {
     
     .targetas {
@@ -230,7 +233,7 @@
         margin-right: -10px;
     }
 }
-
+/* pantallas medianas, dice que a partir de un ancho de 595, hasta un máximo de 1000pixel se aplicarán estos ajustes */
 @media screen and (min-width: 595px) and (max-width:1000px) {
 
     .targetas {
@@ -260,6 +263,7 @@
         height: 100%;
     }
 }
+/* pantallas grandes, de escritorio, quizá aqui haya que hacer algo con las pantallas full hd (1920 x 1080) porque creo que se verá estirado, de todas formas es eso mismo, a partir de 1000px hasta 1920px */
 @media screen and (min-width: 1000px) and (max-width:1920px) {
 
     .targetas {
@@ -273,7 +277,9 @@
     }
 
 }
+/* ---------------------------------------------------------------------------------------------------------- */
 
+/* Esto es un botón, es el de los formularios de registro e inicio de sesión */
 .inicioreg {
     font-size: smaller;
     margin-bottom: 10px;
@@ -289,6 +295,7 @@
     margin-bottom: 0;
 }
 
+/* Este es el contenedor de todas las demás páginas, con esto me refiero a excepción de index y los formularios */
 .contenedor {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -296,7 +303,7 @@
     width: 100%;
     height: 100%;
 }
-
+/* El título de cada página, tiene la misma clase. */
 .tit {
     grid-column: 1 / 13;
     grid-row-end: 1;
@@ -307,7 +314,7 @@
     /* border-bottom: solid 1px #ededed; */
 }
 
-
+/* el cuerpo del nav, todo lo que se ve negro, esto es un contenedor básicamente */
 .navlateral {
     grid-column: 1 / 2;
     background-color: var(--colornegro);
@@ -317,6 +324,7 @@
     object-fit: contain;
 }
 
+/* estos son los enlaces del nav, las letras básicamente */
 .navlateral a {
     text-decoration: none;
     display: flex;
@@ -325,6 +333,7 @@
     object-fit: contain;
 }
 
+/* aca le aplico varios estilos a las litas del nav, que es donde están los enlaces, estructurados en listas */
 .navlateral li {
     padding: 20px;
     transition: 0.2s;
@@ -335,16 +344,12 @@ li:hover {
     background-color: var(--colorazul);
 }
 
-
-.pie {
-    display: flex;
-    justify-items: end;
-}
-
+/* El logo */
 .logonav {
     margin: 25px;
 }
 
+/* los iconos del nav */
 .fa-solid { 
     color:var(--colorenlaces);
     margin-right: 7px;
@@ -354,7 +359,7 @@ li:hover {
     grid-column: 3 / 5;
 }
 
-
+/* aca esta el texto del copyright dentro del nav */
 .footerNav {
     margin: 5px;
     text-align: center;
