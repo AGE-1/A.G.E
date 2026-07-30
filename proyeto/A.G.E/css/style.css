@@ -248,6 +248,12 @@
 .perfil-dash h4 {
     display: none;
 }
+
+.footerNav {
+    font-size: 6px;
+    margin: 5px;
+    text-align: center;
+}
 }
 /* pantallas medianas, dice que a partir de un ancho de 595, hasta un máximo de 1000pixel se aplicarán estos ajustes */
 @media screen and (min-width: 595px) and (max-width:1000px) {
@@ -298,6 +304,13 @@
 .perfil-dash h4 {
     display: none;
 }
+
+.footerNav {
+    font-size: 12px;
+    margin: 5px;
+    text-align: center;
+}
+
 }
 /* pantallas grandes, de escritorio, quizá aqui haya que hacer algo con las pantallas full hd (1920 x 1080) porque creo que se verá estirado, de todas formas es eso mismo, a partir de 1000px hasta 1920px */
 @media screen and (min-width: 1000px) and (max-width:2160px) {
@@ -328,6 +341,13 @@
 .perfil-dash h6 {
     margin-left: -25px;
     margin-top: 0.7mm;
+}
+
+.footerNav {
+    margin: 5px;
+    text-align: center;
+    margin-top: 17px;
+    font-size: smaller;
 }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
@@ -408,13 +428,6 @@ li:hover {
 .nav-Config {
     grid-column: 3 / 5;
 }
-/* aca esta el texto del copyright dentro del nav */
-.footerNav {
-    margin: 5px;
-    text-align: center;
-    font-size: smaller;
-    margin-top: 17px;
-}
 
 .infocliente, .infoempleado {
     grid-column: 3/5;
@@ -456,6 +469,7 @@ li:hover {
     border: 1px solid #626262;
     padding: 10px;
 }
+
 .dcto {
     text-align: center;
 }
@@ -469,9 +483,11 @@ li:hover {
 .textLista {
     color:var(--colorenlaces);
 }
+
 ::placeholder {
     color:var(--colornegro);
 }
+
 .totales {
     grid-row: 2;
     grid-column: 9 / 11;
@@ -650,7 +666,6 @@ li:hover {
     transition: 0.1s;
 }
 /* Tablas */
-
 .tabla-clientes  {
     grid-column: 1/12;
     grid-template-columns: repeat(12, 1fr);
@@ -674,7 +689,6 @@ li:hover {
     padding: 5px;
     width: 300px;
 }
-
 /* ------------ Estilos Agregar clientes ------------ */
 .agregar-cliente {
     background-color: #fff;
@@ -694,7 +708,6 @@ li:hover {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
-
 
 .agregar-cliente label {
     grid-column: 1/4;
