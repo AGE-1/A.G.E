@@ -30,16 +30,17 @@
             </nav>
         </div>
     </aside>
-    <section class="agregar-empleado">
+    <section class="agregar-cliente">
         <form>
+
             <label for="nombre">Nombre cliente:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <input type="text" id="nombre" required>
 
             <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+            <input type="tel" id="telefono"  required>
 
             <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+            <input type="email" id="correo"  required>
 
 
             <label for="ubi">Ubicacion:</label>
@@ -48,13 +49,14 @@
             <label for="fecharegistro">Fecha de Registro:</label>
             <input type="date" id="fecharegistro">
 
-            <textarea name="Descripcion" id="Descripcion-cliente" placeholder="Agregar      Descripcion"></textarea>
+            <textarea name="Descripcion" id="Descripcion-cliente" placeholder="Agregar descripcion" ></textarea>
 
 
-            <input type="button" value="Agregar Cliente">
-            <input type="reset" value="Limpiar Campos">
+            <input type="button" value="Agregar Cliente" id="agrecarcbotton">
+            <input type="reset" value="Limpiar Campos" id="limpiarclientebotton">
             <a href="clientes.html">Regresar</a>
         </form>
+        
     </section>
 </div>    
 </body>

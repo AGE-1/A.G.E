@@ -43,10 +43,10 @@
     </div>
 
     <div class="tabla-listas">
-        <table border="1">
+        <table>
             <tbody>
-                <tr>
-                    <th>Producto: 
+                <tr class="superiorTabla">
+                    <th><span class="textLista">Producto:</span> 
                         <select name="producto" id="producto">
                             <option value="">Seleccione un producto</option>
                             <option value="1">Producto 1</option>
@@ -54,11 +54,11 @@
                             <option value="3">Producto 3</option>
                         </select>
                     </th>
-                    <th>Descripción: <input type="text" id="descripcion" name="descripcion" placeholder="Ponga una descripcion"></th>
-                    <th>Cantidad: <input type="text" id="cantidad" name="cantidad" placeholder="Introduzca una Cantidad"></th>
-                    <th>Precio: <input type="text" id="precio" name="precio" placeholder="Introduzca un precio"></th>
-                    <th>Descuento: <input type="text" readonly></th>
-                    <th>Total:</th>
+                    <th><span class="textLista">Descripción:</span> <input type="text" id="descripcion" name="descripcion" placeholder="Ponga una descripcion"></th>
+                    <th><span class="textLista">Cantidad:</span> <input type="text" id="cantidad" name="cantidad" placeholder="Introduzca una Cantidad"></th>
+                    <th><span class="textLista">Precio:</span> <input type="text" id="precio" name="precio" placeholder="Introduzca un precio"></th>
+                    <th><span class="textLista">Descuento:</span> <p class="dcto">0.00$</p></th>
+                    <th><span class="textLista">Total:</span></th>
                 </tr>
             </tbody>
             <tbody class="factura-body">
@@ -98,7 +98,7 @@
         <h5>Impuesto: <span id="impuesto">0.00</span></h5>
         <h5>Total Factura: <span id="total">702.50</span></h5>
     </aside>
-
+    
     <div class="botonesfacturas">
         <button id="cancelar-factura">Guardar Borrador</button>
         <button id="generar-factura">Generar Factura</button>

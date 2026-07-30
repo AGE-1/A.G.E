@@ -12,6 +12,7 @@
     --colorazul: #3B82F6;
     --colorseleccion:  #245cb7;
     --colorCuentaDash: #00000037;
+    --colorBordesTargetas: #3b83f686;
 }
 /* contenedor principal, con z index 2 para que quede abajo, mientras mas bajito, es menor la capa */
 .contenedor-principal {
@@ -106,7 +107,6 @@
     background: wheat url(../image/principal.jpg);
     margin-left: -180px;
 }
-
 /* el logo AGE, los estilos */
 .logo {
     max-width: 90%;
@@ -115,7 +115,6 @@
     padding-top: 0;
     overflow: hidden;
 }
-
 /* este es el contenedor donde se encuentra el login */
 .login {
     display: flex;
@@ -173,7 +172,6 @@
 .botoniniciar {
     transition: 0.17s ease-in;
 }
-
 .botoniniciar:hover {
     transform: scale(1.1,1.1);
 }
@@ -182,14 +180,12 @@
     display: flex;
     justify-content: space-between;
 }
-
 /* lo mismo aca, pero este es el enlace de crear una cuenta. */
 .creacuenta a{
     display: flex;
     justify-content: end;
     margin-top: -25px;
 }
-
 /* --------------------------------------------------- RESPONSIVE --------------------------------------------------------------------------- */
 /* para pantallas pequeñas, ahi dice con un máximo de 595 pixeles de ancho, osea toda pantalla que sea menor a eso de ancho, se aplicará eso */
 @media screen and (max-width: 595px) {
@@ -232,6 +228,26 @@
         padding-right: 20px;
         margin-right: -10px;
     }
+
+    .perfil-dash {
+    grid-column: 10 / 13;
+    grid-row: 1;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    border-radius: 15px;
+    margin-top: -65px 
+}
+
+.perfil-dash h6 {
+    display: none;
+}
+
+.perfil-dash h4 {
+    display: none;
+}
 }
 /* pantallas medianas, dice que a partir de un ancho de 595, hasta un máximo de 1000pixel se aplicarán estos ajustes */
 @media screen and (min-width: 595px) and (max-width:1000px) {
@@ -262,9 +278,29 @@
         width: 70%;
         height: 100%;
     }
+
+    .perfil-dash {
+    grid-column: 10 / 13;
+    grid-row: 1;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    border-radius: 15px;
+    margin-top: -60px 
+}
+
+.perfil-dash h6 {
+    display: none;
+}
+
+.perfil-dash h4 {
+    display: none;
+}
 }
 /* pantallas grandes, de escritorio, quizá aqui haya que hacer algo con las pantallas full hd (1920 x 1080) porque creo que se verá estirado, de todas formas es eso mismo, a partir de 1000px hasta 1920px */
-@media screen and (min-width: 1000px) and (max-width:1920px) {
+@media screen and (min-width: 1000px) and (max-width:2160px) {
 
     .targetas {
         grid-template-columns: repeat(3, 1fr);
@@ -276,9 +312,25 @@
         opacity: 1;
     }
 
+    .perfil-dash {
+    grid-column: 10 / 13;
+    grid-row: 1;
+    /* background-color: var(--colorCuentaDash); */
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    border-radius: 15px;
+    margin-top: -60px
+}
+
+.perfil-dash h6 {
+    margin-left: -25px;
+    margin-top: 0.7mm;
+}
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-
 /* Esto es un botón, es el de los formularios de registro e inicio de sesión */
 .inicioreg {
     font-size: smaller;
@@ -294,7 +346,6 @@
 .inicioreg:last-child{
     margin-bottom: 0;
 }
-
 /* Este es el contenedor de todas las demás páginas, con esto me refiero a excepción de index y los formularios */
 .contenedor {
     display: grid;
@@ -313,7 +364,6 @@
     box-shadow: 4px 5px 10px #ccc;  
     /* border-bottom: solid 1px #ededed; */
 }
-
 /* el cuerpo del nav, todo lo que se ve negro, esto es un contenedor básicamente */
 .navlateral {
     grid-column: 1 / 2;
@@ -322,6 +372,7 @@
     height: 100%;
     width: 12%;
     object-fit: contain;
+    z-index: 5;
 }
 
 /* estos son los enlaces del nav, las letras básicamente */
@@ -332,7 +383,6 @@
     color: var(--colorenlaces);
     object-fit: contain;
 }
-
 /* aca le aplico varios estilos a las litas del nav, que es donde están los enlaces, estructurados en listas */
 .navlateral li {
     padding: 20px;
@@ -358,7 +408,6 @@ li:hover {
 .nav-Config {
     grid-column: 3 / 5;
 }
-
 /* aca esta el texto del copyright dentro del nav */
 .footerNav {
     margin: 5px;
@@ -370,7 +419,7 @@ li:hover {
 .infocliente, .infoempleado {
     grid-column: 3/5;
 }
-
+/* El color de selección del nav */
 .seleccionadoNav {
     background-color: var(--colorseleccion);
 }
@@ -387,31 +436,66 @@ li:hover {
 .resend {
     margin-bottom: 10px;
 }
-
+/* Esto es de facturación */
 .seleccion {
-    grid-column: 5;
+    grid-column: 3 / 13;
     grid-row: 1;
     display: flex;
-    align-items: center;
+    align-items: start;
+    margin-top: 20px;
 }
 
 .tabla-listas {
-    grid-row: 2;
-    grid-column: 5;
+    grid-row: 1 ;
+    grid-column: 3 / 12;
+    margin-top: 70px;
+
 }
 
+.tabla-listas th {
+    border: 1px solid #626262;
+    padding: 10px;
+}
+.dcto {
+    text-align: center;
+}
+
+.tabla-listas .superiorTabla th {
+    padding: 10px;
+    background-color: #979797;
+    text-align: justify;
+}
+/* span con la clase texto lista */
+.textLista {
+    color:var(--colorenlaces);
+}
+::placeholder {
+    color:var(--colornegro);
+}
 .totales {
-    grid-row: 3;
-    grid-column: 5;
+    grid-row: 2;
+    grid-column: 9 / 11;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 10px;
+    font-size: larger;
+    line-height: 2;
 }
 
 .seccion-abajo {
     padding: 20px;
-    margin: 20px;
-    grid-column: 5 / 13;
-    grid-row: 5;
+    margin-top: 153px;
+    margin-left: -20px;
+    grid-column: 3 / 13;
+    grid-row: 2;
+    background-color: #979797;
+    border-radius: 20px;
+    height: 30%;
+    z-index: 1;
+    width: 1040px;
 }
-
+/* Las targetas del dashboard, este es el bloque donde están las 6 */
 .targetas {
     grid-column: 3 / 12;
     grid-row: 1 / 4;
@@ -427,10 +511,10 @@ li:hover {
     transform: scale(1.04);
     box-shadow: 5px 10px 10px #ccc;
 }
-
+/* las targetas pero individuales */
 .targ {
     grid-template-rows: repeat(3, 1fr);
-    border: 1px solid #ccc;
+    border: 1px solid var(--colorBordesTargetas);
     border-radius: 23px;    
     padding: 0 20px 15px 0;
     width: 100%;
@@ -444,7 +528,7 @@ li:hover {
     transition: 0.3s;
 }
 
-
+/* Este seria el boton de cada tarjeta */
 .targ a {
     margin-top: 15px;
     text-decoration: none;
@@ -455,11 +539,10 @@ li:hover {
     transition: 0.2s;
 }
 
-
 .targ a:hover {
     background-color: var(--colorseleccion);
 }
-
+/* El botón de cada tarjeta */
 .botonver {
     z-index: 3;
     /* margin-top: 50px;
@@ -470,13 +553,12 @@ li:hover {
 .targe {
     padding: 10px;
 }
-
+/* El titulo o texto de referencia de cada tarjeta */
 .tittarge {
     margin-top: 10px;
     margin-left: 20px;
 }
-
-
+/* -------------------------------- Algunos estilos de listas, facturación y producción ------------------------------------------------ */
 .tabla-listas-2 {
     grid-row: 2;
     grid-column: 4;
@@ -496,35 +578,23 @@ li:hover {
 .botonesfactura {
     grid-row: 3;
     grid-column: 4/5;
-    /* background-color: #000; */
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .botonesfacturas {
-    grid-column: 5;
-    grid-row: 3;
-    /* background-color: #000; */
+    grid-column: 3 /12;
+    grid-row: 2;
+    margin-top: 93px;
     display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    justify-content: space-between ;
+    align-items: flex-start;
+    justify-content: space-between;
+    z-index: 3;
 }
-
-.perfil-dash {
-    grid-column: 10 / 13;
-    grid-row: 1;
-    /* background-color: var(--colorCuentaDash); */
-    max-height: 70px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 10px;
-    border-radius: 15px;
-    margin-top: -20%;
-}
-
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+/* Esto es donde sale el usuario y su nombre, junto con el botón de cerrar sesion */
+/* Este es el enlace */
 .perfil-dash a {
     text-decoration: none;
     padding: 10px;
@@ -535,14 +605,7 @@ li:hover {
 .perfil-dash a:hover {
     transform: scale(1.03);
 }
-
-.perfil-dash h6 {
-    margin-left: -25px;
-    margin-top: 0.7mm;
-}
-
-/* ------------ Estilos clientes ------------ */
-
+/* ------------------------------------------------------- Estilos clientes ------------------------------------------------------------ */
 .contenedor-clientes {
     background-color: #fff;
     border: 1px solid #ccc;
@@ -560,12 +623,11 @@ li:hover {
 .interaccion-cliente{
     margin: 30px auto auto;
     display: grid;
-    grid-template-columns: 12;
+    grid-template-columns: repeat(12, 1fr);
     grid-row: 1/12;
     grid-column: 4/12;
     width: 100%;
 }
-
 /* Boton de aniadir */
 .btn-aniado{
     width: 100%;
@@ -587,13 +649,11 @@ li:hover {
     background-color: var(--colorseleccion);
     transition: 0.1s;
 }
-
-
 /* Tablas */
 
 .tabla-clientes  {
     grid-column: 1/12;
-    grid-template-columns: 12;
+    grid-template-columns: repeat(12, 1fr);
     padding: 12px;
 }
 
@@ -602,7 +662,6 @@ li:hover {
     grid-column: 1/12;
     padding: 12px;
 }
-
 /* Barra de buscar */
 .buscar-cliente {
     grid-column: 1/5;
@@ -617,4 +676,66 @@ li:hover {
 }
 
 /* ------------ Estilos Agregar clientes ------------ */
+.agregar-cliente {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    /* Seguir una sintaxis de las sombras  */
+    box-shadow: 6px 8px 10px #ccc;
+    grid-row: 1;
+    grid-column: 4/12;
+    height: 100%;
+    margin: 30px 0px;
+    border-radius: 10px;
+    /* display: grid; */
+    /* grid-template-columns: repeat(12, 1fr); */
+}
 
+.agregar-cliente form{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+
+.agregar-cliente label {
+    grid-column: 1/4;
+    display: flex;
+    margin: 10px 10px;
+    font-size: 20px;
+}
+
+.agregar-cliente input {  
+    grid-column: 5/9;
+    border-radius: 8px;
+    margin: 10px 10px;
+    width: 250px;
+    height: 30px;
+}
+
+.agregar-cliente #Descripcion-cliente {
+    grid-column: 1/4;
+    border-radius: 8px;
+    margin: 10px 10px;
+    min-width: 250px;
+    max-width: 250px;
+    max-height: 90px;
+    min-height: 90px;
+}
+
+.agregar-cliente #agrecarcbotton {
+    width: 100px;
+    grid-column: 7/9;
+    grid-row: 6;
+    background-color: var(--colorazul);
+    color: #fff;
+    border: none;
+}
+
+.agregar-cliente #limpiarclientebotton {
+    width: 100px;
+    /* height: 40px; */
+    grid-column: 5/7;
+    grid-row: 6;
+    /* background-color: var(--colorazul);
+    color: #fff; */
+}
+/* ----------------------------------------------------- Estilos Agregar clientes ------------------------------------------------------- */
