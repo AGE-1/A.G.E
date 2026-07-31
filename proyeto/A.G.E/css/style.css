@@ -499,17 +499,47 @@ li:hover {
     line-height: 2;
 }
 
+.totales h5 {
+    border-bottom: 1px solid var(--colorCuentaDash);
+}
+
+.btn-factura {
+    background: none;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    transform: scale(2.1);
+    z-index: 3;
+}
+
+.fa-share-from-square {
+    color: var(--colorenlaces);
+}
+
+.fa-regular {
+    color: var(--colorenlaces);
+}
+
+.fatodo:hover {
+    color: var(--colornegro);
+}
+
+
+/* Aqui es donde están los botones de la sección oscura de facturación y producción */
 .seccion-abajo {
     padding: 20px;
-    margin-top: 153px;
+    margin-top: 183px;
     margin-left: -20px;
     grid-column: 3 / 13;
     grid-row: 2;
     background-color: #979797;
     border-radius: 20px;
     height: 30%;
-    z-index: 1;
     width: 1040px;
+    box-shadow: 5px 5px 10px #ccc;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 /* Las targetas del dashboard, este es el bloque donde están las 6 */
 .targetas {
@@ -575,14 +605,34 @@ li:hover {
     margin-left: 20px;
 }
 /* -------------------------------- Algunos estilos de listas, facturación y producción ------------------------------------------------ */
+/* En este caso es casi todo de producción */
 .tabla-listas-2 {
     grid-row: 2;
     grid-column: 4;
 }
 
+.abajo2 {
+    margin-top: 157px;
+    justify-content: space-evenly;
+    align-content: center;
+    height: 30%;
+}
+
+.totales2 h5 {
+    border-bottom: 1px solid var(--colorCuentaDash);
+}
+
 .totales2 {
-    grid-row: 3;
-    grid-column: 4;
+    grid-row: 1;
+    grid-column: 9 / 12;
+    display: flex;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-top: 162px;
+    margin-bottom: -65px;
+    gap: 30px;
+    font-size: larger;
+    line-height: 2; 
 }
 
 .seleccionorden {
@@ -592,17 +642,18 @@ li:hover {
 }
 
 .botonesfactura {
-    grid-row: 3;
-    grid-column: 4/5;
+    grid-row: 2 / 2;
+    grid-column: 3/12;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
+    margin-top: 90px;
 }
 
 .botonesfacturas {
     grid-column: 3 /12;
     grid-row: 2;
-    margin-top: 93px;
+    margin-top: 133px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -689,7 +740,7 @@ li:hover {
     padding: 5px;
     width: 300px;
 }
-/* ------------ Estilos Agregar clientes ------------ */
+/* -------------------------------- Estilos Agregar clientes ----------------------------- */
 .agregar-cliente {
     background-color: #fff;
     border: 1px solid #ccc;
@@ -700,13 +751,21 @@ li:hover {
     height: 100%;
     margin: 30px 0px;
     border-radius: 10px;
-    /* display: grid; */
-    /* grid-template-columns: repeat(12, 1fr); */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .agregar-cliente form{
+    grid-column: 1/12;
+    margin: 30px 5px;
+    grid-row: 1/2;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 6px 8px 10px #ccc;
+    width: 70%;
+    border-radius: 10px;
 }
 
 .agregar-cliente label {
@@ -751,8 +810,29 @@ li:hover {
     /* background-color: var(--colorazul);
     color: #fff; */
 }
-/* ----------------------------------------------------- Estilos Agregar clientes ------------------------------------------------------- */
 
+.agregar-cliente #regresar-clientes {
+    color: #000;
+    text-decoration: none;
+    grid-column: 1;
+    grid-row: 1;
+    margin: 10px;
+}
+
+.agregar-cliente #imagen-AniadirCliente {
+    grid-column: 10/12;
+    grid-row: 1;
+    margin: 50px 30px;
+    max-width: 200px;
+    min-width: 150px;
+    max-height: 200px;
+    min-height: 200px;
+}
+/* Hacerle un hover a la imagen para que se oscurezca al poner mouse */
+/* .agregar-cliente #imagen-AniadirCliente:hover {
+    
+} */
+/* ----------------------------------------------------- Estilos Agregar clientes ------------------------------------------------------- */
 
 
 /* ----------------------------------------------------- Estilos Inventario y Estadisticas generales ------------------------------------ */
@@ -765,13 +845,11 @@ li:hover {
 }
 
 /* ------------------------------------------ Esta Parte es del buscador ------------------------------------ */
-
 .topbar {
     grid-column-start: 1;
    margin-left: 20px;
    margin-top: 15px;
 }
-
 
 .buscador {
     display: flex;
@@ -795,12 +873,10 @@ li:hover {
     cursor: pointer;
 }
 
-
 .buscador button i {
     color: black;
     font-size: 1.2rem;
 }
-
 
 
 
@@ -816,9 +892,7 @@ li:hover {
     margin-bottom: 10px;
 }
 
-
 /* ------------------------------- Esta parte es de las Cards ----------------------------------------- */
-
 .cards {
     display: grid;
     grid-column: 1 / 13;
@@ -826,6 +900,10 @@ li:hover {
     gap: 20px;
     width: 90%;
     margin-left: 60px;
+}
+
+div .card {
+    height: 115px;
 }
 
 .card-header {
@@ -836,7 +914,7 @@ li:hover {
 .card-body{
     margin-left: 90px;
     font-size: 1.7rem;
-    margin-top: -30px;
+    margin-top: -50px;
 
 }
 
@@ -852,8 +930,8 @@ li:hover {
     width: 70px;
     height: 70px;
     border-radius: 20%;
+    margin-top: -15px;
 }
-
 
 .card-header .icono2 {
     margin-left: -90px;
@@ -861,8 +939,8 @@ li:hover {
     width: 70px;
     height: 70px;
     border-radius: 20%;
+    margin-top: -15px;
 }
-
 
 .card-header .icono3 {
     margin-left: -90px;
@@ -870,6 +948,7 @@ li:hover {
     width: 70px;
     height: 70px;
     border-radius: 20%;
+    margin-top: -15px;
 }
 
 .card-header .icono1 i {
@@ -879,13 +958,13 @@ li:hover {
     margin-top: 10px;
 
 }
+
 .card-header .icono2 i {
     color: #b91c1c;
     font-size: 3rem;
     margin-left: 5px;
     margin-top: 13px;
 }
-
 
 .card-header .icono3 i {
     color: #f7ba11;
@@ -894,10 +973,51 @@ li:hover {
     margin-top: 10px;
 }
 
-
 .card {
     border-radius: 12px;
     padding: 18px;
     border: 1px solid #e2e8f0;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+}
+/* -------------------------------------------------- Tabla Productos ----------------------------------------------- */
+.seccion-productos {
+    margin-top: 40px;
+    margin-left: 95px;
+}
+
+.contenedor-productos {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: 1000px;
+    height: 200px;
+}
+
+.titulo-tabla {
+    font-size: 1.6rem;
+    margin-top: 5px;
+    margin-left: 9px;
+}
+
+tr {
+    margin-left: 20px;
+}
+
+.btn-accion {
+    background: transparent;
+    border: none;
+}
+
+.btn-eliminar i {
+    color: rgb(207, 31, 31);
+}
+/* ------------------------------------------------- Seccion Gráficas ----------------------------------------------- */
+.seccion-graficos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 300px;
+    margin-left: -1050px;
+}
+
+.ulES {
+    list-style: none;
 }

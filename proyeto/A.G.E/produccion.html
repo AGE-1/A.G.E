@@ -30,7 +30,7 @@
             </nav>
         </div>
     </aside>
-    <div class="seleccionorden">
+    <div class="seleccion">
             <label for="orden">Orden NO:</label>
             <select name="orden" id="orden">
                 <option value="">Seleccione una orden</option>
@@ -42,18 +42,21 @@
             </select>
         </div>
 
-        <div class="tabla-listas-2">
-            <table border="1">
+        <div class="tabla-listas tablaprod">
+            <table>
                 <thead>
-                    <tr>
-                        <th>Material/Compuesto</th>
-                        <th>Descripción</th>
-                        <th>Cantidad Requerida</th>
-                        <th>Precio Unitario</th>
-                        <th>Total</th>
+                    <tr class="superiorTabla">
+                        <th><span class="textLista">Material/Compuesto</span></th>
+                        <th><span class="textLista">Descripción</span></th>
+                        <th><span class="textLista">Cantidad Requerida</span></th>
+                        <th><span class="textLista">Precio Unitario</span></th>
+                        <th><span class="textLista">Total</span></th>
                     </tr>
                 </thead>
                 <tbody class="factura-body">
+                    <tr>
+                    <th colspan="6">Historial</th>
+                </tr>
                         <tr>
                         <th>MC-101</th>
                         <th>Champu(crudo)</th>
@@ -96,15 +99,47 @@
             <button id="cancelar-Orden">Guardar Borrador de Orden</button>
             <button id="generar-Orden">Generar Orden de Producción</button>
         </div>
-        <div class="seccion-abajo">
-            <input type="button" value="compartir">
-            <input type="button" value="imprimir">
-            <input type="button" value="descargar pdf">
-            <input type="button" value="Nuevo registro">
-            <input type="button" value="Guardar y salir">
-            <input type="button" value="Nueva Orden">
-            <input type="button" value="Exportar">
-            <input type="button" value="Compartir Orden">
+        <div class="seccion-abajo abajo2">
+            <button class="btn-factura">
+            <a href="#">
+                <i class="fa-regular fa-share-from-square fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-solid fa-print fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-regular fa-file-pdf fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-solid fa-download fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-regular fa-floppy-disk fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="agregarFactura.html">
+                <i class="fa-solid fa-file-circle-plus fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-solid fa-arrow-up-from-bracket fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-solid fa-share-nodes fatodo"></i>
+            </a>
+        </button>
         </div>
         <br>
     </div>
