@@ -752,3 +752,152 @@ li:hover {
     color: #fff; */
 }
 /* ----------------------------------------------------- Estilos Agregar clientes ------------------------------------------------------- */
+
+
+
+/* ----------------------------------------------------- Estilos Inventario y Estadisticas generales ------------------------------------ */
+
+.contenido-inventario{
+    grid-column: 3 / 13;
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    margin-left: -60px;
+}
+
+/* ------------------------------------------ Esta Parte es del buscador ------------------------------------ */
+
+.topbar {
+    grid-column-start: 1;
+   margin-left: 20px;
+   margin-top: 15px;
+}
+
+
+.buscador {
+    display: flex;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    padding: 6px 12px;
+    width: 350px;
+    border: 1px solid #cbd5e1;
+}
+
+.buscador input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    outline: none;
+}
+
+.buscador button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+.buscador button i {
+    color: black;
+    font-size: 1.2rem;
+}
+
+
+
+
+.encabezado {
+    margin-top: 50px;
+    grid-column: 1 / 5;
+    margin-left: 20px;
+}
+
+.titulo-encabezado {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* ------------------------------- Esta parte es de las Cards ----------------------------------------- */
+
+.cards {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    margin-left: 60px;
+}
+
+.card-header {
+    margin-left: 90px;
+    font-size: 0.7rem;
+}
+
+.card-body{
+    margin-left: 90px;
+    font-size: 1.7rem;
+    margin-top: -30px;
+
+}
+
+.card-footer {
+    margin-left: 90px;
+    font-size: 0.9rem;
+    /* margin-top: -10px; */
+}
+
+.card-header .icono1 {
+    margin-left: -90px;
+    background-color: rgba(131, 95, 231, 0.26);
+    width: 70px;
+    height: 70px;
+    border-radius: 20%;
+}
+
+
+.card-header .icono2 {
+    margin-left: -90px;
+    background-color: #b91c1c34;
+    width: 70px;
+    height: 70px;
+    border-radius: 20%;
+}
+
+
+.card-header .icono3 {
+    margin-left: -90px;
+    background-color: #ece91a33;
+    width: 70px;
+    height: 70px;
+    border-radius: 20%;
+}
+
+.card-header .icono1 i {
+    color: rgb(131, 95, 231);
+    font-size: 3rem;
+    margin-left: 14px;
+    margin-top: 10px;
+
+}
+.card-header .icono2 i {
+    color: #b91c1c;
+    font-size: 3rem;
+    margin-left: 5px;
+    margin-top: 13px;
+}
+
+
+.card-header .icono3 i {
+    color: #f7ba11;
+    font-size: 3rem;
+    margin-left: 12px;
+    margin-top: 10px;
+}
+
+
+.card {
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+}
