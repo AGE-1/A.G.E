@@ -687,6 +687,10 @@ li:hover {
     display: grid;
 }
 
+.fa-user {
+    color: var(--colornegro);
+}
+
 .interaccion-cliente{
     margin: 30px auto auto;
     display: grid;
