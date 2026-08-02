@@ -1025,3 +1025,109 @@ tr {
 .ulES {
     list-style: none;
 }
+
+/* ================= BARRA DE CONFIGURACIÓN ================= */
+
+.nav-Config{
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    padding: 20px 15px;
+}
+
+.nav-Config ul{
+    list-style: none;
+}
+
+.nav-Config li{
+    margin-bottom: 8px;
+}
+
+.nav-Config li:last-child{
+    margin-bottom: 0;
+}
+
+.nav-Config a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 14px 18px;
+    border-radius: 2px;
+}
+
+.nav-Config a:hover{
+    background: #f2f2f2;
+    color: #000;
+}
+
+/* Opción seleccionada */
+.nav-Config .activo a{
+    background: #E9DCC4;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-Config{
+    position: relative;
+    right: 55px;
+    height: 700px;
+}
+
+/* =================== RESPALDOS =================== */
+
+#respaldos{
+    position: fixed;
+    left: 580px;
+    top: 65px;
+    width: 500px;
+
+
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+#respaldos h1{
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+#respaldos form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#respaldos label{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#respaldos input{
+    width: 100%;
+    height: 35px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#respaldos button{
+    width: 130px;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+    background: #3B82F6;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.nav-Respaldo1 {
+ position: fixed;
+ right: 990px;
+ top: 65px;
+}
