@@ -46,13 +46,18 @@
                 <div class="titulo-encabezado">
                     <p>Analisis detallados del estado y movimientos del inventario</p>
                 </div>
+            </section>
 
-                <select class="tiempo">
-                    <option value="dia">Este día</option>
-                    <option value="semana">Esta semana</option>
-                    <option value="mes">Este mes</option>
-                    <option value="año">Este año</option>
-                </select>
+            <section class="agregarProductos">
+                <div class="btnn btn-agregar">
+                    <button><i class="fa-solid fa-plus"></i><span>Producto</span></button>
+                </div>
+                <div class="btnn btn-exportar">
+                    <button><i class="fa-solid fa-file-export"></i><span>Exportar</span></button>
+                </div>
+                <div class="btnn btn-importar">
+                    <button><i class="fa-solid fa-file-import"></i><span>Importar</span></button>
+                </div>
             </section>
 
             <section class="cards">
@@ -205,13 +210,13 @@
                     </select>
 
                     <ul class="ulES">
-                        <li class="entrada">Entradas</li>
-                        <li class="salida">Salidas</li>
+                        <li class="entrada"><div class="colorEN"></div>Entradas</li>
+                        <li class="salida"><div class="colorSA"></div>Salidas</li>
                     </ul>
                     <canvas id="graficoES"></canvas>
                 </div>
 
-                <div class="PPC">
+                <div class="graficoPPC">
                     <h2>Productos por Categoría</h2>
                     <select class="tiempoPPC">
                         <option value="dia">Este día</option>

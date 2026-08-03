@@ -846,6 +846,7 @@ li:hover {
     display:grid;
     grid-template-columns:repeat(12,1fr);
     margin-left: -60px;
+    height: 150px;
 }
 
 /* ------------------------------------------ Esta Parte es del buscador ------------------------------------ */
@@ -896,6 +897,72 @@ li:hover {
     margin-bottom: 10px;
 }
 
+/* --------------------------------- Botones --------------------------------------- */
+
+.agregarProductos {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: -340px;
+    margin-top: 100px;
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+
+.btnn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 115px;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.btn-agregar {
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+}
+
+.btn-exportar {
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+}
+
+
+.btn-importar {
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+}
+
+
+.btnn:hover {
+    background-color: #245cb7;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.212);
+    transform: scale(1.05);
+}
+
+.btnn:active {
+    transform: scale(0.95);
+}
+
+.agregarProductos span {
+    color: white;
+    font-size: 0.9rem;
+}
+
+
 /* ------------------------------- Esta parte es de las Cards ----------------------------------------- */
 .cards {
     display: grid;
@@ -903,7 +970,8 @@ li:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 90%;
-    margin-left: 60px;
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
 div .card {
@@ -980,20 +1048,22 @@ div .card {
 .card {
     border-radius: 12px;
     padding: 18px;
-    border: 1px solid #e2e8f0;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
 /* -------------------------------------------------- Tabla Productos ----------------------------------------------- */
 .seccion-productos {
     margin-top: 40px;
-    margin-left: 95px;
+    margin-left: 10px;
+    
 }
 
 .contenedor-productos {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 1000px;
-    height: 200px;
+    width: 1050px;
+    height: 310px;
+    margin-left: 50px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
 
 .titulo-tabla {
@@ -1002,13 +1072,28 @@ div .card {
     margin-left: 9px;
 }
 
-tr {
-    margin-left: 20px;
+th {
+    padding: 10px 30px;
+}
+
+td {
+    padding: 25px 50px;
 }
 
 .btn-accion {
     background: transparent;
     border: none;
+    font-size: 1.15rem;
+
+}
+
+
+td, th {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.btn-ver i, .btn-editar i {
+    color: rgb(0, 0, 0);
 }
 
 .btn-eliminar i {
@@ -1018,12 +1103,79 @@ tr {
 .seccion-graficos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 300px;
+    margin-top: 400px;
     margin-left: -1050px;
 }
 
 .ulES {
     list-style: none;
+}
+
+.ulES li {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+
+.colorEN {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #00ff15;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.colorSA {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #ff0000;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+div .graficoES {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    margin-left: -10px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+}
+
+
+div .graficoPPC {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    margin-left: 50px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+}
+
+
+.seccion-graficos h2 {
+    font-size: 1.6rem;
+    margin-top: 5px;
+    margin-left: 9px;
+}
+
+.tiempoES {
+    margin-left: 380px;
+    margin-top: -60px;
+}
+
+.tiempoPPC {
+    margin-left: 380px;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    background-color: #fff;
+    color: #000;
 }
 
 /* ================= BARRA DE CONFIGURACIÓN ================= */
