@@ -30,30 +30,35 @@
             </nav>
         </div>
   </aside>
-    <div class="infocliente">
-        <img src="" alt="" id="imagen-Cliente">
-        <form action="">
-            <label for="NombreEmpleado">Nombre Cliente:</label>
-            <input type="text" id="NombreEmpleado">
-            
-            <label for="tel">Numero Telefonico:</label>
-            <input type="tel" id="tel">
-
-            <label for="mail">Correo Electronico:</label>
-            <input type="email" id="mail">
-
+    <section class="agregar-cliente">
+        <form>
+    
+            <label for="nombre">Nombre cliente:</label>
+            <input type="text" id="nombre" required>
+    
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" required>
+    
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" required>
+    
+    
             <label for="ubi">Ubicacion:</label>
             <input type="text" id="ubi">
-
+    
             <label for="fecharegistro">Fecha de Registro:</label>
             <input type="date" id="fecharegistro">
-
-            <textarea name="Descripcion" id="Descripcion-cliente" placeholder="Agregar Descripcion"></textarea>
+    
+            <textarea name="Descripcion" id="Descripcion-cliente" placeholder="Agregar descripcion"></textarea>
+    
+    
+            <input type="button" value="Agregar Cliente" id="agrecarcbotton">
+            <input type="reset" value="Cancelar" id="limpiarclientebotton">
+    
         </form>
-
-        <button>Eliminar</button>
-        <a href="clientes.html"><input type="button" name="" id="" value="Regresar"></a>
-    </div>
+        <img src="image/logo_fondo_negro.png" alt="Agregar imagen cliente" id="imagen-AniadirCliente">
+        <a href="clientes.html" id="regresar-clientes"><</a>
+    </section>
 </div>
 </body>
 </html>

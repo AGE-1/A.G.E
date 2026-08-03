@@ -659,6 +659,75 @@ li:hover {
     justify-content: space-between;
     z-index: 3;
 }
+
+#cliente {
+    margin-left: 20px;
+    margin-top: -5px;
+}
+
+.agregarfactura {
+    grid-column: 3 / 12;
+    grid-row: 1 / 9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: justify ;
+}
+
+.textoF {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--colorCuentaDash);
+    width: 100%;
+    font-size: large;
+}
+
+#tipo-factura {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.formulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+}
+
+.opcionesF {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.crearfactura-btn {
+    margin-top: -20px;
+}
+
+.previewF {
+    text-align: center;
+    color: #00000037;
+    margin: 10px;
+}
+
+.factura-preview {
+    color: #00000037;
+    text-align: center;
+}
+
+.formulario div, label {
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+}
 /* -------------------------------------------------------------------------------------------------------------------------------------- */
 /* Esto es donde sale el usuario y su nombre, junto con el botón de cerrar sesion */
 /* Este es el enlace */
@@ -685,11 +754,17 @@ li:hover {
     margin: 15px 0px;
     border-radius: 10px ;
     display: grid;
+    grid-template-columns: repeat(12, 1fr);
 }
 
-.fa-user {
-    color: var(--colornegro);
+#lineaclientes {
+    grid-row: 2;
+    grid-column: 1/12;
 }
+
+/* .fa-user {
+    color: var(--colornegro);
+} */
 
 .interaccion-cliente{
     margin: 30px auto auto;
@@ -723,15 +798,19 @@ li:hover {
 /* Tablas */
 .tabla-clientes  {
     grid-column: 1/12;
-    grid-template-columns: repeat(12, 1fr);
-    padding: 12px;
 }
 
 .tabla-clientes thead {
-    grid-row: 1;
-    grid-column: 1/12;
     padding: 12px;
+    width: 100%;
 }
+
+.tabla-clientes tr:hover{
+    background-color: #ccc;
+    width: 100%;
+    grid-column: 1/13;
+}
+
 /* Barra de buscar */
 .buscar-cliente {
     grid-column: 1/5;
@@ -839,8 +918,28 @@ li:hover {
 /* ----------------------------------------------------- Estilos Agregar clientes ------------------------------------------------------- */
 
 
-/* ----------------------------------------------------- Estilos Inventario y Estadisticas generales ------------------------------------ */
+/* -------------------------Estilos Empleados ----------------------------------------- */
+.empleadosp {
+    grid-column: 1/12;
+    grid-row: 3;
+    
+}
+.empleadosp ul {
+    display:flex ;
+    text-align: center;
+    
+}
+.empleadosp li{
+    list-style: none;
+    width: 90px;
+    padding: 10px;
+}
+.empleadosp li a {
+    text-decoration: none;
+    color: #000;
+}
 
+/* ----------------------------------------------------- Estilos Inventario y Estadisticas generales ------------------------------------ */
 .contenido-inventario{
     grid-column: 3 / 13;
     display:grid;
@@ -848,7 +947,6 @@ li:hover {
     margin-left: -60px;
     height: 150px;
 }
-
 /* ------------------------------------------ Esta Parte es del buscador ------------------------------------ */
 .topbar {
     grid-column-start: 1;
@@ -883,8 +981,6 @@ li:hover {
     font-size: 1.2rem;
 }
 
-
-
 .encabezado {
     margin-top: 50px;
     grid-column: 1 / 5;
@@ -896,9 +992,7 @@ li:hover {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 /* --------------------------------- Botones --------------------------------------- */
-
 .agregarProductos {
     display: flex;
     align-items: center;
@@ -912,7 +1006,6 @@ button {
     border: none;
     outline: none;
 }
-
 
 .btnn {
     display: inline-flex;
@@ -961,8 +1054,6 @@ button {
     color: white;
     font-size: 0.9rem;
 }
-
-
 /* ------------------------------- Esta parte es de las Cards ----------------------------------------- */
 .cards {
     display: grid;
@@ -1087,7 +1178,6 @@ td {
 
 }
 
-
 td, th {
     border-bottom: 1px solid rgba(0, 0, 0, 0.075);
 }
@@ -1116,7 +1206,6 @@ td, th {
     margin-left: 50px;
 }
 
-
 .colorEN {
     display: inline-block;
     width: 15px;
@@ -1143,7 +1232,6 @@ div .graficoES {
     margin-left: -10px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
-
 
 div .graficoPPC {
     border: 1px solid rgba(0, 0, 0, 0.212);
@@ -1177,9 +1265,7 @@ select {
     background-color: #fff;
     color: #000;
 }
-
 /* ================= BARRA DE CONFIGURACIÓN ================= */
-
 .nav-Config{
     background: #fff;
     border-radius: 4px;
@@ -1213,7 +1299,6 @@ select {
     background: #f2f2f2;
     color: #000;
 }
-
 /* Opción seleccionada */
 .nav-Config .activo a{
     background: #E9DCC4;
@@ -1226,9 +1311,7 @@ select {
     right: 55px;
     height: 700px;
 }
-
 /* =================== RESPALDOS =================== */
-
 #respaldos{
     position: fixed;
     left: 580px;

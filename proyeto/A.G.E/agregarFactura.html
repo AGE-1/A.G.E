@@ -31,6 +31,77 @@
             </nav>
         </div>
      </aside>
+    <div class="agregarfactura">
+        <label for="tipo-factura" class="textoF">Tipo de Factura *</label>
+        <select id="tipo-factura">
+            <option value="normal">Factura Normal</option>
+            <option value="credito">Factura de Crédito Fiscal</option>
+        </select>
+    <div class="formulario">
+            <div class="opcionesF">
+            <label for="cliente-nombre">Nombre del Cliente *</label>
+            <input type="text" id="cliente-nombre" required placeholder="Nombre del cliente">
+            <label for="cliente-rfc">RNC *</label>
+            <input type="text" id="cliente-rfc" required placeholder="Ej: 4-01-01006-2">
+            <label for="dias-credito">Días de Crédito</label>
+            <input type="number" id="dias-credito" min="0" placeholder="30">
+            <label for="tasa-interes">Tasa de Interés (%)</label>
+            <input type="number" id="tasa-interes" min="0" step="0.01" placeholder="0.00">
+
+        <h4>Agregar Productos</h4>
+
+            <label for="fact-producto">Producto *</label>
+            <select id="fact-producto">
+                <option value="">Selecciona un producto</option>
+            </select>
+
+            <label for="fact-cantidad">Cantidad *</label>
+            <input type="number" id="fact-cantidad" min="1" placeholder="1">
+    </div>
+    <button class="btnF">Agregar a Factura</button>
+
+        <h3>Detalle de Factura</h3>
+
+        <div class="items-carrito" id="factura-items">
+            <div>Sin productos aún</div>
+        </div>
+
+        <div class="resumen-venta">
+            <div class="resumen-fila">
+                <span>Subtotal:</span>
+                <span id="fact-subtotal">$0.00</span>
+            </div>
+            <div class="resumen-fila">
+                <span>IVA (16%):</span>
+                <span id="fact-iva">$0.00</span>
+            </div>
+            <div id="interes-container" style="display: none;">
+                <div class="resumen-fila">
+                    <span>Interés:</span>
+                    <span id="fact-interes">$0.00</span>
+                </div>
+            </div>
+            <div class="resumen-fila total">
+                <span>TOTAL:</span>
+                <span id="fact-total">$0.00</span>
+            </div>
+        </div>
+
+        <div class="btn-aniado crearfactura-btn">
+                <a href="#"><input type="button" value="Generar Factura" style="width: 120px;"></a>
+                <a href="#"><input type="button" value="Limpiar" style="width: 120px;"></a>
+        </div>
+
+        <div>
+            <h3 class="previewF">Vista Previa de Factura</h3>
+            <div class="factura-preview">
+                <div>La factura aparecerá aquí</div>
+            </div>
+            <div class="btn-aniado">
+                <a href="#"><input type="button" value="Imprimir factura"></a>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </body>
