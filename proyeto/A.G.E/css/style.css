@@ -940,6 +940,7 @@ li:hover {
 }
 
 /* ----------------------------------------------------- Estilos Inventario y Estadisticas generales ------------------------------------ */
+
 .contenido-inventario{
     grid-column: 3 / 13;
     display:grid;
@@ -947,6 +948,7 @@ li:hover {
     margin-left: -60px;
     height: 150px;
 }
+
 /* ------------------------------------------ Esta Parte es del buscador ------------------------------------ */
 .topbar {
     grid-column-start: 1;
@@ -981,9 +983,11 @@ li:hover {
     font-size: 1.2rem;
 }
 
+
+
 .encabezado {
     margin-top: 50px;
-    grid-column: 1 / 5;
+    grid-column: 1 / 12;
     margin-left: 20px;
 }
 
@@ -992,7 +996,9 @@ li:hover {
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 /* --------------------------------- Botones --------------------------------------- */
+
 .agregarProductos {
     display: flex;
     align-items: center;
@@ -1006,6 +1012,7 @@ button {
     border: none;
     outline: none;
 }
+
 
 .btnn {
     display: inline-flex;
@@ -1054,6 +1061,8 @@ button {
     color: white;
     font-size: 0.9rem;
 }
+
+
 /* ------------------------------- Esta parte es de las Cards ----------------------------------------- */
 .cards {
     display: grid;
@@ -1174,9 +1183,10 @@ td {
 .btn-accion {
     background: transparent;
     border: none;
-    font-size: 1.15rem;
+    font-size: 1rem;
 
 }
+
 
 td, th {
     border-bottom: 1px solid rgba(0, 0, 0, 0.075);
@@ -1206,6 +1216,7 @@ td, th {
     margin-left: 50px;
 }
 
+
 .colorEN {
     display: inline-block;
     width: 15px;
@@ -1232,6 +1243,7 @@ div .graficoES {
     margin-left: -10px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
+
 
 div .graficoPPC {
     border: 1px solid rgba(0, 0, 0, 0.212);
@@ -1265,6 +1277,53 @@ select {
     background-color: #fff;
     color: #000;
 }
+
+/* ---------------------------------------------------- Seccion De Estadisticas ---------------------------------------------------- */
+
+.contenido-estadisticas{
+    grid-column: 3 / 13;
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    margin-left: -60px;
+    height: 150px;
+    gap: 20px;
+}
+
+.encabezado i {
+    color: #000;
+}
+
+.cards-ES {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    margin-left: 30px;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+.cards-ES i {
+    color:#000;
+}
+
+.lista-clientes i {
+    color: #000;
+}
+
+.card-ES {
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    width: 250px;
+}
+
+
+.card-header-ES {
+    
+}
+
+
 /* ================= BARRA DE CONFIGURACIÓN ================= */
 .nav-Config{
     background: #fff;
