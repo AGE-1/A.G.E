@@ -44,7 +44,7 @@
       </ul>
     </nav>
   </aside>
-  <div id="impuestos">
+  <div class="contenido-config">
   <h1>Impuestos</h1>
 
     <form>
@@ -54,8 +54,8 @@
       </div>
 
       <div>
-        <label for="tasa-impuesto">Tasa de impuesto</label>
-        <input type="text" id="tasa-impuesto" name="tasa-impuesto" value="18%">
+        <label for="tasa-impuesto">Tasa de impuesto (%)</label>
+        <input type="number" id="tasa-impuesto" name="tasa-impuesto" step="0.1" placeholder="0.0">
       </div>
 
       <div>
@@ -70,7 +70,10 @@
 
       <div>
         <label for="comprobantes-fiscales">Comprobantes fiscales</label>
-        <input type="text" id="comprobantes-fiscales" name="comprobantes-fiscales" value="Habilitados">
+        <select name="comprobantes" id="comprobantes">
+          <option value="hab">Habilitado</option>
+          <option value="des">Deshabilitado</option>
+        </select>
       </div>
 
       <button type="submit">Guardar cambios</button>

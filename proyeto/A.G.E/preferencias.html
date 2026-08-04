@@ -44,7 +44,7 @@
     </nav>
   </aside>
 
-  <section id="preferencias">
+  <section class="contenido-config">
     <h1>Preferencias</h1>
 
     <form>
@@ -60,7 +60,7 @@
         <label for="moneda">Moneda</label>
         <select id="moneda" name="moneda">
           <option value="dop" selected>DOP (RD$)</option>
-          <option value="usd">USD ($)</option>
+          <option value="usd">USD (US$)</option>
         </select>
       </div>
 
@@ -93,7 +93,10 @@
 
       <div>
         <label for="formato-fecha">Formato de fecha</label>
-        <input type="date" name="" id="">
+        <select name="formato-fecha" id="formato-fecha">
+          <option value="12Hr's">12Hr's</option>
+          <option value="24Hr's">24Hr's</option>
+        </select>
       </div>
 
       <div>

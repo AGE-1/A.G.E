@@ -238,7 +238,8 @@
     align-items: center;
     gap: 10px;
     border-radius: 15px;
-    margin-top: -65px 
+    margin-top: -65px;
+    z-index: 3;
 }
 
 .perfil-dash h6 {
@@ -294,7 +295,8 @@
     align-items: center;
     gap: 10px;
     border-radius: 15px;
-    margin-top: -60px 
+    margin-top: -60px;
+    z-index: 3;
 }
 
 .perfil-dash h6 {
@@ -335,12 +337,14 @@
     align-items: center;
     gap: 10px;
     border-radius: 15px;
-    margin-top: -60px
+    margin-top: -60px;
+    z-index: 3;
 }
 
 .perfil-dash h6 {
     margin-left: -25px;
     margin-top: 0.7mm;
+    z-index: 3;
 }
 
 .footerNav {
@@ -382,6 +386,7 @@
     background-color:#ededed;
     line-height: 2;
     box-shadow: 4px 5px 10px #ccc;  
+    z-index: 2;
     /* border-bottom: solid 1px #ededed; */
 }
 /* el cuerpo del nav, todo lo que se ve negro, esto es un contenedor básicamente */
@@ -436,7 +441,6 @@ li:hover {
 .seleccionadoNav {
     background-color: var(--colorseleccion);
 }
-
 
 .fa-people-group {
     margin-left: -1px; 
@@ -635,12 +639,6 @@ li:hover {
     line-height: 2; 
 }
 
-.seleccionorden {
-    grid-column: 4;
-    display: flex;
-    align-items: center;
-}
-
 .botonesfactura {
     grid-row: 2 / 2;
     grid-column: 3/12;
@@ -661,8 +659,9 @@ li:hover {
 }
 
 #cliente {
-    margin-left: 20px;
-    margin-top: -5px;
+    margin-left: 10px;
+    width: 20%;
+    margin-top: 13px;
 }
 
 .agregarfactura {
@@ -709,6 +708,7 @@ li:hover {
     flex-wrap: wrap;
     align-items: flex-start;
 }
+
 .crearfactura-btn {
     margin-top: -20px;
 }
@@ -810,7 +810,6 @@ li:hover {
     width: 100%;
     grid-column: 1/13;
 }
-
 /* Barra de buscar */
 .buscar-cliente {
     grid-column: 1/5;
@@ -824,6 +823,38 @@ li:hover {
     width: 300px;
 }
 /* -------------------------------- Estilos Agregar clientes ----------------------------- */
+.contenedor-clientes {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    /* Seguir una sintaxis de las sombras  */
+    box-shadow:  6px 8px 10px #ccc;
+    grid-row: 2;
+    grid-column: 4/12;
+    width: 100%;
+    height: 100%;
+    margin: 15px 0px;
+    border-radius: 10px ;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+#lineaclientes {
+    grid-row: 2;
+    grid-column: 1/12;
+}
+
+/* .fa-user {
+    color: var(--colornegro);
+} */
+
+.interaccion-cliente{
+    margin: 30px auto auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-row: 1/12;
+    grid-column: 4/12;
+    width: 100%;
+}
 .agregar-cliente {
     background-color: #fff;
     border: 1px solid #ccc;
@@ -911,18 +942,74 @@ li:hover {
     max-height: 200px;
     min-height: 200px;
 }
-/* Hacerle un hover a la imagen para que se oscurezca al poner mouse */
-/* .agregar-cliente #imagen-AniadirCliente:hover {
-    
-} */
-/* ----------------------------------------------------- Estilos Agregar clientes ------------------------------------------------------- */
+/* Boton de aniadir */
+.btn-aniado{
+    width: 100%;
+    padding: 10px;
+    grid-column: 12;
+    grid-row: 3;
+}
 
+.btn-aniado input {
+    background-color: var(--colorazul);
+    color: #fff;
+    width: 75px;
+    border-radius: 6px;
+    border: none;
+    padding: 7px;
+}
+
+.btn-aniado input:hover {
+    background-color: var(--colorseleccion);
+    transition: 0.1s;
+}
+/* Tablas */
+.tabla-clientes  {
+    grid-column: 1/12;
+}
+
+.tabla-clientes thead {
+    padding: 12px;
+    width: 100%;
+}
+
+.tabla-clientes thead{
+    border-bottom: 5px #ccc solid;
+}
+
+
+/* Barra de buscar */
+.buscar-cliente {
+    grid-column: 1/5;
+    padding: 10px;
+    grid-row: 3;
+}
+
+.buscar-cliente input {
+    border-radius: 8px;
+    padding: 5px;
+    width: 300px;
+}
+/* ----------------------------------------------------- Estilos Agregar clientes ------------------------------------------------------- */
 
 /* -------------------------Estilos Empleados ----------------------------------------- */
 .empleadosp {
     grid-column: 1/12;
     grid-row: 3;
-    
+    font-size: 15px;
+}
+
+.empleadosp li:hover {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+hr {
+    grid-row: 4;
+    grid-column: 1/15;
+    height: 3px;
+    background-color: #ccc;
+    border-radius: 12px;
 }
 .empleadosp ul {
     display:flex ;
@@ -934,13 +1021,16 @@ li:hover {
     width: 90px;
     padding: 10px;
 }
+
+.empleadosp #li1{
+    border-bottom: 7px solid #ccc;
+    transition: 0.2s;
+}
 .empleadosp li a {
     text-decoration: none;
     color: #000;
 }
-
 /* ----------------------------------------------------- Estilos Inventario y Estadisticas generales ------------------------------------ */
-
 .contenido-inventario{
     grid-column: 3 / 13;
     display:grid;
@@ -948,7 +1038,6 @@ li:hover {
     margin-left: -60px;
     height: 150px;
 }
-
 /* ------------------------------------------ Esta Parte es del buscador ------------------------------------ */
 .topbar {
     grid-column-start: 1;
@@ -983,8 +1072,6 @@ li:hover {
     font-size: 1.2rem;
 }
 
-
-
 .encabezado {
     margin-top: 50px;
     grid-column: 1 / 12;
@@ -996,9 +1083,7 @@ li:hover {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 /* --------------------------------- Botones --------------------------------------- */
-
 .agregarProductos {
     display: flex;
     align-items: center;
@@ -1039,13 +1124,11 @@ button {
     border: none;
 }
 
-
 .btn-importar {
     background-color: #3b82f6;
     color: #fff;
     border: none;
 }
-
 
 .btnn:hover {
     background-color: #245cb7;
@@ -1061,8 +1144,6 @@ button {
     color: white;
     font-size: 0.9rem;
 }
-
-
 /* ------------------------------- Esta parte es de las Cards ----------------------------------------- */
 .cards {
     display: grid;
@@ -1187,7 +1268,6 @@ td {
 
 }
 
-
 td, th {
     border-bottom: 1px solid rgba(0, 0, 0, 0.075);
 }
@@ -1216,7 +1296,6 @@ td, th {
     margin-left: 50px;
 }
 
-
 .colorEN {
     display: inline-block;
     width: 15px;
@@ -1244,7 +1323,6 @@ div .graficoES {
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
 
-
 div .graficoPPC {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
@@ -1253,7 +1331,6 @@ div .graficoPPC {
     margin-left: 50px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
-
 
 .seccion-graficos h2 {
     font-size: 1.6rem;
@@ -1277,9 +1354,7 @@ select {
     background-color: #fff;
     color: #000;
 }
-
 /* ---------------------------------------------------- Seccion De Estadisticas ---------------------------------------------------- */
-
 .contenido-estadisticas{
     grid-column: 3 / 13;
     display:grid;
@@ -1318,30 +1393,28 @@ select {
     width: 250px;
 }
 
-
-.card-header-ES {
+/* .card-header-ES {
     
-}
-
+} */
 /* ================= BARRA DE CONFIGURACIÓN ================= */
-
 .nav-Config{
     background: #fff;
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0,0,0,.15);
     padding: 20px 15px;
+    position: fixed;
+    margin-left: 150px;
+    height: 100%;
+    z-index: 1;
 }
 
 .nav-Config ul{
     list-style: none;
+    text-align: center;
 }
 
-.nav-Config li{
-    margin-bottom: 8px;
-}
-
-.nav-Config li:last-child{
-    margin-bottom: 0;
+.nav-Config li:first-child{
+    margin-top: 55px;
 }
 
 .nav-Config a{
@@ -1351,14 +1424,22 @@ select {
     font-size: 17px;
     font-weight: 500;
     padding: 14px 18px;
-    border-radius: 2px;
+    margin-bottom: 10px;
+}
+.config-principal {
+    grid-column: 5 / 12;
+    margin-top: 36px;
+    width: 100%;
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
 }
 
 .nav-Config a:hover{
     background: #f2f2f2;
     color: #000;
 }
-
 /* Opción seleccionada */
 .nav-Config .activo a{
     background: #E9DCC4;
@@ -1366,42 +1447,64 @@ select {
     font-weight: bold;
 }
 
-.nav-Config{
-    position: relative;
-    right: 55px;
-    height: 700px;
-}
-
 /* =================== RESPALDOS =================== */
-
 #respaldos{
-    position: fixed;
-        
-    top: 65px;
-        
-    left: calc(12% + 250px);
-        
-    width: calc(100% - (12% + 290px));
-        
-    max-width: 500px;
-    min-width: 350px;
-
-
+    grid-column: 8;
+    left: 580px;
+    margin-top: 36px;
+    width: 500px;
     background: #fff;
     padding: 18px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,.15);
 }
 
+#perfil-empresa {
+    grid-column: 8;
+    margin-top: 36px;
+    width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenido-config {
+    grid-column: 8;
+    left: 580px;
+    margin-top: 36px;
+    width: 500px;
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+.acercaDe {
+    grid-column: 8;
+    left: 580px;
+    margin-top: 36px;
+    width: 500px;
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+.acercaDe h1,h2 {
+    margin-bottom: 10px;
+}
+
+.acercaDe article {
+    margin-bottom: 35px;
+}
+
 #respaldos h1{
     font-size: 22px;
     margin-bottom: 18px;
-}
-
-#respaldos form{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 #respaldos label{
@@ -1416,6 +1519,7 @@ select {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
+    margin-bottom: 10px;
 }
 
 #respaldos button{
@@ -1427,14 +1531,4 @@ select {
     color: white;
     font-size: 14px;
     cursor: pointer;
-}
-
-
-.nav-Respaldo1 {
-    position: fixed;
-    top: 65px;
-
-    left: calc(12% + 30px);
-
-    width: 210px;
 }
