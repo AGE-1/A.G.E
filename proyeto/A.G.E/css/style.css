@@ -1391,11 +1391,155 @@ select {
     padding: 18px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     width: 250px;
+    height: 100px;
 }
 
-/* .card-header-ES {
-    
-} */
+.card-header-ES {
+    font-size:16px;
+    margin-left: 70px;
+    margin-top: -55px;
+}
+
+.body {
+    margin-top: 5px;
+}
+
+
+.stats {
+    font-size: 0.7rem;
+    margin-left: 70px;
+    margin-top: 5px;
+
+}
+
+.pp {
+    color: lawngreen;
+}
+
+.pp i {
+    color: lawngreen;
+}
+
+.icon1 {
+    background-color: rgba(116, 247, 116, 0.39);
+    width: 50px;
+    height: 50px;
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+.icon2 {
+    background-color: rgba(0, 128, 0, 0.075);
+    width: 50px;
+    height: 50px;
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+.icon3 {
+    background-color: rgba(0, 128, 0, 0.082);
+    width: 50px;
+    height: 50px;
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+.icon4 {
+    background-color: rgba(0, 128, 0, 0.158);
+    width: 50px;
+    height: 50px;
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+.icon1 i {
+    color: green;
+    font-size: 30px;
+    margin-left: 16px;
+    margin-top: 10px;
+}
+
+.icon2 i {
+    color: green;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 11px;
+}
+
+
+.icon3 i {
+    color: green;
+    font-size: 30px;
+    margin-left: 12px;
+    margin-top: 9px;
+}
+
+
+.icon4 i {
+    color: green;
+    font-size: 30px;
+    margin-left: 8px;
+    margin-top: 10px;
+}
+
+.graficas {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.graficoVG {
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: 700px;
+    height: 300px;
+}
+
+.graficoVG li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+
+.graficoVPC {
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: 700px;
+    height: 300px;
+}
+
+
+.graficoVPCA {
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: 700px;
+    height: 300px;
+}
+
+
+.tiempoVG {
+    margin-top: -120px; 
+    margin-left: 580px;
+}
+
+
+.tiempoVPC {
+    margin-top: -120px; 
+    margin-left: 580px;
+}
+
+
+.tiempoVPCA {
+    margin-top: -120px; 
+    margin-left: 580px;
+}
+
+.panel-clientes {
+    /* margin-top: -500px; */
+}
 /* ================= BARRA DE CONFIGURACIÓN ================= */
 .nav-Config{
     background: #fff;
