@@ -762,9 +762,9 @@ li:hover {
     grid-column: 1/12;
 }
 
-/* .fa-user {
+.fa-user {
     color: var(--colornegro);
-} */
+}
 
 .interaccion-cliente{
     margin: 30px auto auto;
