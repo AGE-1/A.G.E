@@ -1323,8 +1323,8 @@ select {
     
 }
 
-
 /* ================= BARRA DE CONFIGURACIÓN ================= */
+
 .nav-Config{
     background: #fff;
     border-radius: 4px;
@@ -1358,6 +1358,7 @@ select {
     background: #f2f2f2;
     color: #000;
 }
+
 /* Opción seleccionada */
 .nav-Config .activo a{
     background: #E9DCC4;
@@ -1370,12 +1371,20 @@ select {
     right: 55px;
     height: 700px;
 }
+
 /* =================== RESPALDOS =================== */
+
 #respaldos{
     position: fixed;
-    left: 580px;
+        
     top: 65px;
-    width: 500px;
+        
+    left: calc(12% + 250px);
+        
+    width: calc(100% - (12% + 290px));
+        
+    max-width: 500px;
+    min-width: 350px;
 
 
     background: #fff;
@@ -1420,8 +1429,12 @@ select {
     cursor: pointer;
 }
 
+
 .nav-Respaldo1 {
- position: fixed;
- right: 990px;
- top: 65px;
+    position: fixed;
+    top: 65px;
+
+    left: calc(12% + 30px);
+
+    width: 210px;
 }
