@@ -13,6 +13,7 @@
     --colorseleccion:  #245cb7;
     --colorCuentaDash: #00000037;
     --colorBordesTargetas: #3b83f686;
+    --colorVerde: rgb(0, 165, 0);
 }
 /* contenedor principal, con z index 2 para que quede abajo, mientras mas bajito, es menor la capa */
 .contenedor-principal {
@@ -476,6 +477,7 @@ li:hover {
 
 .dcto {
     text-align: center;
+    color: var(--colorVerde);
 }
 
 .tabla-listas .superiorTabla th {
@@ -494,13 +496,14 @@ li:hover {
 
 .totales {
     grid-row: 2;
-    grid-column: 9 / 11;
+    grid-column: 8 / 11;
     display: flex;
     flex-direction: column;
     margin: 10px;
     gap: 10px;
     font-size: larger;
     line-height: 2;
+    margin-right: 40px;
 }
 
 .totales h5 {
@@ -532,7 +535,7 @@ li:hover {
 /* Aqui es donde están los botones de la sección oscura de facturación y producción */
 .seccion-abajo {
     padding: 20px;
-    margin-top: 183px;
+    margin-top: 154px;
     margin-left: -20px;
     grid-column: 3 / 13;
     grid-row: 2;
@@ -615,11 +618,18 @@ li:hover {
     grid-column: 4;
 }
 
+.dctolista {
+    color: lawngreen;
+}
+
+.num-totales {
+    color: var(--colorazul);
+}
+
 .abajo2 {
     margin-top: 157px;
     justify-content: space-evenly;
     align-content: center;
-    height: 30%;
 }
 
 .totales2 h5 {
@@ -645,17 +655,33 @@ li:hover {
     display: flex;
     align-items: start;
     justify-content: space-between;
-    margin-top: 90px;
+    margin-top: 110px;
 }
 
 .botonesfacturas {
     grid-column: 3 /12;
     grid-row: 2;
-    margin-top: 133px;
+    margin-top: 110px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     z-index: 3;
+}
+
+.btn-facturas {
+    background-color: var(--colorazul);
+    padding: 6px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--colorenlaces);
+    transition: 0.17s ease-in;
+}
+
+.btn-facturas:hover {
+    transform:scale(1.06);
+    box-shadow: 5px 10px 10px #ccc;
+    background-color: var(--colorseleccion);
 }
 
 #cliente {
@@ -789,6 +815,7 @@ li:hover {
     border-radius: 15px;
     border: none;
     padding: 5px;
+    cursor: pointer;
 }
 
 .btn-aniado input:hover {
