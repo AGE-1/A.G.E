@@ -49,19 +49,19 @@
     
       <form>
         <label for="nombre-empresa">Nombre de la empresa</label>
-        <input type="text" id="nombre-empresa" name="nombre-empresa" value="Distribuidora Televendo">
+        <input type="text" id="nombre-empresa" name="nombre-empresa" placeholder="Nombre Empresa" required>
       
-        <label for="ruc">RUC / ID Fiscal</label>
-        <input type="text" id="ruc" name="ruc" value="10914">
+        <label for="rnc">RNC / Cédula</label>
+        <input type="text" id="rnc" name="rnc" placeholder="402-3957658-6" maxlength="11" pattern="\d{9}|\d{11}" title="Debe ingresar 9 dígitos (RNC) u 11 dígitos (Cédula/RNC)" required>
       
         <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="telefono" value="(809) 123-4567">
+        <input type="tel" id="telefono" name="telefono" placeholder="1 + (809)-123-4567" title="Ingrese un número de teléfono" required>
       
         <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo" name="correo" value="info@televendo.com">
+        <input type="email" id="correo" name="email" placeholder="adgenempress@gmail.com" title="Ingrese una dirección de correo electrónico" required>
       
       <label for="direccion">Dirección</label>
-      <input type="text" id="direccion" name="direccion" value="Av. Principal #123, Santo Domingo, RD">
+      <input type="text" id="direccion" name="direccion" placeholder="Av. Principal #123, Santo Domingo, RD" title="Ingrese la dirección de la empresa" required>
     
       <button type="submit" class="resbutton">Guardar cambios</button>
     </form>

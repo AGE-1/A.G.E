@@ -73,25 +73,6 @@
       </div>
 
       <div>
-        <label for="notificaciones">Notificaciones</label>
-        <input type="checkbox" id="notificaciones" name="notificaciones" checked>
-      </div>
-
-      <div>
-        <label for="inicio-automatico">Inicio automático</label>
-        <input type="checkbox" id="inicio-automatico" name="inicio-automatico" checked>
-      </div>
-
-      <div>
-        <label for="respaldo-automatico">Respaldo automático</label>
-        <select id="respaldo-automatico" name="respaldo-automatico">
-          <option value="diario" selected>Diario</option>
-          <option value="semanal">Semanal</option>
-          <option value="mensual">Mensual</option>
-        </select>
-      </div>
-
-      <div>
         <label for="formato-fecha">Formato de fecha</label>
         <select name="formato-fecha" id="formato-fecha">
           <option value="12Hr's">12Hr's</option>
@@ -99,12 +80,22 @@
         </select>
       </div>
 
-      <div>
+
+      <button type="submit" class="resbutton">Guardar cambios</button>
+      <div class="inputsConf">
+        <label for="notificaciones">Notificaciones</label>
+        <input type="checkbox" id="notificaciones" name="notificaciones" checked>
+      </div>
+      
+      <div class="inputsConf">
+        <label for="inicio-automatico" class="inicio-automatico">Inicio automático</label>
+        <input type="checkbox" id="inicio-automatico" name="inicio-automatico" checked>
+      </div>
+      
+      <div class="inputsConf">
         <label for="animaciones">Animaciones</label>
         <input type="checkbox" id="animaciones" name="animaciones" checked>
       </div>
-
-      <button type="submit" class="resbutton">Guardar cambios</button>
     </form>
   </section>
 </div>
