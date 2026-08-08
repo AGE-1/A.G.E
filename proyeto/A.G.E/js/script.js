@@ -1,3 +1,6 @@
+
+// ESTOS SON LOS SCRIPTS DEL LOGIN, REGISTRO Y RECUPERACION DE CONTRASEÑA, SOLO COMPRUEBAN QUE SE INTRODUJERON DATOS
+// Y TAMBIEN GUARDAN EL NOMBRE DEL USUARIO EN EL LOCALSTORAGE PARA MOSTRARLO EN EL DASHBOARD
 document.addEventListener('DOMContentLoaded', function () {
 	const loginForm = document.getElementById('login-form');
 	const registerForm = document.getElementById('register-form');
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			localStorage.setItem('usuario', document.getElementById('nombre').value.trim());
 		});
 	}
-
+// ESTOS SON LOS SCRIPTS PARA EL FORMULARIO DE RECUPERACION DE CONTRASEÑA, SIMULAN EL ENVIO DE UN CODIGO AL CORREO DEL USUARIO Y MUESTRAN MENSAJES DE ESTADO
 	if (recoveryForm) {
 		const emailInput = document.getElementById('email');
 		const sendCodeButton = document.getElementById('send-code');
@@ -66,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			usuarioDashboard.textContent = usuarioGuardado;
 		}
 	}
-
+// ESTOS SON LOS SCRIPTS PARA FILTRAR LAS TABLAS DE HISTORIAL DE FACTURAS Y ORDENES DE PRODUCCION
 	if (historialBody) {
 		const searchInput = document.getElementById('buscar-factura');
 		const statusSelect = document.getElementById('estado-factura');
@@ -90,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		searchInput.addEventListener('input', filterInvoices);
 		statusSelect.addEventListener('change', filterInvoices);
 	}
-
+// ESTOS SON LOS SCRIPTS PARA FILTRAR LAS TABLAS DE HISTORIAL DE FACTURAS Y ORDENES DE PRODUCCION
 	if (productionBody) {
 		const searchInput = document.getElementById('buscar-orden');
 		const statusSelect = document.getElementById('estado-orden');
