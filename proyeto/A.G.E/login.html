@@ -11,6 +11,7 @@
 <body>
 <div class="contenedor-principal2">
          <div class="login">
+            <form id="login-form" action="dashboard.html" method="get">
             <label for="nombre">Usuario:</label>
             <input type="text" name="log" id="nombre" autocomplete="off" autofocus placeholder="Usuario.." required>
             <label for="contraseña">Contraseña:</label>
@@ -19,13 +20,12 @@
             <div class="creacuenta">
                 <a href="register.html" class="inicioreg">Crear cuenta</a>
             </div>
-                <form class="botoniniciar" action="dashboard.html">
-                <button href="dashboard.html" class="botonlog">Iniciar sesión</button>
-            </form>
+                <button type="submit" class="botonlog">Iniciar sesión</button>
             <div class="forgot">
                 <a href="recuperarCuenta.html" class="inicioreg">Olvidó su contraseña?</a>
                 <a href="index.html" class="inicioreg">regresar</a>
             </div>
+            </form>
         </div>
         <div class="seccion-negra2">
     </div>
