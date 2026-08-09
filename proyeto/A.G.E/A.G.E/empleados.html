@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="contenedor">
+    <h1 class="tit">Empleados</h1>
+    <aside class="navlateral">
+        <div class="nav">
+            <nav>
+                <ul>
+                    <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house" id="dashb"></i>Dashboard</a></li>
+                    <li><a href="configuracion.html"><i class="fa-solid fa-gear"></i>Configuración</a></li>
+                    <li><a href="clientes.html"><i class="fa-solid fa-people-group"></i>Clientes</a></li>
+                    <li><a href="facturacion.html"><i class="fa-solid fa-file-invoice"></i>Facturación</a></li>
+                    <li class="seleccionadoNav"><a href="#"><i class="fa-solid fa-user-group"></i>Empleados</a></li>
+                    <li><a href="inventario.html"><i class="fa-solid fa-boxes-stacked"></i>Inventario</a></li>
+                    <li><a href="produccion.html"><i class="fa-solid fa-gears"></i>Producción</a></li>
+                    <li><a href="estadisticasGenerales.html"><i class="fa-solid fa-chart-line"></i>Estadísticas</a></li>
+                    <li><a href="notificaciones.html"><i class="fa-solid fa-bell"></i>Notificaciones</a></li>
+                </ul>
+                <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
+            </nav>
+        </div>
+    </aside>
+    <div class="interaccion-cliente">
+
+        <!-- <div>
+            <input type="search" placeholder="Buscar Empleado" id="buscar-cliente">
+        </div> -->
+
+        <div class="btn-aniado">
+            <a href="agregarEmpleado.html"><input type="button" value="Añadir"></a>
+        </div>
+        
+        <nav class="empleadosp">
+            <ul>
+                <li id="li1"><a href="verEmpleado.html">Todos</a></li>
+                <li id="li2"><a href="#">Activos</a></li>
+                <li id="li3"><a href="#">Inactivos</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </div>
+
+    <div class="contenedor-clientes">
+       
+        <!-- Tabla de Empleados -->
+        <table class="tabla-clientes">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>ID</th>
+                    <th>Area</th>
+                    <th>Estado</th> 
+                </tr>
+                <tr></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Fulano</th>
+                    <th>0001</th>
+                    <th>Produccion</th>
+                    <th>Activo</th>
+                    <th><a href="verEmpleado.html"><input type="button" value="Ver"></a></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

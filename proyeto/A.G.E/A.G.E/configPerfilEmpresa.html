@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>perfil-empresa</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+  <link rel="icon" href="./image/Logo A.G.E.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="contenedor">
+  <h1 class="tit">Configuración</h1>
+    <aside class="navlateral">
+      <div class="nav">
+        <nav>
+          <ul>
+            <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+            <li><a href="dashboard.html"><i class="fa-solid fa-house" id="dashb"></i>Dashboard</a></li>
+            <li class="seleccionadoNav"><a href="configuracion.html"><i class="fa-solid fa-gear"></i>Configuración</a></li>
+            <li><a href="clientes.html"><i class="fa-solid fa-people-group"></i>Clientes</a></li>
+            <li><a href="facturacion.html"><i class="fa-solid fa-file-invoice"></i>Facturación</a></li>
+            <li><a href="empleados.html"><i class="fa-solid fa-user-group"></i>Empleados</a></li>
+            <li><a href="inventario.html"><i class="fa-solid fa-boxes-stacked"></i>Inventario</a></li>
+            <li><a href="produccion.html"><i class="fa-solid fa-gears"></i>Producción</a></li>
+            <li><a href="estadisticasGenerales.html"><i class="fa-solid fa-chart-line"></i>Estadísticas</a></li>
+          </ul>
+          <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
+        </nav>
+      </div>
+    </aside>
+  <aside class="nav-Config">
+    <nav>
+      <ul>
+        <li class="activo"><a href="configPerfilEmpresa.html">Perfil de la empresa</a></li>
+        <li><a href="configUsuario.html">Usuarios</a></li>
+        <li><a href="preferencias.html">Preferencias</a></li>
+        <li><a href="configImpuestos.html">Impuestos</a></li>
+        <li><a href="configRespaldos.html">Respaldos</a></li>
+        <li><a href="configSeguridad.html">Seguridad</a></li>
+        <li><a href="configAcercaDe.html">Acerca de AGE</a></li>
+      </ul>
+    </nav>
+  </aside>
+  
+  <section class="contenido-config">
+    <h1>Perfil de la empresa</h1>
+    
+      <form>
+        <label for="nombre-empresa">Nombre de la empresa</label>
+        <input type="text" id="nombre-empresa" name="nombre-empresa" placeholder="Nombre Empresa" required>
+      
+        <label for="rnc">RNC / Cédula</label>
+        <input type="text" id="rnc" name="rnc" placeholder="402-3957658-6" maxlength="11" pattern="\d{9}|\d{11}" title="Debe ingresar 9 dígitos (RNC) u 11 dígitos (Cédula/RNC)" required>
+      
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="1 + (809)-123-4567" title="Ingrese un número de teléfono" required>
+      
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="email" placeholder="adgenempress@gmail.com" title="Ingrese una dirección de correo electrónico" required>
+      
+      <label for="direccion">Dirección</label>
+      <input type="text" id="direccion" name="direccion" placeholder="Av. Principal #123, Santo Domingo, RD" title="Ingrese la dirección de la empresa" required>
+    
+      <button type="submit" class="resbutton">Guardar cambios</button>
+    </form>
+  </section>
+</div>
+</body>
+</html>
