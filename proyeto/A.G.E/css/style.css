@@ -2267,13 +2267,16 @@ select {
 
 .contenido-config {
     grid-column: 5 / 12;
-    left: 580px;
     margin-top: 36px;
     width: 100%;
     background: #fff;
     padding: 18px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,.15);
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 .acercaDe {
@@ -2305,19 +2308,40 @@ select {
     font-weight: bold;
 }
 
+.contenido-config label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: none;
+}
+
+.contenido-config input {
+    display: block;
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.contenido-config .resbutton {
+    margin-top: 10px;
+}
+
 .contenedor-config input {
     margin-bottom: 10px;
 }
 
-.contenedor-config, input, select, textarea {
-    /* width: 100%; */
+.contenido-config input,
+.contenido-config select,
+.contenido-config textarea {
     height: 35px;
     padding: 8px 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
+    box-sizing: border-box;
 }
-
 .resbutton {
     width: 130px;
     height: 35px;
@@ -2329,4 +2353,30 @@ select {
     cursor: pointer;
 }
 
-/* ==================================== Configuración ==================================================== */
+
+.contenido-config form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.contenido-config form label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: none;
+}
+
+.contenido-config form input {
+    display: block;
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.contenido-config form .resbutton {
+    display: block;
+    margin-top: 10px;
+}
