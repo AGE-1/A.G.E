@@ -1466,7 +1466,7 @@ hr {
     display:grid;
     grid-template-columns:repeat(12,1fr);
     margin-left: -60px;
-    height: 150px;
+    height: 200px;
 }
 /* ------------------------------------------ Esta Parte es del buscador ------------------------------------ */
 .topbar {
@@ -1516,58 +1516,66 @@ hr {
 /* --------------------------------- Botones --------------------------------------- */
 .agregarProductos {
     display: flex;
-    align-items: center;
     gap: 12px;
     margin-left: -340px;
     margin-top: 100px;
 }
 
-button {
-    background: transparent;
-    border: none;
-    outline: none;
-}
-
-
-.btnn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    width: 115px;
-    height: 30px;
-    box-sizing: border-box;
-    padding: 20px;
-}
 
 .btn-agregar {
-    background-color: #3b82f6;
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
     color: #fff;
-    border: none;
+    background-color: var(--colorazul);
+    outline: none;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
 }
 
 .btn-exportar {
-    background-color: #3b82f6;
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
     color: #fff;
-    border: none;
+    background-color: var(--colorazul);
+    outline: none;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
 }
 
 .btn-importar {
-    background-color: #3b82f6;
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
     color: #fff;
-    border: none;
+    background-color: var(--colorazul);
+    outline: none;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
 }
 
-.btnn:hover {
+.btnn i {
+    color: #fff;
+    margin-right: 5px;
+}
+
+.btn-agregar:hover {
     background-color: #245cb7;
     box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.212);
     transform: scale(1.05);
 }
 
-.btnn:active {
-    transform: scale(0.95);
+.btn-exportar:hover {
+    background-color: #245cb7;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.212);
+    transform: scale(1.05);
+}
+
+.btn-importar:hover {
+    background-color: #245cb7;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.212);
+    transform: scale(1.05);
 }
 
 .agregarProductos span {
@@ -1712,9 +1720,8 @@ td, th {
 /* ------------------------------------------------- Seccion Gráficas ----------------------------------------------- */
 .seccion-graficos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     margin-top: 400px;
-    margin-left: -1050px;
 }
 
 .ulES {
@@ -1747,18 +1754,19 @@ td, th {
 div .graficoES {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 500px;
-    height: 300px;
-    margin-left: -10px;
+    width: 700px;
+    height: 400px;
+    margin-left: -1060px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
 
 div .graficoPPC {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 500px;
-    height: 300px;
-    margin-left: 50px;
+    width: 700px;
+    height: 400px;
+    margin-left: -1060px;
+    margin-top: 20px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
 
@@ -1975,7 +1983,76 @@ select {
 }
 
 
-/* -------------------------------- NOTIFICACIONES --------------------------------------  */
+/* -------------------------------- ASIDE NOTIFICACIONES --------------------------------------  */
+.notificaciones {
+    margin-left: -330px;
+    margin-top: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    height: 400px;
+    width: 350px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+}
+
+.aside-nf {
+    font-size: 0.6rem;
+}
+
+.notificaciones a {
+    text-decoration: none;
+    color: var(--colorazul);
+}
+
+.notificaciones i {
+    margin-right: 5px;
+}
+
+.btn-nf {
+    font-size: 1rem;
+    margin-top: 330px;
+    margin-left: 20px;
+}
+
+.notificaciones h1 {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.actividades {
+    margin-left: -350px;
+    margin-top: 820px;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    height: 400px;
+    width: 350px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+}
+
+.aside-act {
+    font-size: 0.6rem;
+}
+
+.actividades a {
+    text-decoration: none;
+    color: var(--colorazul);
+}
+
+.actividades i {
+    margin-right: 5px;
+}
+
+.btn-act {
+    font-size: 1rem;
+    margin-top: 330px;
+    margin-left: 20px;
+}
+
+.actividades h1 {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
 /* -------------------------------- NOTIFICACIONES -------------------------------------- */
 
 .contenido-notificaciones {
@@ -2065,7 +2142,6 @@ select {
 }
 
 .desplegable-filtro {
-   
     display: flex;
     align-items: center;
     margin-left: 890px;
