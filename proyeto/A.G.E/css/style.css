@@ -2366,8 +2366,44 @@ select {
     box-shadow: 0 4px 10px rgba(0,0,0,.15);
 }
 
-.acercaDe h1,h2 {
-    margin-bottom: 10px;
+.acercaDe h1,
+.acercaDe h2,
+.acercaDe h3,
+.acercaDe p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.acercaDe h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #171717;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.acercaDe h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #3B82F6;
+    margin-bottom: 25px;
+}
+
+.acercaDe article {
+    margin-bottom: 30px;
+}
+
+.acercaDe article h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.acercaDe article p {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #64748b;
+    line-height: 1.6;
 }
 
 .acercaDe article {
