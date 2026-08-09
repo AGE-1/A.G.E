@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producción</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="contenedor">
+    <h1 class="tit">Producción de Artículos</h1>
+    <aside class="navlateral">
+        <div class="nav">
+            <nav>
+                <ul>
+                    <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house" id="dashb"></i>Dashboard</a></li>
+                    <li><a href="configuracion.html"><i class="fa-solid fa-gear"></i>Configuración</a></li>
+                    <li><a href="clientes.html"><i class="fa-solid fa-people-group"></i>Clientes</a></li>
+                    <li><a href="facturacion.html"><i class="fa-solid fa-file-invoice"></i>Facturación</a></li>
+                    <li><a href="empleados.html"><i class="fa-solid fa-user-group"></i>Empleados</a></li>
+                    <li><a href="inventario.html"><i class="fa-solid fa-boxes-stacked"></i>Inventario</a></li>
+                    <li class="seleccionadoNav"><a href="#"><i class="fa-solid fa-gears"></i>Producción</a></li>
+                    <li><a href="estadisticasGenerales.html"><i class="fa-solid fa-chart-line"></i>Estadísticas</a></li>
+                </ul>
+                <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
+            </nav>
+        </div>
+    </aside>
+    <main class="historial-produccion">
+        <div class="produccion-encabezado">
+            <div>
+                <h2>Historial de producción</h2>
+                <p>Consulta el avance y el costo de las órdenes de producción.</p>
+            </div>
+            <a href="agregarOrden.html" class="btn-facturas"><i class="fa-solid fa-plus"></i> Nueva orden</a>
+        </div>
+
+        <div class="produccion-filtros">
+            <label for="buscar-orden">Buscar orden o producto
+                <input type="search" id="buscar-orden" placeholder="Ej. SR-2026-0627">
+            </label>
+            <label for="estado-orden">Estado
+                <select id="estado-orden">
+                    <option value="">Todos los estados</option>
+                    <option value="Completada">Completada</option>
+                    <option value="En proceso">En proceso</option>
+                    <option value="Pendiente">Pendiente</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="tabla-listas tablaprod historial-produccion-tabla">
+            <table>
+                <thead>
+                    <tr class="superiorTabla">
+                        <th><span class="textLista">Orden NO.</span></th>
+                        <th><span class="textLista">Producto</span></th>
+                        <th><span class="textLista">Fecha</span></th>
+                        <th><span class="textLista">Responsable</span></th>
+                        <th><span class="textLista">Costo estimado</span></th>
+                        <th><span class="textLista">Estado</span></th>
+                        <th><span class="textLista">Acciones</span></th>
+                    </tr>
+                </thead>
+                <tbody id="historial-produccion-body">
+                    <tr data-estado="Completada">
+                        <td>SR-2026-0627</td><td>Champú</td><td>08/08/2026</td><td>Producción</td><td>$8,337.50</td>
+                        <td><span class="estado estado-completada">Completada</span></td>
+                        <td><a href="#" title="Ver orden"><i class="fa-regular fa-eye eye"></i></a> <a href="#" title="Descargar orden"><i class="fa-solid fa-download falista"></i></a></td>
+                    </tr>
+                    <tr data-estado="En proceso">
+                        <td>SR-2026-0628</td><td>Gel de ducha</td><td>07/08/2026</td><td>Producción</td><td>$6,420.00</td>
+                        <td><span class="estado estado-proceso">En proceso</span></td>
+                        <td><a href="#" title="Ver orden"><i class="fa-regular fa-eye eye"></i></a> <a href="#" title="Descargar orden"><i class="fa-solid fa-download falista"></i></a></td>
+                    </tr>
+                    <tr data-estado="Pendiente">
+                        <td>SR-2026-0629</td><td>Crema de afeitar</td><td>05/08/2026</td><td>Producción</td><td>$4,250.00</td>
+                        <td><span class="estado estado-pendiente">Pendiente</span></td>
+                        <td><a href="#" title="Ver orden"><i class="fa-regular fa-eye eye"></i></a> <a href="#" title="Descargar orden"><i class="fa-solid fa-download falista"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="sin-resultados-produccion" class="sin-resultados" hidden>No hay órdenes que coincidan con los filtros.</p>
+        </div>
+
+        <aside class="totales2">
+            <h5>Órdenes registradas: <span class="num-totales">24</span></h5>
+            <h5>Órdenes en proceso: <span class="num-totales">6</span></h5>
+            <h5>COSTO TOTAL ESTIMADO: <span class="num-totales">$19,007.50</span></h5>
+        </aside>
+
+        <div class="botonesfactura">
+            <button id="cancelar-Orden" class="btn-facturas">Ver borradores</button>
+            <a href="#" id="generar-Orden" class="btn-facturas">Generar orden de producción</a>
+        </div>
+        <div class="seccion-abajo historial-acciones">
+            <button class="btn-factura">
+            <a href="#" title="Compartir orden">
+                <i class="fa-regular fa-share-from-square fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#" title="Imprimir">
+                <i class="fa-solid fa-print fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#" title="Crear pdf">
+                <i class="fa-regular fa-file-pdf fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#" title="Guardar orden">
+                <i class="fa-solid fa-download fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#" title="Guardar y salir">
+                <i class="fa-regular fa-floppy-disk fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="agregarOrden.html" title="Agrega una orden">
+                <i class="fa-solid fa-file-circle-plus fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#" title="Exportar orden">
+                <i class="fa-solid fa-arrow-up-from-bracket fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#" title="Compartir">
+                <i class="fa-solid fa-share-nodes fatodo"></i>
+            </a>
+        </button>
+        </div>
+        <br>
+    </main>
+    </div>
+</div>
+</body>
+</html>
