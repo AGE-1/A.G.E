@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impuestos</title>
+    <title>Dashboard | Inicio</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <link rel="icon" href="./image/Logo A.G.E.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>  
 <body>
 <div class="contenedor">
   <h1 class="tit">Configuración</h1>
@@ -25,57 +26,50 @@
           <li><a href="inventario.html"><i class="fa-solid fa-boxes-stacked"></i>Inventario</a></li>
           <li><a href="produccion.html"><i class="fa-solid fa-gears"></i>Producción</a></li>
           <li><a href="estadisticasGenerales.html"><i class="fa-solid fa-chart-line"></i>Estadísticas</a></li>
-          <li><a href="notificaciones.html"><i class="fa-solid fa-bell"></i>Notificaciones</a></li>
         </ul>
         <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
       </nav>
     </div>
   </aside>
-
-  <aside class="nav-Config">
-    <nav>
+  <aside class="nav-Config nav-Respaldo1">
+    <nav >
       <ul>
         <li><a href="configPerfilEmpresa.html">Perfil de la empresa</a></li>
         <li><a href="configUsuario.html">Usuarios</a></li>
         <li><a href="preferencias.html">Preferencias</a></li>
-        <li class="activo"><a href="configImpuestos.html">Impuestos</a></li>
-        <li><a href="configRespaldos.html">Respaldos</a></li>
+        <li><a href="configImpuestos.html">Impuestos</a></li>
+        <li class="activo" ><a href="configRespaldos.html">Respaldos</a></li>
         <li><a href="configSeguridad.html">Seguridad</a></li>
         <li><a href="configAcercaDe.html">Acerca de AGE</a></li>
       </ul>
     </nav>
   </aside>
-  <div class="contenido-config">
-  <h1>Impuestos</h1>
 
-   
-      <div>
-        <label for="tasa-impuesto">Tasa de impuesto (%)</label>
-        <input type="number" id="tasa-impuesto" name="tasa-impuesto" step="0.1" placeholder="0.0" title="Introduzca una tasa de impuestos">
-      </div>
+    <div class="contenido-config">
+      <h1>Respaldos</h1>
 
-      <div>
-        <label for="impuesto-predeterminado">Impuesto predeterminado</label>
-        <select name="impuestos" id="impuestos">
-          <option value="ITBIS">ITBIS</option>
-        </select>
-      </div>
+        <form>
+            <label for="copia-automatica">Copia automática</label>
+            <input type="text" id="copia-automatica" name="copia-automatica" value="Activada">
 
-      <div>
-        <label for="rnc">Número de identificación fiscal</label>
-        <input type="text" id="rnc" name="identificación-fiscal" value="40239576586" maxlength="11" pattern="\d{9}|\d{11}" title="Debe ingresar 9 dígitos (RNC) u 11 dígitos (Cédula/RNC)" required>
-      </div>
+            <label for="frecuencia-respaldo">Frecuencia de respaldo</label>
+            <input type="text" id="frecuencia-respaldo" name="frecuencia-respaldo" value="Diario">
 
-      <div>
-        <label for="comprobantes-fiscales">Comprobantes fiscales</label>
-        <select name="comprobantes" id="comprobantes">
-          <option value="hab">Habilitado</option>
-          <option value="des">Deshabilitado</option>
-        </select>
-      </div>
+            <label for="ultimo-respaldo">Último respaldo</label>
+            <input type="text" id="ultimo-respaldo" name="ultimo-respaldo" value="28/06/2026 - 12:00 PM">
+        
+            <label for="ubicacion">Ubicación</label>
+            <input type="text" id="ubicacion" name="ubicacion" value="Servidor seguro">
 
-      <button type="submit" class="resbutton">Guardar cambios</button>
-  </div>
+            <label for="mantener-copias">Mantener copias</label>
+            <input type="text" id="mantener-copias" name="mantener-copias" value="Últimos 30 días">
+
+            <label for="restauracion">Restauración</label>
+            <input type="text" id="restauracion" name="restauracion" value="Disponible">
+          
+            <button type="submit" class="resbutton">Guardar cambios</button>
+      </form>
+    </div>
 </div>
 </body>
 </html>

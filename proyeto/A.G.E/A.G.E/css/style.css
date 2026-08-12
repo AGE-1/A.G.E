@@ -443,7 +443,7 @@
     background-color: var(--colornegro);
     position: fixed;
     height: 100%;
-    width: 13%;
+    width: 12%;
     object-fit: contain;
     z-index: 5;
     overflow-y: auto;
@@ -593,7 +593,9 @@
     z-index: 3;
 }
 
-.btn-factura a, .historial-tabla td a, .historial-produccion-tabla td a {
+.btn-factura a,
+.historial-tabla td a,
+.historial-produccion-tabla td a {
     text-decoration: none;
 }
 
@@ -763,11 +765,10 @@
     color: var(--colorenlaces);
     text-decoration: none;
     transition: 0.17s ease-in;
-    border: none;
 }
 
 .btn-facturas:hover {
-    transform:scale(1.02);
+    transform:scale(1.06);
     box-shadow: 5px 10px 10px #ccc;
     background-color: var(--colorseleccion);
 }
@@ -811,11 +812,7 @@
     content: "Historial | ";
     color: var(--colorazul);
     font-size: 1rem;
-}
-.produccion-encabezado h2::before {
-    content: 'Historial |';
-    color: var(--colorazul);
-    font-size: 1rem;
+    font-weight: bold;
 }
 
 .historial-filtros {
@@ -1216,7 +1213,11 @@
     width: 100%;
 }
 
-
+.tabla-clientes tr:hover{
+    background-color: #ccc;
+    width: 100%;
+    grid-column: 1/13;
+}
 /* Barra de buscar */
 .buscar-cliente {
     grid-column: 1/5;
@@ -1250,6 +1251,9 @@
     grid-column: 1/12;
 }
 
+/* .fa-user {
+    color: var(--colornegro);
+} */
 
 .interaccion-cliente{
     margin: 30px auto auto;
@@ -1774,7 +1778,7 @@ div .graficoPPC {
 
 .tiempoES {
     display: flex;
-    margin-top: -15px; 
+    margin-top: -35px; 
     margin-left: 580px;
     font-weight: 600;
     color: #000000b7;
@@ -1782,7 +1786,7 @@ div .graficoPPC {
 
 .tiempoPPC {
     display: flex;
-    margin-top: -15px; 
+    margin-top: -35px; 
     margin-left: 580px;
     font-weight: 600;
     color: #000000b7;
@@ -1970,19 +1974,19 @@ select {
 
 }
 
+
 .tiempoVG {
     display: flex;
-    margin-top: -15px; 
+    margin-top: -35px; 
     margin-left: 440px;
     font-weight: 600;
     color: #000000b7;
 }
 
 
-
 .tiempoVPC {
     display: flex;
-    margin-top: -15px; 
+    margin-top: -35px; 
     margin-left: 440px;
     font-weight: 600;
     color: #000000b7;
@@ -1992,11 +1996,12 @@ select {
 
 .tiempoVPCA {
     display: flex;
-    margin-top: -15px; 
+    margin-top: -35px; 
     margin-left: 580px;
     font-weight: 600;
     color: #000000b7;
 }
+
 
 /* -------------------------------- ASIDE NOTIFICACIONES --------------------------------------  */
 .notificaciones {
@@ -2329,6 +2334,8 @@ select {
     color: #94a3b8;
     text-align: right;
 }
+
+
 /* ------------------------------------ Lista Clientes y Metodos -------------------------------------- */
 .panel-clientes {
     display: flex;
@@ -2694,44 +2701,8 @@ select {
     box-shadow: 0 4px 10px rgba(0,0,0,.15);
 }
 
-.acercaDe h1,
-.acercaDe h2,
-.acercaDe h3,
-.acercaDe p {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.acercaDe h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #171717;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-}
-
-.acercaDe h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #3B82F6;
-    margin-bottom: 25px;
-}
-
-.acercaDe article {
-    margin-bottom: 30px;
-}
-
-.acercaDe article h3 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 4px;
-}
-
-.acercaDe article p {
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: #64748b;
-    line-height: 1.6;
+.acercaDe h1,h2 {
+    margin-bottom: 10px;
 }
 
 .acercaDe article {
