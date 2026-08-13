@@ -780,7 +780,7 @@
 
 .historial-facturas {
     grid-column: 3 / 12;
-    grid-row: 1 / 9;
+    grid-row: 1 / 7;
     padding: 18px 0 0 10px;
 }
 
@@ -2671,6 +2671,7 @@ select {
 
 .contenido-config {
     grid-column: 5 / 12;
+    grid-row: 1 / 7;
     margin-top: 36px;
     width: 100%;
     background: #fff;
