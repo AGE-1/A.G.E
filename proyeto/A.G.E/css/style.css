@@ -2686,6 +2686,7 @@ select {
 
 .acercaDe {
     grid-column: 5 / 12;
+    grid-row: 1 / 7;
     left: 580px;
     margin-top: 36px;
     width: 100%;
