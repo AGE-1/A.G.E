@@ -212,10 +212,21 @@
         grid-template-columns: repeat(1, 1fr);
         grid-column-start: 5;
         grid-row: 1 / 4;
+        height: 100%;
+        width: 100%;
+        margin-left: 15px;
     }
 
     .navlateral {
         width: 68px;
+        background-color: var(--colornegro);
+        position: fixed;
+        height: 100%;
+        object-fit: contain;
+        z-index: 5;
+        overflow-y: auto;
+        overflow-x: hidden;
+        text-align: center;
     }
 
     .logonav {
@@ -300,6 +311,15 @@
 
     .navlateral {
         width: 88px;
+        background-color: var(--colornegro);
+        position: fixed;
+        height: 100%;
+        width: 88px;
+        object-fit: contain;
+        z-index: 5;
+        overflow-y: auto;
+        overflow-x: hidden;
+        text-align: center;
     }
 
     .logonav {
@@ -401,9 +421,39 @@
     margin-top: 17px;
     font-size: smaller;
 }
+.navlateral {
+    grid-column: 1 / 2;
+    background-color: var(--colornegro);
+    position: fixed;
+    height: 100%;
+    width: 171.984px;
+    object-fit: contain;
+    z-index: 5;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.nav-Config{
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    padding: 20px 15px;
+    position: fixed;
+    margin-left: 11.367%;
+    height: 100%;
+    z-index: 1;
+}
+.menu, .fa-lines {
+    /* display: none; */
+    grid-column: 3;
+    z-index:5;
+    cursor: pointer;
+}   
 }
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Esto es un botón, es el de los formularios de registro e inicio de sesión */
+
 .inicioreg {
     font-size: smaller;
     margin-bottom: 10px;
@@ -438,18 +488,7 @@
     /* border-bottom: solid 1px #ededed; */
 }
 /* el cuerpo del nav, todo lo que se ve negro, esto es un contenedor básicamente */
-.navlateral {
-    grid-column: 1 / 2;
-    background-color: var(--colornegro);
-    position: fixed;
-    height: 100%;
-    width: 13%;
-    object-fit: contain;
-    z-index: 5;
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-align: center;
-}
+
 
 /* estos son los enlaces del nav, las letras básicamente */
 .navlateral a {
@@ -2619,16 +2658,7 @@ select {
 }
 
 /* ==================================== Configuración ==================================================== */
-.nav-Config{
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.15);
-    padding: 20px 15px;
-    position: fixed;
-    margin-left: 11.367%;
-    height: 100%;
-    z-index: 1;
-}
+
 
 .nav-Config ul{
     list-style: none;
