@@ -229,6 +229,24 @@
         text-align: center;
     }
 
+    .nav-Config{
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.15);
+        padding: 20px 15px;
+        position: fixed;
+        margin-left: 71.98px;
+        width: 170px;
+        height: 100%;
+        z-index: 1;
+        display: none;
+    }
+    .fa-bars {
+    cursor: pointer;
+    grid-column: 3;
+    margin-left: 20px;
+    margin-top: 10px;
+}
     .logonav {
         display: none;
     }
@@ -309,12 +327,23 @@
         grid-row: 1 / 4;
     }
 
+    .nav-Config{
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    padding: 20px 15px;
+    position: fixed;
+    margin-left: 71.98px;
+    width: 170px;
+    height: 100%;
+    z-index: 1;
+}
+
     .navlateral {
         width: 88px;
         background-color: var(--colornegro);
         position: fixed;
         height: 100%;
-        width: 88px;
         object-fit: contain;
         z-index: 5;
         overflow-y: auto;
@@ -432,7 +461,6 @@
     overflow-y: auto;
     overflow-x: hidden;
     text-align: center;
-    display: none;
 }
 
 .nav-Config{
@@ -445,15 +473,16 @@
     height: 100%;
     z-index: 1;
 }
+.fa-bars {
+    display: none;
+    color: var(--colorenlaces);
+    /* grid-column: 5; */
+    cursor: pointer;
+}   
 }
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Esto es un botón, es el de los formularios de registro e inicio de sesión */
 
-.menu, .fa-lines {
-    /* display: none; */
-    grid-column: 5;
-    cursor: pointer;
-}   
 .inicioreg {
     font-size: smaller;
     margin-bottom: 10px;
@@ -561,6 +590,7 @@
     grid-row: 1 ;
     grid-column: 3 / 12;
     margin-top: 70px;
+    overflow-y: auto;
 
 }
 
@@ -732,6 +762,7 @@
 .tabla-listas-2 {
     grid-row: 2;
     grid-column: 4;
+    overflow-y: auto;
 }
 
 .dctolista {
@@ -1305,7 +1336,6 @@
     grid-column: 1/4;
     border-radius: 8px;
     margin: 10px 10px;
-    padding: 10px;
     min-width: 250px;
     max-width: 250px;
     max-height: 90px;
@@ -1323,9 +1353,11 @@
 
 .agregar-cliente #limpiarclientebotton {
     width: 100px;
+    /* height: 40px; */
     grid-column: 5/7;
     grid-row: 6;
-
+    /* background-color: var(--colorazul);
+    color: #fff; */
 }
 
 .agregar-cliente #regresar-clientes {
@@ -1344,10 +1376,7 @@
     min-width: 150px;
     max-height: 200px;
     min-height: 200px;
-    border: 1px solid #ccc;
-    box-shadow: 6px 8px 10px #ccc;
 }
-
 /* Boton de aniadir */
 .btn-aniado{
     width: 100%;
