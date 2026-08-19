@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producción</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="contenedor">
+    <h1 class="tit">Producción de Artículos</h1>
+    <aside class="navlateral">
+        <div class="nav">
+            <nav>
+                <ul>
+                    <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                    <li><i class="fa-solid fa-house" id="dashb"></i><a href="dashboard.html">Dashboard</a></li>
+                    <li><i class="fa-solid fa-gear"></i><a href="configuracion.html">Configuración</a></li>
+                    <li><i class="fa-solid fa-people-group"></i><a href="clientes.html">Clientes</a></li>
+                    <li><i class="fa-solid fa-file-invoice"></i><a href="facturacion.html">Facturación</a></li>
+                    <li><i class="fa-solid fa-user-group"></i><a href="empleados.html">Empleados</a></li>
+                    <li><i class="fa-solid fa-boxes-stacked"></i><a href="inventario.html">Inventario</a></li>
+                    <li class="seleccionadoNav"><i class="fa-solid fa-gears"></i><a href="#">Producción</a></li>
+                    <li><i class="fa-solid fa-chart-line"></i><a href="estadisticasGenerales.html">Estadísticas</a></li>
+                </ul>
+                <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
+            </nav>
+        </div>
+    </aside>
+    <div class="seleccion">
+            <label for="orden">Orden NO:</label>
+            <select name="orden" id="cliente">
+                <option value="">Seleccione una orden</option>
+                <option value="1">SR-2026-0627</option>
+                <option value="2">SR-2026-0628</option>
+                <option value="3">SR-2026-0629</option>
+                <option value="4">SR-2026-0630</option>
+                <option value="5">SR-2026-0631</option>
+            </select>
+        </div>
+
+        <div class="tabla-listas tablaprod">
+            <table>
+                <thead>
+                    <tr class="superiorTabla">
+                        <th style="width: 100px; text-align:center;"><span class="textLista">Material/Compuesto</span></th>
+                        <th style="text-align:center;"><span class="textLista">Descripción</span></th>
+                        <th style="text-align:center;"><span class="textLista">Cantidad Requerida</span></th>
+                        <th style="text-align:center;"><span class="textLista">Precio Unitario</span></th>
+                        <th style="text-align:center;"><span class="textLista">Total</span></th>
+                    </tr>
+                </thead>
+                <tbody class="factura-body">
+                    <tr>
+                    <th colspan="6">Historial</th>
+                </tr>
+                        <tr>
+                        <th>MC-101</th>
+                        <th>Champu(crudo)</th>
+                        <th>100</th>
+                        <th>50.00</th>
+                        <th>500.00</th>
+                    </tr>
+                    <tr>
+                        <th>MC-102</th>
+                        <th>Shampoo(líquido)</th>
+                        <th>50</th>
+                        <th>75.00</th>
+                        <th>3,750.00</th>
+                    </tr>
+                    <tr>
+                        <th>MC-103</th>
+                        <th>Gel de ducha</th>
+                        <th>25</th>
+                        <th>100.00</th>
+                        <th>2,500.00</th>
+                    </tr>
+                    <tr>
+                        <th>MC-104</th>
+                        <th>Crema de afeitar</th>
+                        <th>10</th>
+                        <th>150.00</th>
+                        <th>1,500.00</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <aside class="totales2">
+            <h5>Subtotal: <span id="subtotal" class="num-totales">7250.00</span></h5>
+            <h5>Impuestos (<span class="impuestosnumber">15%</span>): <span id="impuesto" class="num-totales">1,087.50</span></h5>
+            <h5>TOTAL COSTO ESTIMADO: <span id="total" class="num-totales">8,337.50</span></h5>
+        </aside>
+
+        <div class="botonesfactura">
+            <button id="cancelar-Orden" class="btn-facturas">Guardar Borrador de Orden</button>
+            <button id="generar-Orden" class="btn-facturas" >Generar Orden de Producción</button>
+        </div>
+        <div class="seccion-abajo abajo2">
+            <button class="btn-factura">
+            <a href="#">
+                <i class="fa-regular fa-share-from-square fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-solid fa-print fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-regular fa-file-pdf fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-solid fa-download fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-regular fa-floppy-disk fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="agregarFactura.html">
+                <i class="fa-solid fa-file-circle-plus fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-solid fa-arrow-up-from-bracket fatodo"></i>
+            </a>
+        </button>
+        <button class="btn-factura">
+            <a href="#">
+                <i class="fa-solid fa-share-nodes fatodo"></i>
+            </a>
+        </button>
+        </div>
+        <br>
+    </div>
+</div>
+</body>
+</html>
