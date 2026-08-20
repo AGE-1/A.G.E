@@ -40,14 +40,21 @@
         <div class="btn-aniado">
             <a href="agregarEmpleado.html"><input type="button" value="Añadir"></a>
         </div>
+
+        <div class="buscar-cliente">
+            <input type="search" placeholder="Buscar Empleado">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
         
-        <nav class="empleadosp">
+        <!-- <nav class="empleadosp">
             <ul>
                 <li id="li1"><a href="verEmpleado.html">Todos</a></li>
                 <li id="li2"><a href="#">Activos</a></li>
                 <li id="li3"><a href="#">Inactivos</a></li>
             </ul>
-        </nav>
+        </nav> -->
         <hr>
     </div>
 
@@ -56,13 +63,12 @@
         <!-- Tabla de Empleados -->
         <table class="tabla-clientes">
             <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>ID</th>
-                    <th>Area</th>
-                    <th>Estado</th> 
-                </tr>
-                <tr></tr>
+               
+                <th>Nombre</th>
+                <th>ID</th>
+                <th>Area</th>
+                <th>Estado</th> 
+                <th></th>
             </thead>
             <tbody>
                 <tr>
@@ -70,6 +76,22 @@
                     <th>0001</th>
                     <th>Produccion</th>
                     <th>Activo</th>
+                    <th><a href="verEmpleado.html"><input type="button" value="Ver"></a></th>
+                </tr>
+
+                <tr>
+                    <th>Marcos</th>
+                    <th>0002</th>
+                    <th>Ventas</th>
+                    <th>Activo</th>
+                    <th><a href="verEmpleado.html"><input type="button" value="Ver"></a></th>
+                </tr>
+
+                <tr>
+                    <th>Estefany</th>
+                    <th>0008</th>
+                    <th>Compras</th>
+                    <th>Inactivo</th>
                     <th><a href="verEmpleado.html"><input type="button" value="Ver"></a></th>
                 </tr>
             </tbody>
