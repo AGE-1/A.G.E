@@ -342,15 +342,16 @@
 .panel-clientes {
     display: grid;
     gap: 24px;
-    margin-left: 70px;
-    grid-row: 7 / 10;
+    width: 200px;
+    margin-left: 60px;
+    margin-top: 20px;
     grid-template-columns: repeat(1, 1fr);
 }
 .graficas {
     display: grid;
-    grid-column: 1 / 2;
     grid-template-columns: repeat(1, 1fr);
     gap: 15px;
+    margin-top: 10px;
     margin-left: 50px;
 }   
 
@@ -424,7 +425,7 @@
     padding: 24px;
 }
 .campana {
-    margin-top: -50px;
+    margin-top: 20px;
     grid-column: 1;
     font-size: 1.4rem;
     margin-left: 350px;
@@ -433,7 +434,8 @@
 .topbar {
     grid-column: 1 / 12;
    margin-left: 70px;
-   margin-top: 15px;
+   margin-top: -25px;
+   margin-bottom: 10px;
 }
 .buscador {
     display: flex;
@@ -748,6 +750,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 .graficoVPC {
@@ -804,6 +807,7 @@
     gap: 24px;
     margin-left: 50px;
     grid-row: 7 / 10;
+    margin-top: 20px;
 }
 .graficoVG {
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
@@ -2138,13 +2142,10 @@ select {
 /* ---------------------------------------------------- Seccion De Estadisticas ---------------------------------------------------- */
 .contenido-estadisticas{
     grid-column: 3 / 13;
-    display:grid;
-    grid-template-columns:repeat(12,1fr);
     margin-left: -60px;
     height: 180px;
-    gap: 20px;
-
 }
+
 
 .encabezado i {
     color: #000;
