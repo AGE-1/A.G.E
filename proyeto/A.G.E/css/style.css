@@ -1581,7 +1581,6 @@
     grid-row: 1 / 7;
     grid-column: 4/12;
     width: 100%;
-    height: 100%;
     margin: 100px 0px;
     border-radius: 10px ;
     display: grid;
@@ -1772,11 +1771,30 @@
 .tabla-clientes thead {
     padding: 12px;
     width: 100%;
-}
-
-.tabla-clientes thead{
     border-bottom: 5px #ccc solid;
 }
+
+.tabla-clientes thead th{
+    font-weight: 800;
+    font-family: sans-serif;
+}
+
+.tabla-clientes th {
+    text-align: start;
+}
+
+.tabla-clientes tr {
+    height: 80px;
+}
+
+.btn-ver {
+    width: 100%;
+    padding: px;
+    background-color: #fff;
+    border: none;
+}
+
+
 
 
 /* Barra de buscar */
@@ -2167,7 +2185,7 @@ select {
 .contenido-estadisticas{
     grid-column: 3 / 13;
     margin-left: -60px;
-    height: 180px;
+    grid-row: 1 / 8;
 }
 
 
@@ -2389,7 +2407,7 @@ select {
     grid-template-columns: repeat(12, 1fr);
     margin-left: -60px;
     padding: 20px 40px;
-    height: 140px;
+    grid-row: 1 / 8;
 }
 
 
@@ -2503,6 +2521,8 @@ select {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    overflow-y: auto;
+    overflow-x: auto;
 }
 
 .encabezado-grupo {
