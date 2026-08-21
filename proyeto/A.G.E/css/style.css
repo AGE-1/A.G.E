@@ -445,6 +445,18 @@
     width: 150px;
     border: 1px solid #cbd5e1;
 }
+/* El título de cada página, tiene la misma clase. */
+.tit {
+    grid-column: 3 / 13;
+    grid-row-end: 1;
+    text-align:center;
+    font-size: 1.5rem;
+    background-color:#ededed;
+    line-height: 2;
+    box-shadow: 4px 5px 10px #ccc;  
+    z-index: 2;
+    /* border-bottom: solid 1px #ededed; */
+}
 }
 /* pantallas medianas, dice que a partir de un ancho de 595, hasta un máximo de 1000pixel se aplicarán estos ajustes */
 @media screen and (min-width: 595px) and (max-width:1000px) {
@@ -657,6 +669,17 @@
     color: #000000b7;
 
 }
+/* El título de cada página, tiene la misma clase. */
+.tit {
+    grid-column: 1 / 13;
+    grid-row-end: 1;
+    text-align:center;
+    background-color:#ededed;
+    line-height: 2;
+    box-shadow: 4px 5px 10px #ccc;  
+    z-index: 2;
+    /* border-bottom: solid 1px #ededed; */
+}
 }
 /* pantallas grandes, de escritorio, quizá aqui haya que hacer algo con las pantallas full hd (1920 x 1080) porque creo que se verá estirado, de todas formas es eso mismo, a partir de 1000px hasta 1920px */
 @media screen and (min-width: 1000px) and (max-width:2160px) {
@@ -840,6 +863,17 @@
     width: 350px;
     border: 1px solid #cbd5e1;
 }
+/* El título de cada página, tiene la misma clase. */
+.tit {
+    grid-column: 1 / 13;
+    grid-row-end: 1;
+    text-align:center;
+    background-color:#ededed;
+    line-height: 2;
+    box-shadow: 4px 5px 10px #ccc;  
+    z-index: 2;
+    /* border-bottom: solid 1px #ededed; */
+}
 }
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Esto es un botón, es el de los formularios de registro e inicio de sesión */
@@ -866,17 +900,7 @@
     width: 100%;
     height: 100%;
 }
-/* El título de cada página, tiene la misma clase. */
-.tit {
-    grid-column: 1 / 13;
-    grid-row-end: 1;
-    text-align:center;
-    background-color:#ededed;
-    line-height: 2;
-    box-shadow: 4px 5px 10px #ccc;  
-    z-index: 2;
-    /* border-bottom: solid 1px #ededed; */
-}
+
 /* el cuerpo del nav, todo lo que se ve negro, esto es un contenedor básicamente */
 
 
