@@ -344,6 +344,10 @@
     margin-left: 70px;
 }
 
+div .card {
+    width: 17%;
+}
+
 .panel-clientes {
     display: grid;
     gap: 24px;
@@ -366,6 +370,113 @@
     width: 270px;
     margin-left: 35px;
     height: 350px;
+}
+
+.cards {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+div .card {
+    height: 90px;
+}
+
+.card h2 {
+    margin-top: 4px;
+}
+
+.card-header {
+    margin-left: 90px;
+    font-size: 0.6rem;
+}
+
+
+.card-body2,
+.card-body3 {
+    margin-left: 90px;
+    font-size: 1.0rem;
+    margin-top: -33  px;
+}
+
+
+.card-body{
+    margin-left: 90px;
+    font-size: 1.0rem;
+    margin-top: -33px;
+}
+
+.card-footer2,
+.card-footer3 {
+    margin-left: 90px;
+    font-size: 0.7rem;
+    margin-top: 2px;
+}
+
+.card-footer {
+    margin-left: 90px;
+    font-size: 0.7rem;
+    margin-top: 2px;
+}
+
+
+
+
+.card .icono1 {
+    margin-left: -75px;
+    background-color: rgba(131, 95, 231, 0.26);
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    margin-top: -20px;
+}
+
+.card .icono2 {
+    margin-left: -75px;
+    background-color: #b91c1c34;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    margin-top: -20px;
+}
+
+.card .icono3 {
+    margin-left: -75px;
+    background-color: #ece91a33;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    margin-top: -20px;
+}
+
+.card .icono1 i {
+    color: rgb(131, 95, 231);
+    font-size: 2.5rem;
+    margin-left: 12px;
+    margin-top: 10px;
+
+}
+
+.card .icono2 i {
+    color: #b91c1c;
+    font-size: 2.5rem;
+    margin-left: 5px;
+    margin-top: 12px;
+}
+
+.card .icono3 i {
+    color: #f7ba11;
+    font-size: 2.5rem;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
 
 .graficoVPCA {
@@ -449,7 +560,7 @@
 .desplegable-filtro select{
     width: 15px;
     border: none;
-    margin-left: 230px;
+    margin-left: auto;
 }
 
 .area-titulo {
@@ -502,9 +613,12 @@
 }
 
 .topbar-nf {
-    margin-left: 30px;
+    margin-top: -20px;
+    margin-left: -30px;
 }
 .buscador {
+    margin-left: 70px;
+    margin-top: 20px;
     display: flex;
     background-color: #f1f5f9;
     border-radius: 8px;
@@ -902,6 +1016,93 @@
     gap: 15px;
     margin-left: 20px;
     margin-top: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+div .card {
+    height: 115px;
+}
+
+.card-header {
+    margin-left: 90px;
+    font-size: 0.7rem;
+}
+
+.card-body{
+    margin-left: 90px;
+    font-size: 1.7rem;
+    margin-top: -50px;
+
+}
+
+.card-footer {
+    margin-left: 90px;
+    font-size: 0.9rem;
+    /* margin-top: -10px; */
+}
+
+.card-header .icono1 {
+    margin-left: -90px;
+    background-color: rgba(131, 95, 231, 0.26);
+    width: 70px;
+    height: 70px;
+    border-radius: 20%;
+    margin-top: -15px;
+}
+
+.card-header .icono2 {
+    margin-left: -90px;
+    background-color: #b91c1c34;
+    width: 70px;
+    height: 70px;
+    border-radius: 20%;
+    margin-top: -15px;
+}
+
+.card-header .icono3 {
+    margin-left: -90px;
+    background-color: #ece91a33;
+    width: 70px;
+    height: 70px;
+    border-radius: 20%;
+    margin-top: -15px;
+}
+
+.card-header .icono1 i {
+    color: rgb(131, 95, 231);
+    font-size: 3rem;
+    margin-left: 14px;
+    margin-top: 10px;
+
+}
+
+.card-header .icono2 i {
+    color: #b91c1c;
+    font-size: 3rem;
+    margin-left: 5px;
+    margin-top: 13px;
+}
+
+.card-header .icono3 i {
+    color: #f7ba11;
+    font-size: 3rem;
+    margin-left: 12px;
+    margin-top: 10px;
+}
+
+.card {
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
 
 .graficoVPC {
@@ -2135,92 +2336,9 @@ hr {
     font-size: 0.9rem;
 }
 /* ------------------------------- Esta parte es de las Cards ----------------------------------------- */
-.cards {
-    display: grid;
-    grid-column: 1 / 13;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 90%;
-    margin-left: 50px;
-    margin-top: 20px;
-}
 
-div .card {
-    height: 115px;
-}
 
-.card-header {
-    margin-left: 90px;
-    font-size: 0.7rem;
-}
 
-.card-body{
-    margin-left: 90px;
-    font-size: 1.7rem;
-    margin-top: -50px;
-
-}
-
-.card-footer {
-    margin-left: 90px;
-    font-size: 0.9rem;
-    /* margin-top: -10px; */
-}
-
-.card-header .icono1 {
-    margin-left: -90px;
-    background-color: rgba(131, 95, 231, 0.26);
-    width: 70px;
-    height: 70px;
-    border-radius: 20%;
-    margin-top: -15px;
-}
-
-.card-header .icono2 {
-    margin-left: -90px;
-    background-color: #b91c1c34;
-    width: 70px;
-    height: 70px;
-    border-radius: 20%;
-    margin-top: -15px;
-}
-
-.card-header .icono3 {
-    margin-left: -90px;
-    background-color: #ece91a33;
-    width: 70px;
-    height: 70px;
-    border-radius: 20%;
-    margin-top: -15px;
-}
-
-.card-header .icono1 i {
-    color: rgb(131, 95, 231);
-    font-size: 3rem;
-    margin-left: 14px;
-    margin-top: 10px;
-
-}
-
-.card-header .icono2 i {
-    color: #b91c1c;
-    font-size: 3rem;
-    margin-left: 5px;
-    margin-top: 13px;
-}
-
-.card-header .icono3 i {
-    color: #f7ba11;
-    font-size: 3rem;
-    margin-left: 12px;
-    margin-top: 10px;
-}
-
-.card {
-    border-radius: 12px;
-    padding: 18px;
-    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
-}
 /* -------------------------------------------------- Tabla Productos ----------------------------------------------- */
 .seccion-productos {
     margin-top: 40px;
