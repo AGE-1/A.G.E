@@ -207,6 +207,32 @@
 /* --------------------------------------------------- RESPONSIVE --------------------------------------------------------------------------- */
 /* para pantallas pequeñas, ahi dice con un máximo de 595 pixeles de ancho, osea toda pantalla que sea menor a eso de ancho, se aplicará eso */
 @media screen and (max-width: 595px) {
+
+    .contenedor-clientes {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        /* Seguir una sintaxis de las sombras  */
+        box-shadow: 6px 8px 10px #ccc;
+        grid-row: 1 / 7;
+        grid-column: 4/6;
+        margin: 100px 70px;
+        border-radius: 10px;
+        overflow-x: auto;
+        overflow-y: auto;
+        width: 150px;
+    }
+
+    .interaccion-cliente{
+        margin: 30px auto auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-row: 1;
+        grid-column: 4;
+        width: 150px;
+        overflow-x: auto;
+        overflow-y: auto;
+        
+    } 
     
     .targetas {
         grid-template-columns: repeat(1, 1fr);
@@ -641,6 +667,17 @@ div .card {
 }
 /* pantallas medianas, dice que a partir de un ancho de 595, hasta un máximo de 1000pixel se aplicarán estos ajustes */
 @media screen and (min-width: 595px) and (max-width:1000px) {
+    .contenedor-clientes {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        /* Seguir una sintaxis de las sombras  */
+        box-shadow: 6px 8px 10px #ccc;
+        grid-row: 1 / 7;
+        grid-column: 4/6;
+        width: 100%;
+        margin: 100px 0px;
+        border-radius: 10px;
+    }
 
     .targetas {
         grid-template-columns: repeat(2, 1fr);
@@ -908,6 +945,25 @@ div .card {
 }
 /* pantallas grandes, de escritorio, quizá aqui haya que hacer algo con las pantallas full hd (1920 x 1080) porque creo que se verá estirado, de todas formas es eso mismo, a partir de 1000px hasta 1920px */
 @media screen and (min-width: 1000px) and (max-width:2160px) {
+    .contenedor-clientes {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        /* Seguir una sintaxis de las sombras  */
+        box-shadow: 6px 8px 10px #ccc;
+        grid-row: 1 / 7;
+        grid-column: 4/12;
+        margin: 100px 0px;
+        border-radius: 10px;
+    }
+
+    .interaccion-cliente{
+        margin: 30px auto auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-row: 1;
+        grid-column: 4/12;
+        width: 100%;
+    }
 
     .targetas {
         grid-template-columns: repeat(3, 1fr);
@@ -1944,19 +2000,8 @@ div .card {
 }
 /* ------------------------------------------------------- Estilos clientes ------------------------------------------------------------ */
 
-.contenedor-clientes {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    /* Seguir una sintaxis de las sombras  */
-    box-shadow:  6px 8px 10px #ccc;
-    grid-row: 1 / 7;
-    grid-column: 4/12;
-    width: 100%;
-    margin: 100px 0px;
-    border-radius: 10px ;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-}
+
+
 
 
 #lineaclientes {
@@ -1992,22 +2037,32 @@ div .card {
 /* Tablas */
 
 .tabla-clientes {
-    grid-column: 1/13;
-}
-.tabla-clientes thead {
-    padding: 12px;
     width: 100%;
+    grid-column: 1/13;
+    border-spacing: 0px;
 }
 
+.tabla-clientes thead {
+    padding: 12px;
+    background-color: #979797;
+    border-radius: 10px 0px 0px 0px; 
+    border:1px #000 solid ;
+}
+
+.tabla-clientes thead th {
+    color: #ffffffff;
+    border:1px #000 solid;
+}
 
 /* Barra de buscar */
 
 .buscar-cliente {
+    margin: 10px;
     display: flex;
     background-color: #f1f5f9;
     border-radius: 8px;
     padding: 1px;
-    height: 40px;
+    height: 30px;
     width: 350px;
     border: 1px solid #cbd5e1;
 }
@@ -2031,14 +2086,6 @@ div .card {
 }
 /* -------------------------------- Estilos Agregar clientes ----------------------------- */
 
-.interaccion-cliente{
-    margin: 30px auto auto;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-row: 1;
-    grid-column: 4/12;
-    width: 100%;
-}
 
 .agregar-cliente {
     background-color: #fff;
