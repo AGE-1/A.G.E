@@ -527,6 +527,7 @@ div .card {
     overflow-y: auto;
     overflow-x: auto;
     width: 94%;
+    display: grid;
     scrollbar-width: none;
 }
 
@@ -548,7 +549,7 @@ div .card {
 }
 
 .tarjeta-filtro {
-    width: 92%;
+    width: 120%;
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
     padding: 10px 20px;
@@ -558,9 +559,7 @@ div .card {
 }
 
 .desplegable-filtro select{
-    width: 15px;
     border: none;
-    margin-left: auto;
 }
 
 .area-titulo {
@@ -578,7 +577,7 @@ div .card {
 
 .item-notificacion {
     display: grid;
-    grid-template-columns: 12px 42px 200px 100px 130px 36px;
+    grid-template-columns: 12px 42px 200px 100px 130px 16px;
     align-items: center;
     gap: 16px;
     padding: 12px 24px;
@@ -638,6 +637,64 @@ div .card {
     z-index: 2;
     /* border-bottom: solid 1px #ededed; */
 }
+.historial-filtros {
+    
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    margin: 12px 0 20px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+.historial-filtros input,
+.historial-filtros select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px 9px;
+    border: 1px solid #626262;
+    border-radius: 5px;
+    background: #fff;
+}
+.btn-facturas {
+    background-color: var(--colorazul);
+    color: #ffffff;
+    border: none;
+    padding: 1px 7px;
+    border-radius: 5px;
+    font-size: 0rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.17s ease-in-out;
+}
+.btn-facturas i {
+    font-size: 1rem; 
+}
+.contenedor-clientes {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        /* Seguir una sintaxis de las sombras  */
+        box-shadow: 6px 8px 10px #ccc;
+        grid-row: 1 / 7;
+        grid-column: 4/6;
+        margin: 100px 70px;
+        border-radius: 10px;
+        overflow-x: auto;
+        overflow-y: auto;
+        width: 150px;
+    }
+
+    .interaccion-cliente{
+        margin: 30px auto auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-row: 1;
+        grid-column: 4;
+        width: 150px;
+        overflow-x: auto;
+        overflow-y: auto;
+        
+    } 
 }
 /* pantallas medianas, dice que a partir de un ancho de 595, hasta un máximo de 1000pixel se aplicarán estos ajustes */
 @media screen and (min-width: 595px) and (max-width:1000px) {
@@ -904,6 +961,67 @@ div .card {
     z-index: 2;
     /* border-bottom: solid 1px #ededed; */
 }
+.historial-filtros {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    margin: 12px 0 20px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+.historial-filtros input,
+.historial-filtros select {
+    box-sizing: border-box;
+    padding: 7px 9px;
+    border: 1px solid #626262;
+    border-radius: 5px;
+    background: #fff;
+}
+.btn-facturas {
+    background-color: var(--colorazul);
+    padding: 6px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--colorenlaces);
+    text-decoration: none;
+    transition: 0.17s ease-in;
+    border: none;
+}
+.tarjeta-filtro {
+    grid-column: 1 / 13;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+}
+.contenedor-clientes {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        /* Seguir una sintaxis de las sombras  */
+        box-shadow: 6px 8px 10px #ccc;
+        grid-row: 1 / 7;
+        grid-column: 4/6;
+        margin: 100px 70px;
+        border-radius: 10px;
+        overflow-x: auto;
+        overflow-y: auto;
+        width: 150px;
+    }
+
+    .interaccion-cliente{
+        margin: 30px auto auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-row: 1;
+        grid-column: 4;
+        width: 150px;
+        overflow-x: auto;
+        overflow-y: auto;
+        
+    } 
 }
 /* pantallas grandes, de escritorio, quizá aqui haya que hacer algo con las pantallas full hd (1920 x 1080) porque creo que se verá estirado, de todas formas es eso mismo, a partir de 1000px hasta 1920px */
 @media screen and (min-width: 1000px) and (max-width:2160px) {
@@ -1242,6 +1360,82 @@ div .card {
     z-index: 2;
     /* border-bottom: solid 1px #ededed; */
 }
+.historial-filtros {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    margin: 12px 0 20px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+.historial-filtros input,
+.historial-filtros select {
+    box-sizing: border-box;
+    padding: 7px 9px;
+    border: 1px solid #626262;
+    border-radius: 5px;
+    background: #fff;
+}
+.btn-facturas {
+    background-color: var(--colorazul);
+    padding: 6px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--colorenlaces);
+    text-decoration: none;
+    transition: 0.17s ease-in;
+    border: none;
+}
+.tarjeta-grupo-hoy,
+.tarjeta-grupo-ayer,
+.tarjeta-grupo-semana {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+}
+
+.tarjeta-filtro {
+    grid-column: 1 / 13;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+}
+.resumen-historial {
+    display: flex;
+    justify-content: flex-end;
+    gap: 26px;
+    margin: 0 25px 12px 0;
+}
+
+.contenedor-clientes {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        /* Seguir una sintaxis de las sombras  */
+        box-shadow: 6px 8px 10px #ccc;
+        grid-row: 1 / 7;
+        grid-column: 4/6;
+        margin: 100px 70px;
+        border-radius: 10px;
+        overflow-x: auto;
+        overflow-y: auto;
+        width: 150px;
+    }
+
+    .interaccion-cliente{
+        margin: 30px auto auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-row: 1;
+        grid-column: 4;
+        width: 150px;
+        overflow-x: auto;
+        overflow-y: auto;
+        
+    } 
 }
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Esto es un botón, es el de los formularios de registro e inicio de sesión */
@@ -1578,17 +1772,6 @@ div .card {
     z-index: 3;
 }
 
-.btn-facturas {
-    background-color: var(--colorazul);
-    padding: 6px 13px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    color: var(--colorenlaces);
-    text-decoration: none;
-    transition: 0.17s ease-in;
-    border: none;
-}
 
 .btn-facturas:hover {
     transform:scale(1.02);
@@ -1642,15 +1825,6 @@ div .card {
     font-size: 1rem;
 }
 
-.historial-filtros {
-    display: flex;
-    align-items: flex-end;
-    gap: 14px;
-    margin: 12px 0 20px;
-    padding: 0;
-    background: transparent;
-    border-radius: 0;
-}
 
 .historial-filtros label {
     display: flex;
@@ -1662,25 +1836,12 @@ div .card {
     color: var(--colornegro);
 }
 
-.historial-filtros input,
-.historial-filtros select {
-    box-sizing: border-box;
-    padding: 7px 9px;
-    border: 1px solid #626262;
-    border-radius: 5px;
-    background: #fff;
-}
 
 .historial-filtros label:first-child {
     flex: 1;
 }
 
-.resumen-historial {
-    display: flex;
-    justify-content: flex-end;
-    gap: 26px;
-    margin: 0 25px 12px 0;
-}
+
 
 .resumen-historial div {
     display: flex;
@@ -1991,11 +2152,21 @@ div .card {
 /* Tablas */
 
 .tabla-clientes {
+    width: 100%;
     grid-column: 1/13;
+    border-spacing: 0px;
 }
+
 .tabla-clientes thead {
     padding: 12px;
-    width: 100%;
+    background-color: #979797;
+    border-radius: 10px 0px 0px 0px; 
+    border:1px #000 solid ;
+}
+
+.tabla-clientes thead th {
+    color: #ffffffff;
+    border:1px #000 solid;
 }
 
 
@@ -2742,15 +2913,6 @@ select {
 }
 
 
-.tarjeta-filtro {
-    grid-column: 1 / 13;
-    border: 1px solid rgba(0, 0, 0, 0.212);
-    border-radius: 10px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
-}
-
 .desplegable-filtro {
     display: grid;
 }
@@ -2763,14 +2925,6 @@ select {
     grid-column: 1 / 13;
     display: grid;
     gap: 20px;
-}
-
-.tarjeta-grupo-hoy,
-.tarjeta-grupo-ayer,
-.tarjeta-grupo-semana {
-    border: 1px solid rgba(0, 0, 0, 0.212);
-    border-radius: 10px;
-    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
 }
 
 .encabezado-grupo {
@@ -2806,6 +2960,7 @@ select {
     width: 8px;
     height: 8px;
     border-radius: 50%;
+    display: flex   ;
     background-color: var(--colorazul);
 }
 
