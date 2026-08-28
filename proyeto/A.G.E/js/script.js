@@ -118,3 +118,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		statusSelect.addEventListener('change', filterProduction);
 	}
 });
+// Script para el nav
+function abri() {
+	const toggleBtn = document.getElementById('toggleBtn');
+	const navlateral = document.getElementById('navlateral');
+	
+		toggleBtn.addEventListener('click', () => {
+		navlateral.classList.toggle('open');
+		});
+
+	}

@@ -14,6 +14,7 @@
   --colorCuentaDash: #00000037;
   --colorBordesTargetas: #3b83f686;
   --colorVerde: rgb(0, 165, 0);
+  --colorbarritas: #ff6200;
 }
 /* contenedor principal, con z index 2 para que quede abajo, mientras mas bajito, es menor la capa */
 .contenedor-principal {
@@ -859,7 +860,31 @@
     height: 30px;
     font-size: 12px;
   }
-
+.navlateral.open {
+    left: -250px;
+  
+  }
+  
+  #toggleBtn::after {
+    color: var(--colorbarritas);
+  }
+#toggleBtn {
+  z-index: 6;
+  position: fixed;
+}
+.menuoculto {
+  border: 1px solid #888;
+  color: var(--colorbarritas);
+  font-size: 1rem;
+}
+#toggleBtn {
+  background: transparent;
+  color: var(--colorbarritas);
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 5px;
+}
 }
 /* pantallas medianas, dice que a partir de un ancho de 595, hasta un máximo de 1000pixel se aplicarán estos ajustes */
 @media screen and (min-width: 595px) and (max-width: 1000px) {
@@ -1322,6 +1347,31 @@
     height: 30px;
     font-size: 12px;
   }
+
+  .navlateral.open {
+    left: -250px;
+  
+  }
+  
+  #toggleBtn::after {
+    color: var(--colorbarritas);
+  }
+#toggleBtn {
+  z-index: 6;
+  position: fixed;
+}
+.menuoculto {
+  color: var(--colorbarritas);
+  font-size: 1rem;
+}
+#toggleBtn {
+  background: transparent;
+  color: var(--colorbarritas);
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 5px;
+}
 }
 /* pantallas grandes, de escritorio, quizá aqui haya que hacer algo con las pantallas full hd (1920 x 1080) porque creo que se verá estirado, de todas formas es eso mismo, a partir de 1000px hasta 1920px */
 @media screen and (min-width: 1000px) and (max-width: 2160px) {
@@ -1333,6 +1383,7 @@
 
   .nav ul li a {
     opacity: 1;
+    line-height: 4  ;
   }
 
   .perfil-dash {
@@ -1366,14 +1417,42 @@
     background-color: var(--colornegro);
     position: fixed;
     height: 100%;
+    /* top: 0; */
     width: 171.984px;
     object-fit: contain;
     z-index: 5;
+    left: 0;
     overflow-y: auto;
     overflow-x: hidden;
     text-align: center;
     scrollbar-width: none;
+    /* transition: 0.3s ease-in-out; */
+    transition: all 0.3s ease-in-out;
   }
+  .navlateral.open {
+    left: -250px;
+  
+  }
+  
+  #toggleBtn::after {
+    color: var(--colorbarritas);
+  }
+#toggleBtn {
+  z-index: 6;
+  position: fixed;
+}
+.menuoculto {
+  color: var(--colorbarritas);
+  font-size: 1rem;
+}
+#toggleBtn {
+  background: transparent;
+  color: var(--colorbarritas);
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 5px;
+}
   .campana {
     /* margin-top: 20px; */
     display: none;
@@ -1700,15 +1779,14 @@
     border: 1px solid #cbd5e1;
   }
   /* El título de cada página, tiene la misma clase. */
-  .tit {
-    grid-column: 2 / 13;
+   .tit {
+    grid-column: 1 / 13;
     grid-row-end: 1;
     text-align: center;
     background-color: #ededed;
     line-height: 2;
     box-shadow: 4px 5px 10px #ccc;
     z-index: 2;
-    /* border-bottom: solid 1px #ededed; */
   }
   .historial-filtros {
     display: flex;
@@ -1959,13 +2037,15 @@
 }
 /* aca le aplico varios estilos a las litas del nav, que es donde están los enlaces, estructurados en listas */
 .navlateral li {
-  padding: 20px;
+  /* padding: 20px; */
   transition: 0.2s;
   display: flex;
+  text-align: justify;
   align-items: center;
   width: 100%;
   gap: 7px;
 }
+
 
 .navlateral ul {
   list-style: none;
@@ -1978,12 +2058,15 @@
 /* El logo */
 .logonav {
   margin: 25px;
+
 }
 
 /* los iconos del nav */
 .navlateral .fa-solid {
   color: var(--colorenlaces);
   margin-right: 10px;
+  margin-top: 24px;
+  margin-left: 15px;
 }
 
 .infocliente,
@@ -2774,6 +2857,8 @@ label {
   margin-bottom: 10px;
 }
 /* --------------------------------- Botones --------------------------------------- */
+
+
 .agregarProductos {
   display: flex;
   gap: 12px;
