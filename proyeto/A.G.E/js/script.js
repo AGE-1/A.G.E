@@ -120,11 +120,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 // Script para el nav
 function abri() {
-	const toggleBtn = document.getElementById('toggleBtn');
-	const navlateral = document.getElementById('navlateral');
-	
-		toggleBtn.addEventListener('click', () => {
-		navlateral.classList.toggle('open');
-		});
-
-	}
+    const toggleBtn = document.getElementById('toggleBtn');
+    const iconoBtn = toggleBtn.querySelector('i');
+    const navlateral = document.getElementById('navlateral');
+    
+    toggleBtn.addEventListener('click', () => {
+        navlateral.classList.toggle('open');
+        
+        if (navlateral.classList.contains('open')) {
+            iconoBtn.style.color = '#000';
+        } else {
+            iconoBtn.style.color = '#fff';
+        }
+    });
+}

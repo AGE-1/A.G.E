@@ -395,13 +395,12 @@
   .contenedor-productos {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 25%;
-    height: 30%;
-    margin-left: 65px;
+    display: block;
+    width: 100%; /* Cambiar de 104% a 100% para evitar desborde */
+    margin-left: 0;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     overflow-x: auto;
-    scrollbar-width: none;
-  }
+}
 
   .btn-accion {
     background: transparent;
@@ -1526,7 +1525,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 90%;
-    margin-left: 50px;
+    margin-left: 40px;
     margin-top: 20px;
   }
 
@@ -1538,7 +1537,7 @@
   height: 100%;
 }
 
-  div .graficoES {
+   .graficoES {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
     width: 71%;
@@ -1546,7 +1545,7 @@
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
   }
 
-  div .graficoPPC {
+  .graficoPPC {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
     width: 71%;
@@ -1587,15 +1586,26 @@
   .contenedor-productos {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 104%;
-    height: 37%;
-    margin-left: 50px;
+    display: block;
+    width: 95%; /* Cambiar de 104% a 100% para evitar desborde */
+    /* margin-left: 10px; */
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
-  }
+    overflow-x: auto;
+}
 
   .tabla-productos {
     width: 100%;
   }
+
+
+  .agregarProductos {
+  display: flex;
+  gap: 12px; 
+  grid-column: 10 / 13;
+  margin-right: 70px;
+  justify-content: end;
+  margin-top: 140px;
+}
 
   .seccion-graficos {
     margin-left: 80px;
@@ -1778,6 +1788,15 @@
     width: 350px;
     border: 1px solid #cbd5e1;
   }
+
+  .campanainv{
+    opacity: 0;
+  }
+  .buscador-inv {
+    margin-left: -60px;
+    margin-top: -18px;
+  }
+
   /* El título de cada página, tiene la misma clase. */
    .tit {
     grid-column: 1 / 13;
@@ -1997,6 +2016,7 @@
   }
 
 }
+
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Esto es un botón, es el de los formularios de registro e inicio de sesión */
 
@@ -2817,11 +2837,9 @@ label {
 
 /* ----------------------------------------------------- Estilos Inventario y Estadisticas generales ------------------------------------ */
 .contenido-inventario {
-  grid-column: 3 / 13;
-  display: grid;
-
-  margin-left: -60px;
-  grid-row: 1 / 8;
+    grid-row: 1 / 8;
+    grid-column: 3 / 13;
+    width: 100%;
 }
 /* ------------------------------------------ Esta Parte es del buscador ------------------------------------ */
 .icono-rojo {
@@ -2854,17 +2872,18 @@ label {
 .titulo-encabezado {
   font-size: 1.7rem;
   font-weight: bold;
+  margin-bottom: -100px;
+}
+
+.titulo-encabezado-es {
+  font-size: 1.7rem;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 /* --------------------------------- Botones --------------------------------------- */
 
 
-.agregarProductos {
-  display: flex;
-  gap: 12px;
-  margin-left: -340px;
-  margin-top: 100px;
-}
+
 
 .btn-agregar {
   display: inline-block;
