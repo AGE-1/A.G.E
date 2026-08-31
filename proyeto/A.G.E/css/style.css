@@ -215,7 +215,6 @@
     height: 100%;
     width: 100%;
     margin-left: 15px;
-    transition: all 0.3s ease-in-out;
   }
 
   .navlateral {
@@ -308,7 +307,7 @@
   }
 
   .tit {
-    margin-left:;
+    margin-left: -25px;
   }
 
   .perfil-dash h6 {
@@ -727,7 +726,6 @@
     padding: 0;
     background: transparent;
     border-radius: 0;
-    transition: all 0.3s ease-in-out;
   }
   .historial-filtros input,
   .historial-filtros select {
@@ -760,11 +758,12 @@
     /* Seguir una sintaxis de las sombras  */
     box-shadow: 6px 8px 10px #ccc;
     grid-row: 1 / 7;
-    grid-column: 2/13;
+    grid-column: 4/6;
     margin: 100px 70px;
     border-radius: 10px;
     overflow-x: auto;
     overflow-y: auto;
+    width: 150px;
   }
 
   .interaccion-cliente {
@@ -772,9 +771,8 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-row: 1;
-    grid-column: 4 / 12;
-    /* width: 150px; */
-    margin-left: -20px;
+    grid-column: 4;
+    width: 150px;
     /* overflow-x: auto;
         overflow-y: auto; */
   }
@@ -784,8 +782,8 @@
     background-color: #f1f5f9;
     border-radius: 8px;
     padding: 5px;
-    /* height: 30px; */
-    width: 70%;
+    height: 30px;
+    width: 200px;
     border: 1px solid #cbd5e1;
   }
 
@@ -926,35 +924,7 @@
   margin-top: 5px;
   margin-left: 5px;
 }
-.totales2 {
-  grid-row: 1;
-  grid-column: 7 / 12;
-  display: flex;
-  flex-direction: column;
-  /* margin-left: 45px; */
-  margin-top: 20px;
-  margin-bottom: -65px;
-  gap: 30px;
-  font-size: larger;
-  line-height: 2;
-}
 
-.historial-produccion {
-  grid-column: 3 / 13;
-  grid-row: 1 / 9;
-  padding: 18px 0 0 10px;
-  max-width: 380px;
-  overflow: hidden;
-  padding: 10px;
-}
-.produccion-filtros input,
-.produccion-filtros select {
-  padding: 7px 9px;
-  border: 1px solid #626262;
-  border-radius: 5px;
-  background: #fff;
-  max-width: 80%;
-}
 }
 /* pantallas medianas, dice que a partir de un ancho de 595, hasta un máximo de 1000pixel se aplicarán estos ajustes */
 @media screen and (min-width: 595px) and (max-width: 1000px) {
@@ -962,7 +932,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-start: 4;
     grid-row: 1 / 4;
-    transition: all 0.3s ease-in-out;
   }
 
   .nav-Config {
@@ -1237,7 +1206,6 @@
     padding: 0;
     background: transparent;
     border-radius: 0;
-    transition: all 0.3s ease-in-out;
   }
   .historial-filtros input,
   .historial-filtros select {
@@ -1274,11 +1242,12 @@
     /* Seguir una sintaxis de las sombras  */
     box-shadow: 6px 8px 10px #ccc;
     grid-row: 1 / 7;
-    grid-column: 2/13;
+    grid-column: 4/6;
     margin: 100px 70px;
     border-radius: 10px;
     overflow-x: auto;
     overflow-y: auto;
+    width: 150px;
   }
 
   .interaccion-cliente {
@@ -1286,7 +1255,8 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-row: 1;
-    grid-column: 3 /12;
+    grid-column: 4;
+    width: 150px;
   }
   .buscar-cliente {
     display: flex;
@@ -1440,34 +1410,6 @@
   margin-top: 5px;
   margin-left: 5px;
 }
-.btn-prod {
-    margin-right: 7px;
-  }
-  .totales2 {
-  grid-row: 1;
-  grid-column: 9 / 12;
-  display: flex;
-  flex-direction: column;
-  margin-left: 45px;
-  margin-top: 20px;
-  margin-bottom: -65px;
-  gap: 30px;
-  font-size: larger;
-  line-height: 2;
-}
-.historial-produccion {
-  grid-column: 3 / 12;
-  grid-row: 1 / 9;
-  padding: 18px 0 0 10px;
-}
-.produccion-filtros input,
-.produccion-filtros select {
-  padding: 7px 9px;
-  border: 1px solid #626262;
-  border-radius: 5px;
-  background: #fff;
-  max-width: 100%;
-}
 }
 /* pantallas grandes, de escritorio, quizá aqui haya que hacer algo con las pantallas full hd (1920 x 1080) porque creo que se verá estirado, de todas formas es eso mismo, a partir de 1000px hasta 1920px */
 @media screen and (min-width: 1000px) and (max-width: 2160px) {
@@ -1475,7 +1417,6 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-start: 4 / 12;
     grid-row: 1 / 4;
-    transition: all 0.3s ease-in-out;
   }
 
   .nav ul li a {
@@ -1916,7 +1857,6 @@
     margin: 12px 0 20px;
     padding: 0;
     background: transparent;
-    transition: all 0.3s ease-in-out;
     border-radius: 0;
   }
   .historial-filtros input,
@@ -1969,20 +1909,21 @@
     /* Seguir una sintaxis de las sombras  */
     box-shadow: 6px 8px 10px #ccc;
     grid-row: 1 / 7;
-    grid-column: 2/12;
-    margin: 100px 80px;
+    grid-column: 4/6;
+    margin: 100px 70px;
     border-radius: 10px;
     overflow-x: auto;
     overflow-y: auto;
-    width: 100%;
+    width: 150px;
   }
 
   .interaccion-cliente {
+    border-bottom: 1px solid;
     margin: 30px auto auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-row: 1;
-    grid-column: 3 /12;
+    grid-column: 4/12;
     width: 100%;
     overflow-x: auto;
     overflow-y: auto;
@@ -1995,7 +1936,7 @@
     height: 40px;
     width: 350px;
     border: 1px solid #cbd5e1;
-    grid-column: 1/13;
+    grid-column: 1/5;
     padding: 10px;
     grid-row: 3;
   }
@@ -2118,36 +2059,23 @@
     font-size: 12px;
   }
 
-  .btn-prod {
-    margin-right: 7px;
+  .horario input{
+    width: 70px;
+    /* margin-right: 40px; */
   }
 
-  .totales2 {
-  grid-row: 1;
-  grid-column: 9 / 12;
-  display: flex;
-  flex-direction: column;
-  margin-left: 45px;
-  margin-top: 20px;
-  margin-bottom: -65px;
-  gap: 30px;
-  font-size: larger;
-  line-height: 2;
-}
+  .horario {
+    width: 250px;
+    display: flex;
+    height: 30px;
+    grid-column: 5/9;
+    text-align: center;
+  }
 
-.historial-produccion {
-  grid-column: 3 / 12;
-  grid-row: 1 / 9;
-  padding: 18px 0 0 10px;
-}
-.produccion-filtros input,
-.produccion-filtros select {
-  padding: 7px 9px;
-  border: 1px solid #626262;
-  border-radius: 5px;
-  background: #fff;
-  max-width: 100%;
-}
+  #separacion {
+    margin-top: 15px;
+  }
+
 }
 
 
@@ -2175,7 +2103,6 @@
   grid-template-rows: repeat(8, 1fr);
   width: 100%;
   height: 100%;
-  overflow: hidden; 
 }
 
 /* el cuerpo del nav, todo lo que se ve negro, esto es un contenedor básicamente */
@@ -2366,9 +2293,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  overflow: scroll;
 }
-
 /* Las targetas del dashboard, este es el bloque donde están las 6 */
 .targetas {
   grid-column: 3 / 12;
@@ -2379,7 +2304,6 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  transition: all 0.3s ease-in-out;
 }
 
 .targ:hover {
@@ -2465,6 +2389,18 @@
   border-bottom: 1px solid var(--colorCuentaDash);
 }
 
+.totales2 {
+  grid-row: 1;
+  grid-column: 9 / 12;
+  display: flex;
+  flex-direction: column;
+  margin-left: 45px;
+  margin-top: 20px;
+  margin-bottom: -65px;
+  gap: 30px;
+  font-size: larger;
+  line-height: 2;
+}
 
 .botonesfactura {
   grid-row: 2 / 2;
@@ -2647,6 +2583,11 @@
   width: 100%;
 }
 
+.historial-produccion {
+  grid-column: 3 / 12;
+  grid-row: 1 / 9;
+  padding: 18px 0 0 10px;
+}
 
 .produccion-encabezado {
   display: flex;
@@ -2685,6 +2626,13 @@
   flex: 1;
 }
 
+.produccion-filtros input,
+.produccion-filtros select {
+  padding: 7px 9px;
+  border: 1px solid #626262;
+  border-radius: 5px;
+  background: #fff;
+}
 
 .historial-produccion-tabla {
   margin-top: 0;
@@ -2796,6 +2744,7 @@
 .formulario div,
 label {
   margin-top: 20px;
+  border-bottom: 1px solid #ccc;
 }
 /* -------------------------------------------------------------------------------------------------------------------------------------- */
 /* Esto es donde sale el usuario y su nombre, junto con el botón de cerrar sesion */
@@ -2812,7 +2761,19 @@ label {
 }
 /* ------------------------------------------------------- Estilos clientes ------------------------------------------------------------ */
 
-
+.contenedor-clientes {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* Seguir una sintaxis de las sombras  */
+  box-shadow: 6px 8px 10px #ccc;
+  grid-row: 1 / 7;
+  grid-column: 4/12;
+  width: 100%;
+  margin: 100px 0px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
 
 #lineaclientes {
   grid-row: 2;
@@ -2908,13 +2869,15 @@ label {
 }
 
 .btn-ver {
-  width: 100%;
-  padding: px;
-  background-color: #fff;
+  width: 13px;
+  background-color: transparent;
   border: none;
+  cursor: pointer;
+
 }
 
 /* ----------------------------------------------------- Estilos Agregar clientes ------------------------------------------------------- */
+
 
 /* -------------------------Estilos Empleados ----------------------------------------- */
 .empleadosp {
