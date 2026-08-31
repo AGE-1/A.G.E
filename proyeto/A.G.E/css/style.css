@@ -341,7 +341,23 @@
   height: 100%;
 }
 
+.agregarProductos {
+  display: flex;
+  gap: 12px; 
+  margin-right: 20px;
+  justify-content: end;
+  margin-top: 140px;
+}
 
+.agregarProductos {
+  font-size: 0rem;
+}
+.btn-agregar i,
+.btn-exportar i,
+.btn-importar i {
+  font-size: 1rem;
+  margin-left: 5px;
+}
   .card3,
   .card2 {
     margin-left: 80px;
@@ -367,6 +383,7 @@
     margin-top: 20px;
     grid-template-columns: repeat(1, 1fr);
   }
+
   .graficas {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -385,10 +402,10 @@
 
   .cards {
     display: grid;
-    grid-column: 1 / 13;
-    grid-template-columns: repeat(1, 1fr);
+    grid-column: 1 / 2;
+    grid-template-columns: repeat(1, 410%);
     gap: 20px;
-    margin-left: 90px;
+    margin-left: 60px;
     margin-top: 20px;
   }
 
@@ -396,10 +413,11 @@
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
     display: block;
-    width: 100%; /* Cambiar de 104% a 100% para evitar desborde */
+    width: 90%;
     margin-left: 0;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     overflow-x: auto;
+    margin-left: 15px;
 }
 
   .btn-accion {
@@ -408,28 +426,49 @@
     font-size: 1rem;
   }
 
-  div .graficoES {
-    border: 1px solid rgba(0, 0, 0, 0.212);
-    border-radius: 10px;
-    width: 22%;
-    height: 150%;
-    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
-    margin-left: 2px;
-    margin-top: 70px;
-    overflow-x: auto;
+  .seccion-graficos {
+    gap: 15px;
   }
 
-  div .graficoPPC {
-    border: 1px solid rgba(0, 0, 0, 0.212);
-    border-radius: 10px;
-    width: 22%;
-    height: 80%;
-    margin-left: 2px;
-    margin-top: 300px;
-    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
-    overflow-x: auto;
+  .ulES {
+    margin-left: -35px;
+    margin-top: 10px;
   }
 
+  .tiempoES {
+    z-index: 4;
+    border: none;
+    width: 20px;
+    margin: -5px;
+  }
+
+  .tiempoPPC {
+    width: 20px;
+    border: none;
+    margin: -5px;
+    }
+
+  .graficoES {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: 26%;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    padding: 15px;
+    box-sizing: border-box;
+    margin-left: 990px;
+    margin-top: -350px;
+  }
+
+  .graficoPPC {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: 26%; 
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    padding: 15px;
+    box-sizing: border-box;
+    margin-left: 990px;
+    height: 170%;
+  }
 
   .card h2 {
     margin-top: 20px;
@@ -445,6 +484,10 @@
   .card-body {
     margin-left: 90px;
     font-size: 1rem;
+    margin-top: -40px;
+  }
+
+  .card-body3 {
     margin-top: -40px;
   }
 
@@ -1537,22 +1580,35 @@
   height: 100%;
 }
 
-   .graficoES {
+  .seccion-graficos {
+    gap: 15px;
+}
+
+.graficoES {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 71%;
-    height: 100%;
+    width: 53%;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    /* margin: 0;  */
+    padding: 15px;
+    box-sizing: border-box;
+    margin-left: 950px;
+    margin-top: -350px;
   }
 
   .graficoPPC {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 71%;
-    height: 100%;
-    margin-top: 20px;
+    width: 53%; 
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    /* margin: 0;  */
+    padding: 15px;
+    box-sizing: border-box;
+    margin-left: 950px;
+    height: 170%;
   }
+
+
 
   div .card {
     height: 100%;
@@ -1587,8 +1643,7 @@
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
     display: block;
-    width: 95%; /* Cambiar de 104% a 100% para evitar desborde */
-    /* margin-left: 10px; */
+    width: 95%;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     overflow-x: auto;
 }
@@ -1607,9 +1662,6 @@
   margin-top: 140px;
 }
 
-  .seccion-graficos {
-    margin-left: 80px;
-  }
   .card-header .icono1 {
     margin-left: -90px;
     background-color: rgba(131, 95, 231, 0.26);
@@ -2016,6 +2068,7 @@
   }
 
 }
+
 
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Esto es un botón, es el de los formularios de registro e inicio de sesión */
@@ -2990,6 +3043,7 @@ th {
 
 .ulES {
   list-style: none;
+  margin-top: 10px;
 }
 
 .ulES li {
@@ -3023,16 +3077,16 @@ th {
 
 .tiempoES {
   display: flex;
-  margin-top: -15px;
-  margin-left: 580px;
+  margin-top: -35px;
+  margin-left: auto;
   font-weight: 600;
   color: #000000b7;
 }
 
 .tiempoPPC {
   display: flex;
-  margin-top: -15px;
-  margin-left: 580px;
+  margin-top: -35px;
+  margin-left: auto;
   font-weight: 600;
   color: #000000b7;
 }
