@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturación</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./image/Logo A.G.E.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="contenedor">
+    <h1 class="tit">Facturación</h1>
+    <button id="toggleBtn" onfocus="abri()" onblur="abri()">
+        <i class="fa-solid fa-bars menuoculto" style="background: transparent;"></i>
+    </button>
+    <aside id="navlateral" class="navlateral">
+        <div class="nav">
+            <nav>
+                <ul>
+                    <img src="image/logo_fondo_negro.png" alt="Logo de la empresa" class="logonav" width="100">
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house" id="dashb"></i>Dashboard</a></li>
+                    <li><a href="configuracion.html"><i class="fa-solid fa-gear"></i>Configuración</a></li>
+                    <li><a href="clientes.html"><i class="fa-solid fa-people-group"></i>Clientes</a></li>
+                    <li class="seleccionadoNav"><a href="#"><i class="fa-solid fa-file-invoice"></i>Facturación</a></li>
+                    <li><a href="empleados.html"><i class="fa-solid fa-user-group"></i>Empleados</a></li>
+                    <li><a href="inventario.html"><i class="fa-solid fa-boxes-stacked"></i>Inventario</a></li>
+                    <li><a href="produccion.html"><i class="fa-solid fa-gears"></i>Producción</a></li>
+                    <li><a href="estadisticasGenerales.html"><i class="fa-solid fa-chart-line"></i>Estadísticas</a></li>
+                    <li><a href="notificaciones.html"><i class="fa-solid fa-bell"></i>Notificaciones</a></li>
+                </ul>
+                <p class="footerNav" style="color: #fff;">2026 A.G.E. Todos los derechos reservados.&#174;</p>
+            </nav>
+        </div>
+     </aside>
+    <main class="historial-facturas">
+        <div class="historial-encabezado">
+            <div>
+                <h2>Historial de facturas</h2>
+                <p>Consulta el estado y detalle de todas las facturas.</p>
+            </div>
+            <a href="agregarFactura.html" class="btn-facturas"><i class="fa-solid fa-plus"></i> Nueva factura</a>
+        </div>
+
+        <div class="historial-filtros">
+            <label for="buscar-factura">Buscar factura o cliente
+                <input type="search" id="buscar-factura" placeholder="Ej. F-0001 o Cliente 1">
+            </label>
+            <label for="estado-factura">Estado
+                <select id="estado-factura">
+                    <option value="">Todos los estados</option>
+                    <option value="Pagada">Pagada</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Anulada">Anulada</option>
+                </select>
+            </label>
+            <label for="fecha-factura">Desde
+                <input type="date" id="fecha-factura">
+            </label>
+        </div>
+
+        <div class="resumen-historial">
+            <div><span>Facturas emitidas</span><strong>128</strong></div>
+            <div><span>Facturas pendientes</span><strong>12</strong></div>
+            <div><span>Total facturado</span><strong>$48,750.00</strong></div>
+        </div>
+
+        <div class="tabla-listas historial-tabla">
+            <table>
+                <thead>
+                    <tr class="superiorTabla">
+                        <th>Número</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="historial-body">
+                    <tr data-estado="Pagada">
+                        <td>F-0001</td><td>Cliente 1</td><td>08/08/2026</td><td>$500.00</td>
+                        <td><span class="estado estado-pagada">Pagada</span></td>
+                        <td><a href="#" title="Ver factura"><i class="fa-regular fa-eye eye"></i></a> <a href="#" title="Descargar factura"><i class="fa-solid fa-download falista"></i></a></td>
+                    </tr>
+                    <tr data-estado="Pendiente">
+                        <td>F-0002</td><td>Cliente 2</td><td>07/08/2026</td><td>$135.00</td>
+                        <td><span class="estado estado-pendiente">Pendiente</span></td>
+                        <td><a href="#" title="Ver factura"><i class="fa-regular fa-eye eye"></i></a> <a href="#" title="Descargar factura"><i class="fa-solid fa-download falista"></i></a></td>
+                    </tr>
+                    <tr data-estado="Anulada">
+                        <td>F-0003</td><td>Cliente 3</td><td>05/08/2026</td><td>$47.50</td>
+                        <td><span class="estado estado-anulada">Anulada</span></td>
+                        <td><a href="#" title="Ver factura"><i class="fa-regular fa-eye eye"></i></a> <a href="#" title="Descargar factura"><i class="fa-solid fa-download falista"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="sin-resultados" class="sin-resultados" hidden>No hay facturas que coincidan con los filtros.</p>
+        </div>
+
+        <div class="seccion-abajo historial-acciones">
+            <button class="btn-factura">
+                <a href="#" title="Compartir factura">
+                    <i class="fa-regular fa-share-from-square fatodo"></i>
+                </a>
+            </button>
+            <button class="btn-factura">
+                <a href="#" title="Imprimir factura">
+                    <i class="fa-solid fa-print fatodo"></i>
+                </a>
+            </button>
+            <button class="btn-factura">
+                <a href="#" title="Descargar factura">
+                    <i class="fa-solid fa-download fatodo"></i>
+                </a>
+            </button>
+            <button class="btn-factura">
+                <a href="agregarFactura.html" title="Agregar una factura">
+                    <i class="fa-solid fa-file-circle-plus fatodo"></i>
+                </a>
+            </button>
+            <button class="btn-factura">
+                <a href="#" title="Exportar facturas">
+                    <i class="fa-solid fa-arrow-up-from-bracket fatodo"></i>
+                </a>
+            </button>
+        </div>
+    </main>
+</div>
+</body>
+</html>
