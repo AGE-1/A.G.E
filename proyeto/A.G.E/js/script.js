@@ -134,3 +134,106 @@ function abri() {
         }
     });
 }
+
+
+/*
+A.G.E. - USUARIO
+
+Por ahora se guarda un solo usuario en localStorage y ademas por ahora solo
+se guarda el registro pero el inicio de seccion no.
+*/
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // REGISTRO
+    // Guarda los datos ingresados en register.html.
+
+    const registro = document.getElementById("register-form");
+
+    if (registro) {
+
+        registro.addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            const nombre = document.getElementById("nombre").value.trim();
+            const correo = document.getElementById("email").value.trim();
+            const password = document.getElementById("pass").value;
+            const confirmar = document.getElementById("confirm_pass").value;
+
+            if (password !== confirmar) {
+                alert("Las contraseñas no coinciden.");
+                return;
+            }
+
+            const fecha = new Date();
+
+            const usuario = {
+                id: "USR-0001",
+                nombre: nombre,
+                correo: correo,
+                password: password,
+                fechaCreacion: fecha.toLocaleDateString(),
+                ultimoInicio: fecha.toLocaleString()
+            };
+
+            localStorage.setItem("usuarioAGE", JSON.stringify(usuario));
+
+            localStorage.setItem("sesionAGE", "activa");
+
+            window.location.href = "dashboard.html";
+        });
+    }
+
+// CONFIGURACIÓN DE USUARIO
+    // Coloca en configUsuario.html los datos del usuario
+    // registrado y permite modificar nombre y correo.
+
+    const campoNombre = document.getElementById("nombre-usuario");
+    const campoCorreo = document.getElementById("correo");
+    const campoFecha = document.getElementById("fecha-creacion");
+    const campoInicio = document.getElementById("ultimo-inicio-sesion");
+    const campoId = document.getElementById("id-usuario");
+
+    if (
+        campoNombre &&
+        campoCorreo &&
+        campoFecha &&
+        campoInicio &&
+        campoId
+    ) {
+
+        const usuario = JSON.parse(
+            localStorage.getItem("usuarioAGE")
+        );
+
+        if (!usuario) {
+            window.location.href = "login.html";
+            return;
+        }
+
+        campoNombre.value = usuario.nombre;
+        campoCorreo.value = usuario.correo;
+        campoFecha.value = usuario.fechaCreacion;
+        campoInicio.value = usuario.ultimoInicio;
+        campoId.value = usuario.id;
+
+        const formulario = campoNombre.closest("form");
+
+        formulario.addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            usuario.nombre = campoNombre.value.trim();
+            usuario.correo = campoCorreo.value.trim();
+
+            localStorage.setItem(
+                "usuarioAGE",
+                JSON.stringify(usuario)
+            );
+
+            alert("Datos actualizados correctamente.");
+        });
+    }
+
+});
