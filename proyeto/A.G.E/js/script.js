@@ -207,10 +207,10 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.getItem("usuarioAGE")
         );
 
-        if (!usuario) {
-            window.location.href = "login.html";
-            return;
-        }
+        // if (!usuario) {
+        //     window.location.href = "login.html";
+        //     return;
+        // }
 
         campoNombre.value = usuario.nombre;
         campoCorreo.value = usuario.correo;
