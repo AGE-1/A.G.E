@@ -1532,7 +1532,7 @@
     left: -250px;
   
   }
-  
+
 #toggleBtn {
   z-index: 6;
   position: fixed;
@@ -1639,24 +1639,26 @@
 .graficoES {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 53%;
+    width: auto;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     /* margin: 0;  */
     padding: 15px;
     box-sizing: border-box;
-    margin-left: 950px;
+    margin-left: 940px;
     margin-top: -350px;
+    margin-right: 25px;
   }
 
   .graficoPPC {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 53%; 
+    width: auto; 
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     /* margin: 0;  */
     padding: 15px;
     box-sizing: border-box;
-    margin-left: 950px;
+    margin-left: 940px;
+    margin-right: 25px;
     height: 170%;
   }
 

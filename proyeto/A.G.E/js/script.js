@@ -237,3 +237,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+
+// Boton de Leer notificaciones
+function marcarTodoLeido() {
+    
+    document.querySelectorAll('.indicador-izquierdo').forEach(izq => {
+        izq.style.backgroundColor = 'transparent';
+    });
+
+    
+    document.querySelectorAll('.indicador-derecho').forEach(der => {
+        der.style.backgroundColor = '#cbd5e1';
+    });
+}
+
+
+
+// Filtro notificaciones 
+document.addEventListener('DOMContentLoaded', function () {
+
+	// Esta parte es para buscar el select y sabver las tarjetas de notificacion que hay
+    const selectFiltro = document.querySelector('.desplegable-filtro select');
+    const notificaciones = document.querySelectorAll('.item-notificacion');
+
+
+	// si el select ta, eto le agrega un evento para, para cuando se kiera cambiar la opcion
+    if (selectFiltro) {
+        selectFiltro.addEventListener('change', function () {
+            const categoriaSeleccionada = this.value
+
+
+			// eto recorre todas las notificaciones
+            notificaciones.forEach(function (item) {
+                const categoriaItem = item.querySelector('.etiqueta-categoria').textContent.toLowerCase().trim();
+
+                // si se elige una categoria vacia no aparecera nd, pero si se elige una categoria con algun item aparecera
+                if (categoriaSeleccionada === '' || categoriaItem === categoriaSeleccionada) {
+                    item.style.display = 'grid';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
+});
