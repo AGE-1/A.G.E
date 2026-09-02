@@ -230,7 +230,7 @@
     text-align: center;
     scrollbar-width: none;
     left: 0;
-    transition: all 0.3s ease-in-out;     
+    transition: all 0.3s ease-in-out;
   }
 
   .nav-Config {
@@ -245,12 +245,14 @@
     z-index: 1;
     display: none;
   }
+
   .fa-bars {
     cursor: pointer;
     grid-column: 3;
     margin-left: 20px;
     margin-top: 10px;
   }
+
   .logonav {
     display: none;
   }
@@ -267,7 +269,7 @@
   }
 
   .navlateral li a i,
-  .navlateral li > i {
+  .navlateral li>i {
     margin: 0;
     font-size: 1.15rem;
   }
@@ -287,6 +289,7 @@
   .logo {
     margin-top: -50px;
   }
+
   .seccion-negra {
     width: 100%;
     height: 100%;
@@ -332,47 +335,66 @@
     grid-column: 1 / 2;
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-between;
-    margin-left: 16px;
+    margin-left: 50px;
     margin-top: 20px;
     gap: 10px;
   }
 
 
   .card-ES {
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
-  width: 60%;
-  height: 100%;
-}
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    width: 60%;
+    height: 100%;
+  }
 
-.agregarProductos {
-  display: flex;
-  gap: 12px; 
-  margin-right: 20px;
-  justify-content: end;
-  margin-top: 140px;
-}
+  .agregarProductos {
+    display: flex;
+    gap: 12px;
+    margin-right: 20px;
+    justify-content: end;
+    margin-top: 140px;
+  }
 
-.agregarProductos {
-  font-size: 0rem;
-}
-.btn-agregar i,
-.btn-exportar i,
-.btn-importar i {
-  font-size: 1rem;
-  margin-left: 5px;
-}
+
+
+  .agregarProductos {
+    font-size: 0rem;
+  }
+
+  .btn-agregar i,
+  .btn-exportar i,
+  .btn-importar i {
+    font-size: 1rem;
+    margin-left: 5px;
+  }
+
   .card3,
   .card2 {
     margin-left: 80px;
   }
 
-  .encabezado {
-    /* margin-top: 50px; */
-    grid-column: 1 / 2;
-    max-width: 300px;
+  .titulo-encabezado-es {
+    max-width: 100%;
     margin-left: 70px;
+  }
+
+
+  .titulo-encabezado {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: -100px;
+  }
+
+  .titulo-encabezado i {
+    margin-right: 5px;
+  }
+
+  .titulo-encabezado-es {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 
   div .card {
@@ -398,10 +420,10 @@
   }
 
   .graficoVPC {
-    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    box-shadow: 0 0px 7px rgb(0 0 0 / 21%);
     border-radius: 10px;
-    width: 270px;
-    margin-left: 35px;
+    width: 85%;
+    margin-left: 30px;
     height: 350px;
   }
 
@@ -423,7 +445,7 @@
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     overflow-x: auto;
     margin-left: 15px;
-}
+  }
 
   .btn-accion {
     background: transparent;
@@ -451,7 +473,7 @@
     width: 20px;
     border: none;
     margin: -5px;
-    }
+  }
 
   .graficoES {
     border: 1px solid rgba(0, 0, 0, 0.212);
@@ -467,7 +489,7 @@
   .graficoPPC {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 26%; 
+    width: 26%;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     padding: 15px;
     box-sizing: border-box;
@@ -560,11 +582,12 @@
   .graficoVPCA {
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 270px;
+    width: 85%;
     height: 350px;
-    margin-left: 35px;
+    margin-left: 30px;
     margin-top: 10px;
   }
+
   .tiempoVPCA {
     display: flex;
     margin-top: 10px;
@@ -572,6 +595,7 @@
     font-weight: 600;
     color: #000000b7;
   }
+
   .tiempoVG {
     display: flex;
     margin-top: 10px;
@@ -587,6 +611,7 @@
     font-weight: 600;
     color: #000000b7;
   }
+
   .notificaciones-estadisticas {
     display: none;
   }
@@ -660,22 +685,23 @@
 
   .graficoVG {
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
-    /* grid-column: 1 / 12; */
     border-radius: 10px;
-    width: 270px;
-    margin-left: 35px;
+    width: 85%;
+    margin-left: 30px;
     height: 350px;
   }
+
   .tarjeta-panel-clientes,
   .tarjeta-metodos-pago {
-    width: 380x;
-    margin-left: 14px;
+    width: 112%;
+    margin-left: 16px;
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
-    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 7px rgb(0 0 0 / 10%);
     padding: 24px;
   }
+
   .campana {
     margin-top: 20px;
     grid-column: 1;
@@ -687,6 +713,7 @@
     margin-top: -20px;
     margin-left: -30px;
   }
+
   .buscador-inv {
     margin-left: 70px;
     margin-top: 20px;
@@ -696,7 +723,6 @@
     padding: 6px 12px;
     width: 150px;
     border: 1px solid #cbd5e1;
-    margin-left: -970px;
   }
 
   .buscador {
@@ -709,6 +735,7 @@
     width: 150px;
     border: 1px solid #cbd5e1;
   }
+
   /* El título de cada página, tiene la misma clase. */
   .tit {
     grid-column: 1 / 13;
@@ -721,6 +748,7 @@
     z-index: 2;
     /* border-bottom: solid 1px #ededed; */
   }
+
   .historial-filtros {
     display: flex;
     align-items: flex-end;
@@ -731,6 +759,7 @@
     border-radius: 0;
     transition: all 0.3s ease-in-out;
   }
+
   .historial-filtros input,
   .historial-filtros select {
     width: 100%;
@@ -740,6 +769,7 @@
     border-radius: 5px;
     background: #fff;
   }
+
   .btn-facturas {
     background-color: var(--colorazul);
     color: #ffffff;
@@ -751,6 +781,7 @@
     cursor: pointer;
     transition: 0.17s ease-in-out;
   }
+
   .btn-facturas i {
     font-size: 1rem;
   }
@@ -813,7 +844,8 @@
     width: 100%;
     height: 30px;
   }
-    /* -------------------------------- Estilos Agregar clientes ----------------------------- */
+
+  /* -------------------------------- Estilos Agregar clientes ----------------------------- */
 
   .agregar-cliente {
     background-color: #fff;
@@ -828,7 +860,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
   }
-  
+
   .agregar-cliente form {
     grid-column: 1/12;
     margin: 10px 30px;
@@ -844,8 +876,8 @@
     margin: 30px 30px 10px;
     max-width: 150px;
     min-width: 150px;
-    max-height:150px;
-    min-height:150px;
+    max-height: 150px;
+    min-height: 150px;
     border: 1px solid #ccc;
     box-shadow: 6px 8px 10px #ccc;
 
@@ -878,6 +910,7 @@
     max-height: 90px;
     min-height: 90px;
   }
+
   .agregar-cliente #agrecarcbotton {
     width: 60px;
     grid-column: 1;
@@ -904,60 +937,66 @@
     grid-column: 1;
     border-radius: 8px;
     margin: 10px 10px;
-    width: 100% ;
+    width: 100%;
     height: 30px;
     font-size: 12px;
   }
-.navlateral.open {
+
+  .navlateral.open {
     left: -250px;
-  
+
   }
-  
-#toggleBtn {
-  z-index: 6;
-  position: fixed;
-  color:#fff;
-}
-.menuoculto {
-  font-size: 1rem;
-}
-#toggleBtn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  margin-top: 5px;
-  margin-left: 5px;
-}
-.totales2 {
-  grid-row: 1;
-  grid-column: 7 / 12;
-  display: flex;
-  flex-direction: column;
-  /* margin-left: 45px; */
-  margin-top: 20px;
-  margin-bottom: -65px;
-  gap: 30px;
-  font-size: larger;
-  line-height: 2;
+
+  #toggleBtn {
+    z-index: 6;
+    position: fixed;
+    color: #fff;
+  }
+
+  .menuoculto {
+    font-size: 1rem;
+  }
+
+  #toggleBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  .totales2 {
+    grid-row: 1;
+    grid-column: 7 / 12;
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 45px; */
+    margin-top: 20px;
+    margin-bottom: -65px;
+    gap: 30px;
+    font-size: larger;
+    line-height: 2;
+  }
+
+  .historial-produccion {
+    grid-column: 3 / 13;
+    grid-row: 1 / 9;
+    padding: 18px 0 0 10px;
+    max-width: 380px;
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  .produccion-filtros input,
+  .produccion-filtros select {
+    padding: 7px 9px;
+    border: 1px solid #626262;
+    border-radius: 5px;
+    background: #fff;
+    max-width: 80%;
+  }
 }
 
-.historial-produccion {
-  grid-column: 3 / 13;
-  grid-row: 1 / 9;
-  padding: 18px 0 0 10px;
-  max-width: 380px;
-  overflow: hidden;
-  padding: 10px;
-}
-.produccion-filtros input,
-.produccion-filtros select {
-  padding: 7px 9px;
-  border: 1px solid #626262;
-  border-radius: 5px;
-  background: #fff;
-  max-width: 80%;
-}
-}
 /* pantallas medianas, dice que a partir de un ancho de 595, hasta un máximo de 1000pixel se aplicarán estos ajustes */
 @media screen and (min-width: 595px) and (max-width: 1000px) {
   .targetas {
@@ -1010,7 +1049,7 @@
   }
 
   .navlateral li a i,
-  .navlateral li > i {
+  .navlateral li>i {
     margin: 0;
     font-size: 1.2rem;
   }
@@ -1061,28 +1100,151 @@
     margin-left: 50px;
     margin-top: 20px;
     gap: 15px;
-    width: 50%;
+    /* width: 50%; */
     margin-bottom: 10px;
+  }
+
+  .cards {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-left: -10px;
+    margin-top: 20px;
+  }
+
+  .buscador-inv {
+    margin-left: -60px;
+    margin-top: -18px;
+  }
+
+  .titulo-encabezado {
+    margin-left: -40px;
+  }
+
+  .titulo-encabezado i {
+    margin-right: 5px;
+  }
+
+  .card-header {
+    margin-left: 90px;
+    font-size: 0.7rem;
+    margin-top: 10px;
+  }
+
+  .card-body2,
+  .card-body3,
+  .card-body {
+    margin-left: 90px;
+    font-size: 1rem;
+    margin-top: -40px;
+  }
+
+  .card-body3 {
+    margin-top: -40px;
+  }
+
+  .card-footer2,
+  .card-footer3,
+  .card-footer {
+    margin-left: 90px;
+    font-size: 0.7rem;
+    margin-top: 2px;
+  }
+
+  div .card {
+    height: 80px;
+  }
+
+  .card .icono1 {
+    margin-left: -75px;
+    background-color: rgba(131, 95, 231, 0.26);
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    margin-top: -19px;
+  }
+
+  .card .icono2 {
+    margin-left: -75px;
+    background-color: #b91c1c34;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    margin-top: -19px;
+  }
+
+
+  .card .icono3 {
+    margin-left: -75px;
+    background-color: #ece91a33;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    margin-top: -19px;
+  }
+
+  .card .icono1 i {
+    color: rgb(131, 95, 231);
+    font-size: 2.5rem;
+    margin-left: 12px;
+    margin-top: 10px;
+  }
+
+  .card .icono2 i {
+    color: #b91c1c;
+    font-size: 2.5rem;
+    margin-left: 5px;
+    margin-top: 12px;
+  }
+
+  .card .icono3 i {
+    color: #f7ba11;
+    font-size: 2.5rem;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
   }
 
 
   .card-ES {
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
-  width: 90%;
-  height: 100%;
-}
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    width: 90%;
+    height: 100%;
+  }
 
   .card2 {
     margin-left: 20px;
   }
+
   .encabezado {
     margin-top: 50px;
     grid-column: 1 / 12;
     max-width: 720px;
     margin-left: 30px;
   }
+
+  .titulo-encabezado {
+    font-size: 1.5rem;
+    /* margin-left: 20px; */
+    font-weight: bold;
+    margin-bottom: -100px;
+  }
+
+  .titulo-encabezado-es {
+    font-size: 1.5rem;
+    margin-left: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
   .graficas {
     display: grid;
     grid-column: 1 / 2;
@@ -1095,24 +1257,26 @@
   .graficoVPC {
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 560px;
+    width: 98%;
     height: 350px;
   }
 
   .graficoVPCA {
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 560px;
+    width: 98%;
     height: 350px;
     margin-top: 10px;
   }
+
   .tiempoVPCA {
     display: flex;
-    margin-top: -15px;
-    margin-left: 440px;
+    margin-top: -25px;
+    margin-left: 430px;
     font-weight: 600;
     color: #000000b7;
   }
+
   .notificaciones-estadisticas {
     display: none;
   }
@@ -1162,11 +1326,37 @@
     transition: 0.17s ease-in-out;
   }
 
-  .campana {
-    margin-top: -80px;
-    grid-column: 1;
-    margin-left: 580px;
+  .agregarProductos {
+    display: flex;
+    gap: 12px;
+    grid-column: 10 / 13;
+    margin-right: 20px;
+    justify-content: end;
+    margin-top: 140px;
   }
+
+  .campanainv {
+    display: flex;
+    margin-top: -25px;
+    justify-content: end;
+    margin-right: 15px;
+  }
+
+  .campana {
+    display: flex;
+    margin-top: -25px;
+    justify-content: end;
+    margin-right: 15px;
+  }
+
+  .topbar a {
+    text-decoration: none;
+  }
+
+  .topbar i {
+    font-size: 1rem;
+  }
+
   .panel-clientes {
     display: grid;
     gap: 24px;
@@ -1174,22 +1364,64 @@
     grid-row: 7 / 10;
     grid-template-columns: repeat(1, 1fr);
   }
+
   .graficoVG {
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     /* grid-column: 1 / 12; */
     border-radius: 10px;
-    width: 560px;
+    width: 98%;
     height: 350px;
   }
+
   .tarjeta-panel-clientes,
   .tarjeta-metodos-pago {
-    /* flex: 1; */
-    width: 520px;
+    width: 100%;
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.1);
     padding: 24px;
+    margin-left: -15px;
+  }
+
+  .contenedor-productos {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    display: block;
+    width: 90%;
+    margin-left: 0;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    overflow-x: auto;
+    margin-left: 15px;
+  }
+
+
+  .graficoES {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: auto;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    /* margin: 0;  */
+    padding: 15px;
+    box-sizing: border-box;
+    margin-left: 950px;
+    margin-right: 20px;
+    margin-top: -350px;
+    margin-bottom: 20px;
+    height: 400px;
+  }
+
+  .graficoPPC {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 10px;
+    width: auto;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
+    /* margin: 0;  */
+    padding: 15px;
+    box-sizing: border-box;
+    margin-left: 950px;
+    margin-right: 20px;
+    height: 400px;
   }
 
   .topbar {
@@ -1197,7 +1429,9 @@
     margin-left: 50px;
     margin-top: 15px;
   }
-  .buscador, .buscador-inv {
+
+  .buscador,
+  .buscador-inv {
     display: flex;
     background-color: #f1f5f9;
     border-radius: 8px;
@@ -1205,21 +1439,23 @@
     width: 350px;
     border: 1px solid #cbd5e1;
   }
+
   .tiempoVG {
     display: flex;
-    margin-top: -15px;
-    margin-left: 440px;
+    margin-top: -25px;
+    margin-left: 430px;
     font-weight: 600;
     color: #000000b7;
   }
 
   .tiempoVPC {
     display: flex;
-    margin-top: -15px;
-    margin-left: 440px;
+    margin-top: -25px;
+    margin-left: 430px;
     font-weight: 600;
     color: #000000b7;
   }
+
   /* El título de cada página, tiene la misma clase. */
   .tit {
     grid-column: 1 / 13;
@@ -1231,6 +1467,7 @@
     z-index: 2;
     /* border-bottom: solid 1px #ededed; */
   }
+
   .historial-filtros {
     display: flex;
     align-items: flex-end;
@@ -1241,6 +1478,7 @@
     border-radius: 0;
     transition: all 0.3s ease-in-out;
   }
+
   .historial-filtros input,
   .historial-filtros select {
     box-sizing: border-box;
@@ -1249,6 +1487,7 @@
     border-radius: 5px;
     background: #fff;
   }
+
   .btn-facturas {
     background-color: var(--colorazul);
     padding: 6px 13px;
@@ -1260,6 +1499,7 @@
     transition: 0.17s ease-in;
     border: none;
   }
+
   .tarjeta-filtro {
     grid-column: 1 / 13;
     border: 1px solid rgba(0, 0, 0, 0.212);
@@ -1268,6 +1508,7 @@
     margin-bottom: 20px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
   }
+
   /* -------------------------Clientes------------------------------------- */
 
   .contenedor-clientes {
@@ -1290,6 +1531,7 @@
     grid-row: 1;
     grid-column: 3 /12;
   }
+
   .buscar-cliente {
     display: flex;
     background-color: #f1f5f9;
@@ -1374,6 +1616,7 @@
     max-height: 90px;
     min-height: 90px;
   }
+
   .agregar-cliente #agrecarcbotton {
     width: 100px;
     grid-column: 7/9;
@@ -1424,52 +1667,58 @@
 
   .navlateral.open {
     left: -250px;
-  
+
   }
-  
-#toggleBtn {
-  z-index: 6;
-  position: fixed;
-  color:#fff;
-}
-.menuoculto {
-  font-size: 1rem;
-}
-#toggleBtn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  margin-top: 5px;
-  margin-left: 5px;
-}
-.btn-prod {
+
+  #toggleBtn {
+    z-index: 6;
+    position: fixed;
+    color: #fff;
+  }
+
+  .menuoculto {
+    font-size: 1rem;
+  }
+
+  #toggleBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  .btn-prod {
     margin-right: 7px;
   }
+
   .totales2 {
-  grid-row: 1;
-  grid-column: 9 / 12;
-  display: flex;
-  flex-direction: column;
-  margin-left: 45px;
-  margin-top: 20px;
-  margin-bottom: -65px;
-  gap: 30px;
-  font-size: larger;
-  line-height: 2;
-}
-.historial-produccion {
-  grid-column: 3 / 12;
-  grid-row: 1 / 9;
-  padding: 18px 0 0 10px;
-}
-.produccion-filtros input,
-.produccion-filtros select {
-  padding: 7px 9px;
-  border: 1px solid #626262;
-  border-radius: 5px;
-  background: #fff;
-  max-width: 100%;
-}
+    grid-row: 1;
+    grid-column: 9 / 12;
+    display: flex;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-top: 20px;
+    margin-bottom: -65px;
+    gap: 30px;
+    font-size: larger;
+    line-height: 2;
+  }
+
+  .historial-produccion {
+    grid-column: 3 / 12;
+    grid-row: 1 / 9;
+    padding: 18px 0 0 10px;
+  }
+
+  .produccion-filtros input,
+  .produccion-filtros select {
+    padding: 7px 9px;
+    border: 1px solid #626262;
+    border-radius: 5px;
+    background: #fff;
+    max-width: 100%;
+  }
 }
 /* pantallas grandes, de escritorio, quizá aqui haya que hacer algo con las pantallas full hd (1920 x 1080) porque creo que se verá estirado, de todas formas es eso mismo, a partir de 1000px hasta 1920px */
 @media screen and (min-width: 1000px) and (max-width: 2160px) {
