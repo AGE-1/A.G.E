@@ -238,6 +238,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// PERFIL DE EMPRESA
+// Se encarga de poner los datos de configPerfildeEmpresa automaticamente en agregarFactura por ahora solo en RNC
+// Hasta que el encargado de esa parte modifique los campos asi ya agrego los campos que faltan 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const rncPerfil = document.getElementById("rnc");
+    const rncFactura = document.getElementById("cliente-rfc");
+
+    const empresa = JSON.parse(localStorage.getItem("empresaAGE")) || {};
+
+    // Perfil de empresa
+    if (rncPerfil) {
+
+        rncPerfil.value = empresa.rnc || "";
+
+        rncPerfil.closest("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            empresa.rnc = rncPerfil.value.trim();
+
+            localStorage.setItem(
+                "empresaAGE",
+                JSON.stringify(empresa)
+            );
+
+            alert("Datos guardados correctamente.");
+        });
+    }
+
+    // Agregar factura
+    if (rncFactura) {
+        rncFactura.value = empresa.rnc || "";
+    }
+
+});
+
 
 // Boton de Leer notificaciones
 function marcarTodoLeido() {
