@@ -123,10 +123,14 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const FACTURAS_KEY = 'facturasAGE';
     const IVA = 0.16;
-    const formatoMoneda = new Intl.NumberFormat('es-DO', {
-        style: 'currency',
-        currency: 'USD'
+    // Formato monetario de República Dominicana.
+    const formatoPesos = new Intl.NumberFormat('es-DO', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
     });
+    const formatoMoneda = {
+        format: valor => `RD$ ${formatoPesos.format(valor)}`
+    };
 
     function leerFacturas() {
         try {
