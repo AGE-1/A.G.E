@@ -246,6 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const productoManual = document.getElementById('fact-producto-manual');
     const cantidad = document.getElementById('fact-cantidad');
     const precio = document.getElementById('fact-precio');
+    let ultimaFactura = null;
     const itemsContenedor = document.getElementById('factura-items');
     const interesContenedor = document.getElementById('interes-container');
     const tasaInteres = document.getElementById('tasa-interes');
@@ -386,6 +387,8 @@ document.addEventListener('DOMContentLoaded', function () {
             total: subtotal + iva + interes
         };
 
+        // Conserva la última factura para que pueda descargarse como PDF.
+        ultimaFactura = factura;
         guardarFacturas([factura, ...facturas]);
         alert(`Factura ${factura.numero} guardada correctamente.`);
         limpiarFactura();
@@ -394,7 +397,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('fact-imprimir').addEventListener('click', function (event) {
         event.preventDefault();
-        window.print();
+
+        // jsPDF crea el archivo directamente sin abrir el diálogo de impresión.
+        if (!ultimaFactura) {
+            ultimaFactura = leerFacturas()[0] || null;
+        }
+
+        if (!ultimaFactura) {
+            alert('Primero debes generar una factura.');
+            return;
+        }
+
+        if (!window.jspdf) {
+            alert('No se pudo cargar el generador de PDF. Revisa tu conexión a internet.');
+            return;
+        }
+
+        const { jsPDF } = window.jspdf;
+        const documento = new jsPDF();
+        const factura = ultimaFactura;
+
+        documento.setFontSize(20);
+        documento.text('FACTURA', 20, 25);
+        documento.setFontSize(11);
+        documento.text(`Número: ${factura.numero}`, 20, 38);
+        documento.text(`Fecha: ${new Date(`${factura.fecha}T00:00:00`).toLocaleDateString('es-DO')}`, 20, 46);
+        documento.text(`Cliente: ${factura.cliente}`, 20, 58);
+        documento.text(`RNC: ${factura.rnc}`, 20, 66);
+
+        let posicionY = 82;
+        documento.setFont('helvetica', 'bold');
+        documento.text('Producto', 20, posicionY);
+        documento.text('Cantidad', 115, posicionY);
+        documento.text('Total', 160, posicionY);
+        documento.setFont('helvetica', 'normal');
+        posicionY += 10;
+
+        factura.items.forEach(item => {
+            documento.text(String(item.producto), 20, posicionY);
+            documento.text(String(item.cantidad), 115, posicionY);
+            documento.text(formatoMoneda.format(item.total), 160, posicionY);
+            posicionY += 8;
+        });
+
+        posicionY += 8;
+        documento.text(`Subtotal: ${formatoMoneda.format(factura.subtotal)}`, 125, posicionY);
+        documento.text(`IVA: ${formatoMoneda.format(factura.iva)}`, 125, posicionY + 8);
+        documento.text(`Interés: ${formatoMoneda.format(factura.interes)}`, 125, posicionY + 16);
+        documento.setFont('helvetica', 'bold');
+        documento.text(`TOTAL: ${formatoMoneda.format(factura.total)}`, 125, posicionY + 28);
+        documento.save(`factura-${factura.numero}.pdf`);
     });
 
     mostrarItems();
