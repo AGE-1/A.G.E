@@ -118,6 +118,288 @@ document.addEventListener('DOMContentLoaded', function () {
 		statusSelect.addEventListener('change', filterProduction);
 	}
 });
+// --------------------------------------------- FACTURACION ---------------------------------------------------------------------
+// FACTURACION: crea facturas, calcula sus totales y las conserva en el navegador.
+document.addEventListener('DOMContentLoaded', function () {
+    const FACTURAS_KEY = 'facturasAGE';
+    const IVA = 0.16;
+    const formatoMoneda = new Intl.NumberFormat('es-DO', {
+        style: 'currency',
+        currency: 'USD'
+    });
+
+    function leerFacturas() {
+        try {
+            return JSON.parse(localStorage.getItem(FACTURAS_KEY)) || [];
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function guardarFacturas(facturas) {
+        localStorage.setItem(FACTURAS_KEY, JSON.stringify(facturas));
+    }
+
+    function obtenerFechaActual() {
+        const fecha = new Date();
+        const mes = String(fecha.getMonth() + 1).padStart(2, '0');
+        const dia = String(fecha.getDate()).padStart(2, '0');
+        return `${fecha.getFullYear()}-${mes}-${dia}`;
+    }
+
+    function actualizarResumen(facturas) {
+        // Actualiza las tarjetas superiores con los datos almacenados.
+        const emitidas = document.getElementById('resumen-emitidas');
+        const pendientes = document.getElementById('resumen-pendientes');
+        const total = document.getElementById('resumen-total');
+
+        if (!emitidas || !pendientes || !total) return;
+
+        emitidas.textContent = facturas.length;
+        pendientes.textContent = facturas.filter(factura => factura.estado === 'Pendiente').length;
+        total.textContent = formatoMoneda.format(
+            facturas
+                .filter(factura => factura.estado !== 'Anulada')
+                .reduce((suma, factura) => suma + factura.total, 0)
+        );
+    }
+
+    function mostrarFacturas() {
+        // Dibuja el historial aplicando los filtros de búsqueda, estado y fecha.
+        const cuerpo = document.getElementById('historial-body');
+        if (!cuerpo) return;
+
+        const facturas = leerFacturas();
+        const busqueda = (document.getElementById('buscar-factura')?.value || '').toLowerCase().trim();
+        const estado = document.getElementById('estado-factura')?.value || '';
+        const desde = document.getElementById('fecha-factura')?.value || '';
+        const sinResultados = document.getElementById('sin-resultados');
+
+        cuerpo.textContent = '';
+        const filtradas = facturas.filter(factura => {
+            const coincideTexto = `${factura.numero} ${factura.cliente} ${factura.rnc}`
+                .toLowerCase().includes(busqueda);
+            const coincideEstado = !estado || factura.estado === estado;
+            const coincideFecha = !desde || factura.fecha >= desde;
+            return coincideTexto && coincideEstado && coincideFecha;
+        });
+
+        filtradas.forEach(factura => {
+            const fila = document.createElement('tr');
+            fila.dataset.estado = factura.estado;
+            fila.dataset.id = factura.id;
+            fila.innerHTML = `
+                <td>${factura.numero}</td>
+                <td>${factura.cliente}</td>
+                <td>${new Date(`${factura.fecha}T00:00:00`).toLocaleDateString('es-DO')}</td>
+                <td>${formatoMoneda.format(factura.total)}</td>
+                <td><span class="estado estado-${factura.estado.toLowerCase()}">${factura.estado}</span></td>
+                <td>
+                    <a href="#" data-accion="ver" title="Ver factura"><i class="fa-regular fa-eye eye"></i></a>
+                    <a href="#" data-accion="eliminar" title="Eliminar factura"><i class="fa-regular fa-trash-can falista"></i></a>
+                </td>`;
+            cuerpo.appendChild(fila);
+        });
+
+        if (sinResultados) sinResultados.hidden = filtradas.length !== 0;
+        actualizarResumen(facturas);
+    }
+
+    const historialBody = document.getElementById('historial-body');
+    if (historialBody) {
+        // Los eventos se registran solo cuando estamos en la página de facturación.
+        mostrarFacturas();
+
+        ['buscar-factura', 'estado-factura', 'fecha-factura'].forEach(id => {
+            document.getElementById(id)?.addEventListener('input', mostrarFacturas);
+            document.getElementById(id)?.addEventListener('change', mostrarFacturas);
+        });
+
+        historialBody.addEventListener('click', function (event) {
+            const enlace = event.target.closest('[data-accion]');
+            if (!enlace) return;
+
+            event.preventDefault();
+            const fila = enlace.closest('tr');
+            const id = fila?.dataset.id;
+            const factura = leerFacturas().find(item => item.id === id);
+            if (!factura) return;
+
+            if (enlace.dataset.accion === 'eliminar') {
+                if (confirm(`¿Eliminar la factura ${factura.numero}?`)) {
+                    guardarFacturas(leerFacturas().filter(item => item.id !== id));
+                    mostrarFacturas();
+                }
+                return;
+            }
+
+            alert(`Factura ${factura.numero}\nCliente: ${factura.cliente}\nTotal: ${formatoMoneda.format(factura.total)}`);
+        });
+    }
+
+    const botonAgregar = document.getElementById('fact-agregar-item');
+    if (!botonAgregar) return;
+
+    const items = [];
+    const tipoFactura = document.getElementById('tipo-factura');
+    const producto = document.getElementById('fact-producto');
+    const productoManual = document.getElementById('fact-producto-manual');
+    const cantidad = document.getElementById('fact-cantidad');
+    const precio = document.getElementById('fact-precio');
+    const itemsContenedor = document.getElementById('factura-items');
+    const interesContenedor = document.getElementById('interes-container');
+    const tasaInteres = document.getElementById('tasa-interes');
+
+    function cargarProductos() {
+        // El inventario todavía no es obligatorio; si existe un catálogo, se carga aquí.
+        let productos = [];
+        try {
+            productos = JSON.parse(localStorage.getItem('productosAGE')) || [];
+        } catch (error) {
+            productos = [];
+        }
+
+        productos.forEach(item => {
+            const nombre = item.nombre || item.name;
+            if (!nombre) return;
+            const opcion = document.createElement('option');
+            opcion.value = nombre;
+            opcion.textContent = nombre;
+            opcion.dataset.precio = item.precio || item.price || '';
+            producto.appendChild(opcion);
+        });
+    }
+
+    function actualizarTotales() {
+        // Una factura vacía mantiene todos sus importes en cero.
+        const subtotal = items.reduce((suma, item) => suma + item.total, 0);
+        const iva = subtotal * IVA;
+        const interes = tipoFactura.value === 'credito' ? subtotal * (Number(tasaInteres.value) || 0) / 100 : 0;
+
+        document.getElementById('fact-subtotal').textContent = formatoMoneda.format(subtotal);
+        document.getElementById('fact-iva').textContent = formatoMoneda.format(iva);
+        document.getElementById('fact-interes').textContent = formatoMoneda.format(interes);
+        document.getElementById('fact-total').textContent = formatoMoneda.format(subtotal + iva + interes);
+        interesContenedor.style.display = tipoFactura.value === 'credito' ? 'block' : 'none';
+    }
+
+    function mostrarItems() {
+        // Muestra los productos agregados o un mensaje cuando aún no hay ninguno.
+        itemsContenedor.textContent = '';
+        if (!items.length) {
+            itemsContenedor.textContent = 'Sin productos aún';
+            actualizarTotales();
+            return;
+        }
+
+        items.forEach((item, indice) => {
+            const fila = document.createElement('div');
+            fila.className = 'item-factura';
+            fila.textContent = `${item.producto} x${item.cantidad} - ${formatoMoneda.format(item.total)}`;
+
+            const eliminar = document.createElement('button');
+            eliminar.type = 'button';
+            eliminar.textContent = 'Eliminar';
+            eliminar.addEventListener('click', function () {
+                items.splice(indice, 1);
+                mostrarItems();
+            });
+            fila.appendChild(eliminar);
+            itemsContenedor.appendChild(fila);
+        });
+        actualizarTotales();
+    }
+
+    function limpiarFactura() {
+        items.length = 0;
+        document.getElementById('cliente-nombre').value = '';
+        document.getElementById('cliente-rfc').value = '';
+        cantidad.value = '';
+        precio.value = '';
+        productoManual.value = '';
+        mostrarItems();
+        document.querySelector('.factura-preview').textContent = 'La factura aparecerá aquí';
+    }
+
+    cargarProductos();
+    producto.addEventListener('change', function () {
+        if (producto.selectedOptions[0]?.dataset.precio) precio.value = producto.selectedOptions[0].dataset.precio;
+    });
+    tipoFactura.addEventListener('change', actualizarTotales);
+    tasaInteres.addEventListener('input', actualizarTotales);
+
+    botonAgregar.addEventListener('click', function (event) {
+        // Los productos son opcionales por ahora, pero los que se agreguen deben ser válidos.
+        event.preventDefault();
+        const nombreProducto = productoManual.value.trim() || producto.value.trim();
+        const cantidadProducto = Number(cantidad.value);
+        const precioProducto = Number(precio.value);
+
+        if (!nombreProducto || cantidadProducto < 1 || precioProducto < 0 || !precio.value) {
+            alert('Selecciona un producto e indica una cantidad y un precio válidos.');
+            return;
+        }
+
+        items.push({ producto: nombreProducto, cantidad: cantidadProducto, precio: precioProducto, total: cantidadProducto * precioProducto });
+        producto.value = '';
+        productoManual.value = '';
+        cantidad.value = '';
+        precio.value = '';
+        mostrarItems();
+    });
+
+    document.getElementById('fact-limpiar').addEventListener('click', function (event) {
+        event.preventDefault();
+        limpiarFactura();
+    });
+
+    document.getElementById('fact-generar').addEventListener('click', function (event) {
+        event.preventDefault();
+        const cliente = document.getElementById('cliente-nombre').value.trim();
+        const rnc = document.getElementById('cliente-rfc').value.trim();
+
+        // Por ahora se permite guardar la factura sin productos del inventario.
+        if (!cliente || !rnc) {
+            alert('Completa los datos del cliente.');
+            return;
+        }
+
+        const subtotal = items.reduce((suma, item) => suma + item.total, 0);
+        const iva = subtotal * IVA;
+        const interes = tipoFactura.value === 'credito' ? subtotal * (Number(tasaInteres.value) || 0) / 100 : 0;
+        const facturas = leerFacturas();
+        const siguienteNumero = facturas.reduce((mayor, factura) => Math.max(mayor, Number(factura.numero.replace('F-', '')) || 0), 0) + 1;
+        const factura = {
+            id: `FAC-${Date.now()}`,
+            numero: `F-${String(siguienteNumero).padStart(4, '0')}`,
+            tipo: tipoFactura.value,
+            cliente,
+            rnc,
+            fecha: obtenerFechaActual(),
+            estado: 'Pendiente',
+            diasCredito: Number(document.getElementById('dias-credito').value) || 0,
+            tasaInteres: Number(tasaInteres.value) || 0,
+            items: [...items],
+            subtotal,
+            iva,
+            interes,
+            total: subtotal + iva + interes
+        };
+
+        guardarFacturas([factura, ...facturas]);
+        alert(`Factura ${factura.numero} guardada correctamente.`);
+        limpiarFactura();
+        document.querySelector('.factura-preview').textContent = `Factura ${factura.numero} creada para ${factura.cliente}. Total: ${formatoMoneda.format(factura.total)}`;
+    });
+
+    document.getElementById('fact-imprimir').addEventListener('click', function (event) {
+        event.preventDefault();
+        window.print();
+    });
+
+    mostrarItems();
+});
+// --------------------------------------------- FACTURACION ---------------------------------------------------------------------
 // Script para el nav
 function abri() {
     const toggleBtn = document.getElementById('toggleBtn');
