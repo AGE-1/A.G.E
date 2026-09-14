@@ -234,6 +234,7 @@
   }
 
   .nav-Config {
+    left: 0;
     background: #fff;
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -243,7 +244,10 @@
     width: 170px;
     height: 100%;
     z-index: 1;
-    display: none;
+    /* display: none; */
+    transition: all 0.3s ease-in-out;
+    overflow-y: auto;
+    overflow-x: auto;
   }
 
   .fa-bars {
@@ -965,9 +969,17 @@
     left: -250px;
 
   }
+  .nav-Config.open {
+    left: -250px;
+  }
 
   .menuoculto {
     font-size: 1rem;
+  }
+  
+  .menuoculto2 {
+    margin-right: -145px;
+    margin-top: 60px;
   }
   
   #toggleBtn {
@@ -979,6 +991,16 @@
     z-index: 6;
     position: fixed;
     color: #fff;
+  }
+  #toggleBtn2{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+    z-index: 6;
+    position: fixed;
+    color: #000;
   }
   
 .navlateral ul {
@@ -1038,7 +1060,9 @@
     height: 100%;
     z-index: 1;
   }
-
+  .menuoculto2 {
+    display: none;
+  }
   .navlateral {
     width: 88px;
     background-color: var(--colornegro);
@@ -1730,7 +1754,9 @@
     position: fixed;
     color: #fff;
   }
-
+  #toggleBtn2 {
+  display: none;
+}
   .btn-prod {
     margin-right: 7px;
   }
@@ -1772,6 +1798,9 @@
     transition: all 0.3s ease-in-out;
   }
 
+  .menuoculto2 {
+    display: none;
+  }
   .nav ul li a {
     opacity: 1;
     line-height: 4  ;
@@ -1835,7 +1864,9 @@
   color: #fff;
   font-size: 1.2rem;
 }
-
+#toggleBtn2 {
+  display: none;
+}
 #toggleBtn {
   background: transparent;
   border: none;
@@ -1860,6 +1891,7 @@
     margin-left: 171.98px;
     height: 100%;
     z-index: 1;
+    transition: all 0.3s ease-in-out;
   }
   .fa-bars {
     color: var(--colorenlaces);
@@ -4391,3 +4423,4 @@ select:focus {
   display: block;
   margin-top: 10px;
 }
+

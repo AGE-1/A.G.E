@@ -471,7 +471,22 @@ function abri() {
             iconoBtn.style.color = '#fff';
         }
     });
-}
+} 
+function abri2() {
+  const toggleBtn = document.getElementById("toggleBtn2");
+  const iconoBtn = toggleBtn.querySelector("i");
+  const navConfig = document.getElementById("nav-Config");
+
+  toggleBtn.addEventListener("click", () => {
+    navConfig.classList.toggle("open");
+
+    if (navConfig.classList.contains("open")) {
+      iconoBtn.style.color = "#000";
+    } else {
+      iconoBtn.style.color = "#000";
+    }
+  });
+} 
 
 
 /*
