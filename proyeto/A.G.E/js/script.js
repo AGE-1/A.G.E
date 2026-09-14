@@ -656,3 +656,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+// Buscador de clientes
+const buscadorclientes = document.getElementById("buscador-clientes1");
+const tablaclientes = document.querySelectorAll("#tablaclientesB tr");
+
+buscadorclientes.addEventListener("input",function() {
+
+    const texto = buscadorclientes.value.toLowerCase();
+
+    tablaclientes.forEach(function(tablaclientes){
+        const nombre = tablaclientes.textContent.toLowerCase()
+
+        if (nombre.includes(texto)){
+
+            tablaclientes.style.display = " ";
+
+        }else{
+            tablaclientes.style.display = "none";
+        }
+    });
+});
+
+
