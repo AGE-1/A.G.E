@@ -693,5 +693,3 @@ buscadorclientes.addEventListener("input",function() {
         }
     });
 });
-
-

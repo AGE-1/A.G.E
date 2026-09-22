@@ -358,19 +358,26 @@
     grid-column: 1 / 2;
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-between;
-    margin-left: 50px;
+    margin-left: 15px;
     margin-top: 20px;
-    gap: 10px;
+    gap: 20px;
   }
 
 
   .card-ES {
     border-radius: 12px;
-    padding: 18px;
+    padding: 10px;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
-    width: 60%;
+    width: 70%;
     height: 100%;
   }
+
+  .buscador button i, 
+.buscador-inv button i,
+.buscador-nf button i {
+  color: black;
+  font-size: 1rem;
+}
 
   .agregarProductos {
     display: flex;
@@ -407,7 +414,8 @@
   .titulo-encabezado {
     font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: -100px;
+    margin-bottom: -140px;
+    margin-left: 10px;
   }
 
   .titulo-encabezado i {
@@ -421,14 +429,14 @@
   }
 
   div .card {
-    width: 21%;
+    width: 24%;
     height: 90px;
+    margin-left: -25px;
   }
 
   .panel-clientes {
     display: grid;
     gap: 24px;
-    width: 200px;
     margin-left: 60px;
     margin-top: 20px;
     grid-template-columns: repeat(1, 1fr);
@@ -498,10 +506,25 @@
     margin: -5px;
   }
 
+  .seccion-graficos h2 {
+  font-size: 1.2rem;
+  
+}
+
+  .graficoES h2 {
+    margin-bottom: 10px;
+  }
+
+.graficas h2 {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  margin-left: 9px;
+}
+
   .graficoES {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 26%;
+    width: 22%;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     padding: 15px;
     box-sizing: border-box;
@@ -512,12 +535,12 @@
   .graficoPPC {
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-    width: 26%;
+    width: 22%;
     box-shadow: 0 0px 7px rgba(0, 0, 0, 0.212);
     padding: 15px;
     box-sizing: border-box;
     margin-left: 990px;
-    height: 170%;
+    height: 190%;
   }
 
   .card h2 {
@@ -716,7 +739,7 @@
 
   .tarjeta-panel-clientes,
   .tarjeta-metodos-pago {
-    width: 112%;
+    width: 90%;
     margin-left: 16px;
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -727,19 +750,25 @@
 
   .campana {
     margin-top: 20px;
-    grid-column: 1;
-    font-size: 1.4rem;
-    margin-left: 380px;
+    font-size: 1.2rem;
+    margin-left: 360px;
   }
 
+  .campanainv {
+    margin-top: 20px;
+    grid-column: 1;
+    font-size: 1.2rem;
+    margin-left: 300px;
+  }
   .topbar-nf {
     margin-top: -20px;
     margin-left: -30px;
   }
 
   .buscador-inv {
-    margin-left: 70px;
-    margin-top: 20px;
+    margin-left: 10px;
+    margin-top: -25px;
+    margin-bottom: 20px;
     display: flex;
     background-color: #f1f5f9;
     border-radius: 8px;
@@ -750,7 +779,20 @@
 
   .buscador {
     margin-left: 70px;
-    margin-top: 20px;
+    margin-top: -25px;
+    margin-bottom: 20px;
+    display: flex;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    padding: 6px 12px;
+    width: 150px;
+    border: 1px solid #cbd5e1;
+  }
+
+  .buscador-nf {
+    margin-left: 60px;
+    margin-top: 14px;
+    margin-bottom: 20px;
     display: flex;
     background-color: #f1f5f9;
     border-radius: 8px;
@@ -1184,6 +1226,12 @@
     margin-top: -18px;
   }
 
+  .buscador button i, 
+  .buscador-inv button i {
+    color: black;
+    font-size: 1.2rem;
+  }
+
   .titulo-encabezado {
     margin-left: -40px;
   }
@@ -1494,6 +1542,18 @@
     margin-left: 50px;
     margin-top: 15px;
   }
+
+  .seccion-graficos h2 {
+  font-size: 1.3rem;
+  margin-top: 5px;
+  margin-left: 9px;
+}
+
+.graficas h2 {
+  font-size: 1.3rem;
+  margin-top: 5px;
+  margin-left: 9px;
+}
 
   .buscador,
   .buscador-inv {
@@ -1882,6 +1942,13 @@
     display: none;
   }
 
+
+  .buscador button i, 
+  .buscador-inv button i {
+    color: black;
+    font-size: 1.2rem;
+  }
+
   .nav-Config {
     background: #fff;
     border-radius: 4px;
@@ -1955,6 +2022,17 @@
     margin-top: 4px;
   }
 
+.seccion-graficos h2 {
+  font-size: 1.6rem;
+  margin-top: 5px;
+  margin-left: 9px;
+}
+
+.graficas h2 {
+  font-size: 1.6rem;
+  margin-top: 5px;
+  margin-left: 9px;
+}
   .graficas {
     display: grid;
     grid-column: 1 / 12;
@@ -3363,7 +3441,7 @@ label {
   color: #ef4444;
 }
 
-.buscador input, .buscador-inv input {
+.buscador input, .buscador-inv input, .buscador-nf input {
   border: none;
   background: transparent;
   width: 100%;
@@ -3371,17 +3449,14 @@ label {
 }
 
 .buscador button, 
-.buscador-inv button {
+.buscador-inv button,
+.buscador-nf button {
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
-.buscador button i, 
-.buscador-inv button i {
-  color: black;
-  font-size: 1.2rem;
-}
+
 
 
 /* --------------------------------- Botones --------------------------------------- */
@@ -3522,11 +3597,7 @@ th {
   border-radius: 5px;
 }
 
-.seccion-graficos h2 {
-  font-size: 1.6rem;
-  margin-top: 5px;
-  margin-left: 9px;
-}
+
 
 .tiempoES {
   display: flex;
@@ -3567,11 +3638,7 @@ select:focus {
   color: #000;
 }
 
-.graficas h2 {
-  font-size: 1.6rem;
-  margin-top: 5px;
-  margin-left: 9px;
-}
+
 
 .cards-ES i {
   color: #000;

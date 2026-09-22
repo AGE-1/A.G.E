@@ -37,7 +37,7 @@
             
             <main class="contenido-agp">
                 <div class="agregar-producto">
-                    <form action="procesar_producto.php" method="POST">
+                    <form id="formAgregarProducto">
                         <label for="nombre">Nombre del Producto:</label>
                         <input type="text" id="nombre" name="nombre" required>
 
@@ -54,7 +54,7 @@
                         <input type="number" id="cantidad" name="cantidad" required>
 
                         <div class="acciones-form">
-                            <a href="inventario.html" class="btn-aniadir">Confirmar</a>
+                            <button type="submit" class="btn-aniadir">Confirmar</button>
                             <a href="inventario.html" class="btn-cancelar">Cancelar</a>
                         </div>
                     </form>
