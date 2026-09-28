@@ -3307,7 +3307,7 @@ label {
 .btn-aniado input {
   background-color: var(--colorazul);
   color: #fff;
-  width: 20%;
+  width: 100%;
   border-radius: 6px;
   border: none;
   padding: 7px;

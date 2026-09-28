@@ -674,46 +674,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Buscador de clientes
-const buscadorclientes = document.getElementById("buscador-clientes1");
-const tablaclientes = document.querySelectorAll("#tablaclientesB tr");
+document.addEventListener("DOMContentLoaded", function () {
+    const buscadorClientes = document.getElementById("buscador-clientes1");
+    const cuerpoTabla = document.querySelector(".tabla-clientes tbody");
 
-if (buscadorclientes) {
-buscadorclientes.addEventListener("input",function() {
+    if (!buscadorClientes || !cuerpoTabla) return;
 
-    const texto = buscadorclientes.value.toLowerCase();
+    buscadorClientes.addEventListener("input", function () {
+        const texto = buscadorClientes.value.toLowerCase().trim();
 
-    tablaclientes.forEach(function(tablaclientes){
-        const nombre = tablaclientes.textContent.toLowerCase()
-
-        if (nombre.includes(texto)){
-
-            tablaclientes.style.display = " ";
-
-        }else{
-            tablaclientes.style.display = "none";
-        }
+        cuerpoTabla.querySelectorAll("tr").forEach(function (fila) {
+            const contenido = fila.textContent.toLowerCase();
+            fila.style.display = contenido.includes(texto) ? "" : "none";
+        });
     });
 });
-}
 
-// Anadir empleado bozeto
+// Anadir empleado 
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const botonAgregar = document.getElementById("agrecarcbotton");
+    const formularioEmpleado = document.getElementById("form-empleado");
 
-    if (!botonAgregar) return;
+    if (!formularioEmpleado) return;
 
-    botonAgregar.addEventListener("click", function () {
+    formularioEmpleado.addEventListener("submit", function (event) {
+        event.preventDefault();
 
         // Obtener los datos del formulario
-        const nombre = document.getElementById("nombre").value;
-        const telefono = document.getElementById("telefono").value;
-        const correo = document.getElementById("correo").value;
-        const identificacion = document.getElementById("Identificacion").value;
+        const nombre = document.getElementById("nombre").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const correo = document.getElementById("correo").value.trim();
+        const identificacion = document.getElementById("Identificacion").value.trim();
         const area = document.getElementById("area").value;
         const horario = document.getElementById("Horario").value;
-        const descripcion = document.getElementById("Descripcion-cliente").value;
+        const descripcion = document.getElementById("Descripcion-cliente").value.trim();
 
         // Validar campos principales
         if (nombre === "" || telefono === "" || correo === "") {
@@ -722,10 +717,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Obtener empleados guardados
-        let empleados = JSON.parse(localStorage.getItem("empleados")) || [];
+        let empleados = [];
+        try {
+            const guardados = JSON.parse(localStorage.getItem("empleados")) || [];
+            empleados = Array.isArray(guardados) ? guardados : [];
+        } catch (error) {
+            empleados = [];
+        }
 
         // Crear nuevo empleado
         const nuevoEmpleado = {
+            id: `EMP-${Date.now()}`,
             nombre: nombre,
             telefono: telefono,
             correo: correo,
@@ -736,7 +738,7 @@ document.addEventListener("DOMContentLoaded", function () {
             estado: "Activo"
         };
 
-        // Agregar empleado al arreglo
+        // Agregar empleado al array
         empleados.push(nuevoEmpleado);
 
         // Guardar nuevamente
@@ -748,6 +750,108 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "empleados.html";
     });
 
+});
+
+// Anadir Clientes
+document.addEventListener("DOMContentLoaded", function () {
+
+    const formularioCliente = document.getElementById("form-cliente");
+
+    if (!formularioCliente) return;
+
+    formularioCliente.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Obtener los datos del formulario
+        const nombre = document.getElementById("nombre").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const correo = document.getElementById("correo").value.trim();
+        const ubi = document.getElementById("ubi").value.trim();
+        const fecharegistro = document.getElementById("fecharegistro").value.trim();
+
+
+        // Validar campos principales
+        if (nombre === "" || telefono === "" || correo === "" || fecharegistro === "") {
+            alert("Completa los campos obligatorios");
+            return;
+        }
+
+        // Obtener clientes guardados
+        let clientes = [];
+        try {
+            const guardados = JSON.parse(localStorage.getItem("clientes")) || [];
+            clientes = Array.isArray(guardados) ? guardados : [];
+        } catch (error) {
+            clientes = [];
+        }
+
+        // Crear nuevo cliente
+        const nuevoCliente = {
+            id: `CLI-${Date.now()}`,
+            nombre: nombre,
+            telefono: telefono,
+            correo: correo,
+            ubicacion: ubi,
+            fechaRegistro: fecharegistro,
+        };
+
+        // Agregar cliente al array
+        clientes.push(nuevoCliente);
+
+        // Guardar nuevamente
+        localStorage.setItem("clientes", JSON.stringify(clientes));
+
+        alert("Cliente agregado correctamente");
+
+        // Ir a la página de clientes
+        window.location.href = "clientes.html";
+    });
+
+});
+
+// Muestra en la tabla los clientes guardados desde agregarCliente.html.
+document.addEventListener("DOMContentLoaded", function () {
+    const cuerpoClientes = document.getElementById("clientes-body");
+    if (!cuerpoClientes) return;
+
+    let clientes = [];
+    try {
+        const guardados = JSON.parse(localStorage.getItem("clientes")) || [];
+        clientes = Array.isArray(guardados) ? guardados : [];
+    } catch (error) {
+        clientes = [];
+    }
+
+    clientes.forEach(function (cliente) {
+        const fila = document.createElement("tr");
+        const valores = [
+            cliente.nombre || "",
+            cliente.telefono || "",
+            cliente.correo || "",
+            cliente.ubicacion || "",
+            cliente.fechaRegistro || ""
+        ];
+
+        valores.forEach(function (valor) {
+            const celda = document.createElement("th");
+            celda.textContent = valor;
+            fila.appendChild(celda);
+        });
+
+        const celdaAcciones = document.createElement("th");
+        const enlaceVer = document.createElement("a");
+        const iconoVer = document.createElement("i");
+        enlaceVer.href = `verCliente.html?id=${encodeURIComponent(cliente.id || "")}`;
+        iconoVer.className = "fa-regular fa-eye eye";
+        enlaceVer.appendChild(iconoVer);
+
+        const botonVer = document.createElement("button");
+        botonVer.className = "btn-ver";
+        botonVer.appendChild(enlaceVer);
+        celdaAcciones.appendChild(botonVer);
+        fila.appendChild(celdaAcciones);
+        cuerpoClientes.appendChild(fila);
+    });
 });
 
 // --------------------------------------------- INVENTARIO ---------------------------------------------------------------------

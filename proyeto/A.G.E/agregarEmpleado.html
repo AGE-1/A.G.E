@@ -35,7 +35,7 @@
         </div>
     </aside>
     <section class="agregar-cliente">
-        <form>
+        <form id="form-empleado">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" required>
 
@@ -50,10 +50,10 @@
 
             <label for="area">Area:</label>
             <select name="" id="area">
-                <option value="">Produccion</option>
-                <option value="">Ventas</option>
-                <option value="">Compras</option>
-                <option value="">Otra</option>
+                <option value="Produccion">Produccion</option>
+                <option value="Ventas">Ventas</option>
+                <option value="Compras">Compras</option>
+                <option value="Otra">Otra</option>
             </select>
             
 
@@ -62,7 +62,7 @@
 
             <textarea name="Descripcion" id="Descripcion-cliente" placeholder="Agregar descripcion"></textarea>
             
-            <input type="button" value="Agregar" id="agrecarcbotton">
+            <input type="submit" value="Agregar" id="agrecarcbotton">
             <input type="reset" value="Cancelar" id="limpiarclientebotton">
         </form>
         
