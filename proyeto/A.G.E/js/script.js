@@ -693,3 +693,55 @@ buscadorclientes.addEventListener("input",function() {
         }
     });
 });
+
+// Anadir empleado bozeto
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const botonAgregar = document.getElementById("agrecarcbotton");
+
+    botonAgregar.addEventListener("click", function () {
+
+        // Obtener los datos del formulario
+        const nombre = document.getElementById("nombre").value;
+        const telefono = document.getElementById("telefono").value;
+        const correo = document.getElementById("correo").value;
+        const identificacion = document.getElementById("Identificacion").value;
+        const area = document.getElementById("area").value;
+        const horario = document.getElementById("Horario").value;
+        const descripcion = document.getElementById("Descripcion-cliente").value;
+
+        // Validar campos principales
+        if (nombre === "" || telefono === "" || correo === "") {
+            alert("Completa los campos obligatorios");
+            return;
+        }
+
+        // Obtener empleados guardados
+        let empleados = JSON.parse(localStorage.getItem("empleados")) || [];
+
+        // Crear nuevo empleado
+        const nuevoEmpleado = {
+            nombre: nombre,
+            telefono: telefono,
+            correo: correo,
+            identificacion: identificacion,
+            area: area,
+            horario: horario,
+            descripcion: descripcion,
+            estado: "Activo"
+        };
+
+        // Agregar empleado al arreglo
+        empleados.push(nuevoEmpleado);
+
+        // Guardar nuevamente
+        localStorage.setItem("empleados", JSON.stringify(empleados));
+
+        alert("Empleado agregado correctamente");
+
+        // Ir a la página de empleados
+        window.location.href = "empleados.html";
+    });
+
+});
