@@ -39,8 +39,8 @@
         <a href="notificaciones.html"><i class="fa-regular fa-bell campanainv"></i></a>
         <div class="topbar">
             <div class="buscador-inv">
-                <input type="search" placeholder="Buscar producto, codigo, categoria...">
-                <button>
+                <input type="search" id="buscar-inventario" placeholder="Buscar producto, codigo, categoria...">
+                <button type="button" aria-label="Buscar productos">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
@@ -75,10 +75,10 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p>1,248</p>
+                        <p id="total-productos">0</p>
                     </div>
                     <div class="card-footer">
-                        <p>94.26% del inventario</p>
+                        <p id="porcentaje-disponible">0% del inventario</p>
                     </div>
                 </div>
 
@@ -90,10 +90,10 @@
                         </div>
                     </div>
                     <div class="card-body2">
-                        <p>28</p>
+                        <p id="productos-agotados">0</p>
                     </div>
                     <div class="card-footer2">
-                        <p>2.25% del inventario</p>
+                        <p id="porcentaje-agotado">0% del inventario</p>
                     </div>
                 </div>
 
@@ -106,10 +106,10 @@
                         </div>
                     </div>
                     <div class="card-body3">
-                        <p>56</p>
+                        <p id="productos-bajo-stock">0</p>
                     </div>
                     <div class="card-footer3">
-                        <p>4.49% del inventario</p>
+                        <p id="porcentaje-bajo-stock">0% del inventario</p>
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@
             
             <section class="seccion-productos">
                 <div class="contenedor-productos">
-                    <div class="titulo-tabla">Productos (1,248)</div>
+                    <div class="titulo-tabla" id="titulo-tabla-productos">Productos (0)</div>
                                 
                     <table class="tabla-productos">
                         <thead>
@@ -134,73 +134,7 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        
-                            <tr>
-                                <td>PRD-0001</td>
-                                <td>
-                                    <div class="celda-producto">
-                                        
-                                    </div>
-                                </td>
-                                <td></td>
-                                <td class="stock-disponible"></td>
-                                <td></td>
-                                <td></td>
-                                <td><div class="disponible"></div></td>
-                                <td>
-                                    <div class="acciones">
-                                        <button class="btn-accion btn-verr"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="btn-accion btn-editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                                        <button class="btn-accion btn-eliminar"><i class="fa-regular fa-trash-can"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td>PRD-0002</td>
-                                <td>
-                                    <div class="celda-producto">
-                                        
-                                    </div>
-                                </td>
-                                <td></td>
-                                <td class="stock-bajo"></td>
-                                <td></td>
-                                <td></td>
-                                <td><div class="bajo-stock"> </div></td>
-                                <td>
-                                    <div class="acciones">
-                                        <button class="btn-accion btn-verr"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="btn-accion btn-editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                                        <button class="btn-accion btn-eliminar"><i class="fa-regular fa-trash-can"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td>PRD-0003</td>
-                                <td>
-                                    <div class="celda-producto">
-                                    
-                                    </div>
-                                </td>
-                                <td></td>
-                                <td class="stock-agotado"></td>
-                                <td></td>
-                                <td></td>
-                                <td><div class="agotado"></div></td>
-                                <td>
-                                    <div class="acciones">
-                                        <button class="btn-accion btn-verr"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="btn-accion btn-editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                                        <button class="btn-accion btn-eliminar"><i class="fa-regular fa-trash-can"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="inventario-body"></tbody>
                     </table>
                 </div>
             </section>

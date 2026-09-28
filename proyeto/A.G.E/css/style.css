@@ -3553,6 +3553,52 @@ th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.075);
 }
 
+.tabla-productos .stock-disponible {
+  color: #166534;
+  font-weight: 700;
+}
+
+.tabla-productos .stock-bajo {
+  color: #854d0e;
+  font-weight: 700;
+}
+
+.tabla-productos .stock-agotado {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.tabla-productos .inventario-vacio {
+  height: 160px;
+  text-align: center;
+  vertical-align: middle;
+  color: #64748b;
+}
+
+.tabla-productos .disponible,
+.tabla-productos .bajo-stock,
+.tabla-productos .agotado {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.tabla-productos .disponible {
+  color: #166534;
+  background-color: #dcfce7;
+}
+
+.tabla-productos .bajo-stock {
+  color: #854d0e;
+  background-color: #fef3c7;
+}
+
+.tabla-productos .agotado {
+  color: #b91c1c;
+  background-color: #fee2e2;
+}
+
 .btn-verr i,
 .btn-editar i {
   color: rgb(0, 0, 0);
@@ -4273,10 +4319,10 @@ select:focus {
 }
 
 .agregar-producto .btn-aniadir {
+  width: 100%;
+  border: none;
   background-color: var(--colorazul);
   color: #ffffff;
-  margin-top: 8px;
-  margin-bottom: 5px;
 }
 
 .agregar-producto .btn-aniadir:hover {

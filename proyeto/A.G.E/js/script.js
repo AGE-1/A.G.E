@@ -677,6 +677,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const buscadorclientes = document.getElementById("buscador-clientes1");
 const tablaclientes = document.querySelectorAll("#tablaclientesB tr");
 
+if (buscadorclientes) {
 buscadorclientes.addEventListener("input",function() {
 
     const texto = buscadorclientes.value.toLowerCase();
@@ -693,12 +694,15 @@ buscadorclientes.addEventListener("input",function() {
         }
     });
 });
+}
 
 // Anadir empleado bozeto
 
 document.addEventListener("DOMContentLoaded", function () {
 
     const botonAgregar = document.getElementById("agrecarcbotton");
+
+    if (!botonAgregar) return;
 
     botonAgregar.addEventListener("click", function () {
 
@@ -744,4 +748,233 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "empleados.html";
     });
 
+});
+
+// --------------------------------------------- INVENTARIO ---------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+    // Referencias de la página y clave donde se guarda el catálogo.
+    const PRODUCTOS_KEY = 'productosAGE';
+    const formulario = document.getElementById('formAgregarProducto');
+    const cuerpoInventario = document.getElementById('inventario-body');
+    const busqueda = document.getElementById('buscar-inventario');
+
+    // Funciones para leer, guardar y asignar códigos a los productos.
+    function leerProductos() {
+        try {
+            const productos = JSON.parse(localStorage.getItem(PRODUCTOS_KEY)) || [];
+            return Array.isArray(productos) ? productos : [];
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function guardarProductos(productos) {
+        localStorage.setItem(PRODUCTOS_KEY, JSON.stringify(productos));
+    }
+
+    function siguienteCodigo(productos) {
+        const mayor = productos.reduce((maximo, producto) => {
+            const numero = Number(String(producto.codigo || '').replace(/\D/g, '')) || 0;
+            return Math.max(maximo, numero);
+        }, 0);
+        return `PRD-${String(mayor + 1).padStart(4, '0')}`;
+    }
+
+    // TABLA Y BUSQUEDA: filtra productos, actualiza indicadores y dibuja las filas.
+    function mostrarInventario() {
+        if (!cuerpoInventario) return;        const acciones = document.createElement('td');
+        acciones.innerHTML = `...`;
+        fila.dataset.id = producto.id;
+        fila.appendChild(acciones);
+        cuerpoInventario.appendChild(fila);
+
+        const productos = leerProductos();
+        const termino = busqueda.value.trim().toLowerCase();
+        const filtrados = productos.filter(producto =>
+            `${producto.codigo} ${producto.nombre} ${producto.categoria} ${producto.proveedor || ''} ${producto.descripcion || ''}`
+                .toLowerCase().includes(termino)
+        );
+        const formatoMoneda = new Intl.NumberFormat('es-DO', {
+            style: 'currency',
+            currency: 'DOP'
+        });
+        const agotados = productos.filter(producto => Number(producto.cantidad) <= 0).length;
+        const bajoStock = productos.filter(producto => Number(producto.cantidad) > 0 && Number(producto.cantidad) <= 10).length;
+        const porcentaje = cantidad => productos.length ? `${((cantidad / productos.length) * 100).toFixed(2)}% del inventario` : '0% del inventario';
+
+        document.getElementById('total-productos').textContent = productos.length;
+        document.getElementById('productos-agotados').textContent = agotados;
+        document.getElementById('productos-bajo-stock').textContent = bajoStock;
+        document.getElementById('porcentaje-disponible').textContent = porcentaje(productos.length - agotados - bajoStock);
+        document.getElementById('porcentaje-agotado').textContent = porcentaje(agotados);
+        document.getElementById('porcentaje-bajo-stock').textContent = porcentaje(bajoStock);
+        document.getElementById('titulo-tabla-productos').textContent = `Productos (${productos.length})`;
+        cuerpoInventario.textContent = '';
+
+        if (!filtrados.length) {
+            const filaVacia = document.createElement('tr');
+            const mensajeVacio = document.createElement('td');
+            mensajeVacio.className = 'inventario-vacio';
+            mensajeVacio.colSpan = 8;
+            mensajeVacio.textContent = termino ? 'No se encontraron productos.' : 'No hay productos en el inventario.';
+            filaVacia.appendChild(mensajeVacio);
+            cuerpoInventario.appendChild(filaVacia);
+            return;
+        }
+
+        filtrados.forEach(producto => {
+            const cantidad = Number(producto.cantidad) || 0;
+            const estado = cantidad <= 0 ? 'Agotado' : cantidad <= 10 ? 'Bajo stock' : 'Disponible';
+            const fila = document.createElement('tr');
+            const valores = [
+                producto.codigo,
+                producto.nombre,
+                producto.categoria,
+                String(cantidad),
+                formatoMoneda.format(Number(producto.precio) || 0),
+                producto.proveedor || 'Sin proveedor',
+                estado
+            ];
+
+            valores.forEach((valor, indice) => {
+                const celda = document.createElement('td');
+                celda.textContent = valor || '';
+                if (indice === 3) celda.className = cantidad <= 0 ? 'stock-agotado' : cantidad <= 10 ? 'stock-bajo' : 'stock-disponible';
+                if (indice === 6) {
+                    const etiqueta = document.createElement('div');
+                    etiqueta.className = cantidad <= 0 ? 'agotado' : cantidad <= 10 ? 'bajo-stock' : 'disponible';
+                    etiqueta.textContent = estado;
+                    celda.textContent = '';
+                    celda.appendChild(etiqueta);
+                }
+                fila.appendChild(celda);
+            });
+
+            const acciones = document.createElement('td');
+            acciones.innerHTML = `<div class="acciones">
+                <button type="button" class="btn-accion btn-verr" data-accion="ver" aria-label="Ver producto"><i class="fa-regular fa-eye"></i></button>
+                <button type="button" class="btn-accion btn-editar" data-accion="editar" aria-label="Editar producto"><i class="fa-regular fa-pen-to-square"></i></button>
+                <button type="button" class="btn-accion btn-eliminar" data-accion="eliminar" aria-label="Eliminar producto"><i class="fa-regular fa-trash-can"></i></button>
+            </div>`;
+            fila.dataset.id = producto.id;
+            fila.appendChild(acciones);
+            cuerpoInventario.appendChild(fila);
+        });
+    }
+
+    // FORMULARIO DE PRODUCTOS: carga los datos al editar y guarda altas o cambios.
+    if (formulario) {
+        const parametros = new URLSearchParams(window.location.search);
+        const idEdicion = parametros.get('editar');
+        const productos = leerProductos();
+        const productoEdicion = productos.find(producto => producto.id === idEdicion);
+
+        if (productoEdicion) {
+            ['nombre', 'descripcion', 'categoria', 'proveedor', 'precio', 'cantidad'].forEach(campo => {
+                formulario.elements[campo].value = productoEdicion[campo] ?? '';
+            });
+            formulario.querySelector('button[type="submit"]').textContent = 'Guardar cambios';
+            document.querySelector('.tit').textContent = 'Editar Producto';
+        }
+
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const datos = new FormData(formulario);
+            const producto = {
+                id: productoEdicion?.id || `PRD-${Date.now()}`,
+                codigo: productoEdicion?.codigo || siguienteCodigo(productos),
+                nombre: datos.get('nombre').trim(),
+                descripcion: datos.get('descripcion').trim(),
+                categoria: datos.get('categoria').trim(),
+                precio: Number(datos.get('precio')),
+                cantidad: Number(datos.get('cantidad')),
+                proveedor: datos.get('proveedor').trim()
+            };
+
+            const nuevosProductos = productoEdicion
+                ? productos.map(item => item.id === productoEdicion.id ? producto : item)
+                : [...productos, producto];
+            guardarProductos(nuevosProductos);
+            window.location.href = 'inventario.html';
+        });
+    }
+
+    // ACCIONES DE LA TABLA: ver detalles, editar o eliminar un producto.
+    if (cuerpoInventario) {
+        mostrarInventario();
+        busqueda.addEventListener('input', mostrarInventario);
+
+        cuerpoInventario.addEventListener('click', function (event) {
+            const boton = event.target.closest('[data-accion]');
+            if (!boton) return;
+
+            const fila = boton.closest('tr');
+            const producto = leerProductos().find(item => item.id === fila.dataset.id);
+            if (!producto) return;
+
+            if (boton.dataset.accion === 'editar') {
+                window.location.href = `agregarProducto.html?editar=${encodeURIComponent(producto.id)}`;
+            } else if (boton.dataset.accion === 'eliminar') {
+                if (confirm(`¿Eliminar el producto ${producto.nombre}?`)) {
+                    guardarProductos(leerProductos().filter(item => item.id !== producto.id));
+                    mostrarInventario();
+                }
+            } else {
+                alert(`Producto: ${producto.nombre}\nCódigo: ${producto.codigo}\nCategoría: ${producto.categoria}\nStock: ${producto.cantidad}\nPrecio: ${producto.precio}`);
+            }
+        });
+
+        // EXPORTAR INVENTARIO: descarga el catálogo actual como archivo JSON.
+        document.querySelector('.btn-exportar').addEventListener('click', function (event) {
+            event.preventDefault();
+            const archivo = new Blob([JSON.stringify(leerProductos(), null, 2)], { type: 'application/json' });
+            const enlace = document.createElement('a');
+            enlace.href = URL.createObjectURL(archivo);
+            enlace.download = 'inventario-age.json';
+            enlace.click();
+            URL.revokeObjectURL(enlace.href);
+        });
+
+        // IMPORTAR INVENTARIO: valida un archivo JSON y combina sus productos con el catálogo.
+        document.getElementById('archivo-custom').addEventListener('change', function () {
+            const archivo = this.files[0];
+            if (!archivo) return;
+
+            const lector = new FileReader();
+            lector.onload = () => {
+                try {
+                    const importados = JSON.parse(lector.result);
+                    if (!Array.isArray(importados) || importados.some(item =>
+                        !item || typeof item.nombre !== 'string' || typeof item.categoria !== 'string' ||
+                        !Number.isFinite(Number(item.precio)) || !Number.isFinite(Number(item.cantidad))
+                    )) {
+                        throw new Error('Formato no válido');
+                    }
+
+                    if (!confirm(`Se importarán ${importados.length} productos. Los códigos existentes se actualizarán. ¿Continuar?`)) return;
+                    const actuales = leerProductos();
+                    importados.forEach(item => {
+                        const producto = {
+                            ...item,
+                            id: item.id || `PRD-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+                            codigo: item.codigo || siguienteCodigo(actuales),
+                            precio: Number(item.precio),
+                            cantidad: Number(item.cantidad)
+                        };
+                        const indice = actuales.findIndex(actual => actual.codigo === producto.codigo);
+                        if (indice >= 0) actuales[indice] = producto;
+                        else actuales.push(producto);
+                    });
+                    guardarProductos(actuales);
+                    mostrarInventario();
+                    alert('Inventario importado correctamente.');
+                } catch (error) {
+                    alert('No se pudo importar el archivo. Usa un JSON exportado desde el inventario.');
+                } finally {
+                    this.value = '';
+                }
+            };
+            lector.readAsText(archivo);
+        });
+    }
 });
