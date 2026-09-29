@@ -48,6 +48,14 @@
             <input type="text" id="cliente-nombre" required placeholder="Nombre del cliente">
             <label for="cliente-rfc">RNC *</label>
             <input type="text" id="cliente-rfc" required placeholder="Ej: 4-01-01006-2">
+            <label for="fact-metodo-pago">Método de pago *</label>
+            <select id="fact-metodo-pago" required>
+                <option value="">Selecciona un método de pago</option>
+                <option value="tarjeta">Tarjeta de crédito</option>
+                <option value="transferencia">Transferencia bancaria</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="digital">Billeteras digitales</option>
+            </select>
             <label for="dias-credito">Días de Crédito</label>
             <input type="number" id="dias-credito" min="0" placeholder="30">
             <label for="tasa-interes">Tasa de Interés (%)</label>

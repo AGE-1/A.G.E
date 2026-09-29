@@ -168,6 +168,45 @@
                     <canvas id="graficoPPC"></canvas>
                 </div>
             </section>
+            <dialog class="dialogo-producto" id="dialogo-producto" aria-labelledby="detalle-producto-nombre">
+                <div class="dialogo-producto__encabezado">
+                    <div>
+                        <p class="dialogo-producto__eyebrow">Detalle del producto</p>
+                        <h2 id="detalle-producto-nombre"></h2>
+                    </div>
+                    <button class="dialogo-producto__cerrar-icono" type="button" data-cerrar-detalle aria-label="Cerrar detalles">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <dl class="dialogo-producto__datos">
+                    <div><dt>Código</dt><dd id="detalle-producto-codigo"></dd></div>
+                    <div><dt>Categoría</dt><dd id="detalle-producto-categoria"></dd></div>
+                    <div><dt>Proveedor</dt><dd id="detalle-producto-proveedor"></dd></div>
+                    <div><dt>Precio</dt><dd id="detalle-producto-precio"></dd></div>
+                    <div><dt>Cantidad</dt><dd id="detalle-producto-cantidad"></dd></div>
+                    <div><dt>Estado</dt><dd><span id="detalle-producto-estado"></span></dd></div>
+                    <div class="dialogo-producto__descripcion"><dt>Descripción</dt><dd id="detalle-producto-descripcion"></dd></div>
+                </dl>
+                <div class="dialogo-producto__pie">
+                    <button class="dialogo-producto__cerrar" type="button" data-cerrar-detalle>Cerrar</button>
+                </div>
+            </dialog>
+            <dialog class="dialogo-producto dialogo-eliminar" id="dialogo-eliminar" aria-labelledby="confirmar-eliminar-titulo">
+                <div class="dialogo-producto__encabezado">
+                    <div>
+                        <p class="dialogo-producto__eyebrow">Confirmar eliminación</p>
+                        <h2 id="confirmar-eliminar-titulo">¿Eliminar producto?</h2>
+                    </div>
+                    <button class="dialogo-producto__cerrar-icono" type="button" data-cancelar-eliminar aria-label="Cancelar eliminación">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="dialogo-eliminar__mensaje">Se eliminará <strong id="nombre-producto-eliminar"></strong>. Esta acción no se puede deshacer.</p>
+                <div class="dialogo-producto__pie dialogo-eliminar__pie">
+                    <button class="dialogo-eliminar__cancelar" type="button" data-cancelar-eliminar>Cancelar</button>
+                    <button class="dialogo-eliminar__confirmar" type="button" data-confirmar-eliminar>Eliminar</button>
+                </div>
+            </dialog>
     </main>
 </div>
 </body>

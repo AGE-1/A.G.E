@@ -1232,6 +1232,10 @@
     font-size: 1.2rem;
   }
 
+  .buscador {
+    /* margin-left: 10px; */
+    margin-top: 2px;
+  }
   .titulo-encabezado {
     margin-left: -40px;
   }
@@ -1554,9 +1558,11 @@
   margin-top: 5px;
   margin-left: 9px;
 }
+  
 
   .buscador,
-  .buscador-inv {
+  .buscador-inv,
+  .buscador-nf {
     display: flex;
     background-color: #f1f5f9;
     border-radius: 8px;
@@ -1944,7 +1950,8 @@
 
 
   .buscador button i, 
-  .buscador-inv button i {
+  .buscador-inv button i,
+  .buscador-nf button i {
     color: black;
     font-size: 1.2rem;
   }
@@ -2327,7 +2334,7 @@
     margin-left: -20px;
   }
 
-  .buscador, .buscador-inv {
+  .buscador, .buscador-inv, .buscador-nf {
     display: flex;
     background-color: #f1f5f9;
     border-radius: 8px;
@@ -3526,7 +3533,175 @@ label {
   color: white;
   font-size: 0.9rem;
 }
-/* ------------------------------- Esta parte es de las Cards ----------------------------------------- */
+/* ------------------------------- Esta parte es de lo que aparece al darle a los botones de acciones ----------------------------------------- */
+/* Parte de ver en la tabla de productos */
+.dialogo-producto {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: min(520px, calc(100% - 32px));
+  max-width: none;
+  max-height: min(680px, calc(100% - 32px));
+  padding: 24px;
+  border: 1px solid #d9dee5;
+  border-radius: 8px;
+  color: #202832;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgb(0 0 0 / 24%);
+}
+
+.dialogo-producto::backdrop {
+  background: rgb(17 24 39 / 55%);
+}
+
+.dialogo-producto__encabezado,
+.dialogo-producto__pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dialogo-producto__encabezado {
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dialogo-producto__eyebrow {
+  margin: 0 0 5px;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dialogo-producto__encabezado h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 1.35rem;
+}
+
+.dialogo-producto__cerrar-icono {
+  display: grid;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 0;
+  border-radius: 4px;
+  color: #475569;
+  background: #f1f5f9;
+  cursor: pointer;
+}
+
+.dialogo-producto__datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.dialogo-producto__datos > div {
+  min-width: 0;
+}
+
+.dialogo-producto__datos dt {
+  margin-bottom: 4px;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.dialogo-producto__datos dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+
+.dialogo-producto__descripcion {
+  grid-column: 1 / -1;
+}
+
+.dialogo-producto__estado {
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.dialogo-producto__estado--agotado {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.dialogo-producto__estado--bajo {
+  color: #854d0e;
+  background: #fef3c7;
+}
+
+.dialogo-producto__estado--disponible {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.dialogo-producto__pie {
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.dialogo-producto__cerrar {
+  min-width: 88px;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 4px;
+  color: #ffffff;
+  background: var(--colorazul);
+  cursor: pointer;
+}
+
+/* Estilos de confirmación para eliminar productos. */
+.dialogo-eliminar__mensaje {
+  margin: 20px 0;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.dialogo-eliminar__mensaje strong {
+  color: #202832;
+  overflow-wrap: anywhere;
+}
+
+.dialogo-eliminar__cancelar,
+.dialogo-eliminar__confirmar {
+  min-width: 88px;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.dialogo-eliminar__cancelar {
+  color: #334155;
+  background: #e2e8f0;
+}
+
+.dialogo-eliminar__confirmar {
+  color: #ffffff;
+  background: #b91c1c;
+}
+
+@media screen and (max-width: 480px) {
+  .dialogo-producto {
+    padding: 18px;
+  }
+
+  .dialogo-producto__datos {
+    gap: 14px 10px;
+  }
+}
 
 /* -------------------------------------------------- Tabla Productos ----------------------------------------------- */
 .seccion-productos {
@@ -3708,6 +3883,37 @@ select:focus {
   font-size: 0.7rem;
   margin-left: 70px;
   margin-top: 5px;
+}
+
+
+.estadistica-variacion {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 3px;
+  font-weight: 700;
+} 
+
+.estadistica-variacion--subio,
+.estadistica-variacion--subio i {
+  color: #16a34a;
+}
+
+.estadistica-variacion--bajo,
+.estadistica-variacion--bajo i {
+  color: #dc2626;
+}
+
+.estadistica-variacion--igual,
+.estadistica-variacion--igual i {
+  color: #64748b;
+}
+
+.estadistica-rango {
+  display: block;
+  min-width: 0;
+  color: #334155;
+  white-space: nowrap;
 }
 
 .cp {

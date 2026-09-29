@@ -319,6 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
         items.length = 0;
         document.getElementById('cliente-nombre').value = '';
         document.getElementById('cliente-rfc').value = '';
+        document.getElementById('fact-metodo-pago').value = '';
         cantidad.value = '';
         precio.value = '';
         productoManual.value = '';
@@ -362,10 +363,11 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         const cliente = document.getElementById('cliente-nombre').value.trim();
         const rnc = document.getElementById('cliente-rfc').value.trim();
+        const metodoPago = document.getElementById('fact-metodo-pago').value;
 
         // Por ahora se permite guardar la factura sin productos del inventario.
-        if (!cliente || !rnc) {
-            alert('Completa los datos del cliente.');
+        if (!cliente || !rnc || !metodoPago) {
+            alert('Completa los datos del cliente y selecciona un método de pago.');
             return;
         }
 
@@ -380,6 +382,7 @@ document.addEventListener('DOMContentLoaded', function () {
             tipo: tipoFactura.value,
             cliente,
             rnc,
+            metodoPago,
             fecha: obtenerFechaActual(),
             estado: 'Pendiente',
             diasCredito: Number(document.getElementById('dias-credito').value) || 0,
@@ -673,21 +676,49 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Buscador de clientes
+// Busca y muestra los clientes guardados para mantener la tabla sincronizada.
 document.addEventListener("DOMContentLoaded", function () {
     const buscadorClientes = document.getElementById("buscador-clientes1");
-    const cuerpoTabla = document.querySelector(".tabla-clientes tbody");
+    const cuerpoTabla = document.getElementById("clientes-body");
+    if (!cuerpoTabla) return;
 
-    if (!buscadorClientes || !cuerpoTabla) return;
+    let clientes = [];
+    try {
+        const guardados = JSON.parse(localStorage.getItem("clientes")) || [];
+        clientes = Array.isArray(guardados) ? guardados : [];
+    } catch (error) {
+        clientes = [];
+    }
 
-    buscadorClientes.addEventListener("input", function () {
-        const texto = buscadorClientes.value.toLowerCase().trim();
+    function mostrarClientes() {
+        const texto = buscadorClientes?.value.toLowerCase().trim() || "";
+        cuerpoTabla.textContent = "";
+        clientes.filter(cliente => `${cliente.nombre} ${cliente.telefono} ${cliente.ubicacion}`.toLowerCase().includes(texto))
+            .forEach(cliente => {
+                const fila = document.createElement("tr");
+                [cliente.nombre, cliente.telefono, cliente.ubicacion].forEach(valor => {
+                    const celda = document.createElement("th");
+                    celda.textContent = valor || "";
+                    fila.appendChild(celda);
+                });
 
-        cuerpoTabla.querySelectorAll("tr").forEach(function (fila) {
-            const contenido = fila.textContent.toLowerCase();
-            fila.style.display = contenido.includes(texto) ? "" : "none";
-        });
-    });
+                const celdaAcciones = document.createElement("th");
+                const botonVer = document.createElement("button");
+                botonVer.className = "btn-ver";
+                const enlaceVer = document.createElement("a");
+                enlaceVer.href = `verCliente.html?id=${encodeURIComponent(cliente.id || "")}`;
+                const iconoVer = document.createElement("i");
+                iconoVer.className = "fa-regular fa-eye eye";
+                enlaceVer.appendChild(iconoVer);
+                botonVer.appendChild(enlaceVer);
+                celdaAcciones.appendChild(botonVer);
+                fila.appendChild(celdaAcciones);
+                cuerpoTabla.appendChild(fila);
+            });
+    }
+
+    buscadorClientes?.addEventListener("input", mostrarClientes);
+    mostrarClientes();
 });
 
 // Anadir empleado 
@@ -809,11 +840,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// Muestra en la tabla los clientes guardados desde agregarCliente.html.
+// Muestra la ficha seleccionada y permite eliminar ese cliente de los registros.
 document.addEventListener("DOMContentLoaded", function () {
-    const cuerpoClientes = document.getElementById("clientes-body");
-    if (!cuerpoClientes) return;
+    const botonEliminar = document.getElementById("eliminarclientebtn");
+    if (!botonEliminar) return;
 
+    const clienteId = new URLSearchParams(window.location.search).get("id");
     let clientes = [];
     try {
         const guardados = JSON.parse(localStorage.getItem("clientes")) || [];
@@ -822,36 +854,162 @@ document.addEventListener("DOMContentLoaded", function () {
         clientes = [];
     }
 
-    clientes.forEach(function (cliente) {
-        const fila = document.createElement("tr");
-        const valores = [
-            cliente.nombre || "",
-            cliente.telefono || "",
-            cliente.correo || "",
-            cliente.ubicacion || "",
-            cliente.fechaRegistro || ""
-        ];
+    const cliente = clientes.find(item => item.id === clienteId);
+    if (!cliente) {
+        botonEliminar.disabled = true;
+        alert("No se encontró el cliente seleccionado.");
+        window.location.href = "clientes.html";
+        return;
+    }
 
-        valores.forEach(function (valor) {
-            const celda = document.createElement("th");
-            celda.textContent = valor;
-            fila.appendChild(celda);
+    document.getElementById("nombre").value = cliente.nombre || "";
+    document.getElementById("telefono").value = cliente.telefono || "";
+    document.getElementById("correo").value = cliente.correo || "";
+    document.getElementById("ubi").value = cliente.ubicacion || "";
+    document.getElementById("fecharegistro").value = cliente.fechaRegistro || "";
+    document.getElementById("Descripcion-cliente").value = cliente.descripcion || "";
+
+    botonEliminar.addEventListener("click", function () {
+        if (!confirm(`¿Eliminar al cliente ${cliente.nombre}? Esta acción no se puede deshacer.`)) return;
+        localStorage.setItem("clientes", JSON.stringify(clientes.filter(item => item.id !== clienteId)));
+        window.location.href = "clientes.html";
+    });
+});
+
+// El panel de estadísticas se calcula a partir de los mismos registros guardados.
+document.addEventListener("DOMContentLoaded", function () {
+    const ventas = document.getElementById("estadisticas-ventas-totales");
+    const pedidos = document.getElementById("estadisticas-pedidos");
+    const clientesNuevos = document.getElementById("estadisticas-clientes-nuevos");
+    const clientesTotales = document.getElementById("estadisticas-clientes-totales");
+    const clientesActivos = document.getElementById("estadisticas-clientes-activos");
+    const clientesPanelNuevos = document.getElementById("estadisticas-panel-clientes-nuevos");
+    const clientesInactivos = document.getElementById("estadisticas-clientes-inactivos");
+    const rangosTarjetas = [
+        document.getElementById("estadisticas-ventas-rango"),
+        document.getElementById("estadisticas-ganancias-rango"),
+        document.getElementById("estadisticas-pedidos-rango"),
+        document.getElementById("estadisticas-clientes-rango")
+    ];
+    if (!ventas && !pedidos && !clientesNuevos && !clientesTotales) return;
+
+    function leerLista(clave) {
+        try {
+            const datos = JSON.parse(localStorage.getItem(clave)) || [];
+            return Array.isArray(datos) ? datos : [];
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function fechaDesdePeriodo(periodo) {
+        const hoy = new Date();
+        const fechaLocal = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, "0")}-${String(hoy.getDate()).padStart(2, "0")}`;
+        if (periodo === "dia") return fechaLocal;
+        if (periodo === "semana") {
+            const diaSemana = (hoy.getDay() + 6) % 7;
+            hoy.setDate(hoy.getDate() - diaSemana);
+        } else if (periodo === "mes") {
+            hoy.setDate(1);
+        } else {
+            hoy.setMonth(0, 1);
+        }
+        return `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, "0")}-${String(hoy.getDate()).padStart(2, "0")}`;
+    }
+
+    function obtenerRangosMensuales() {
+        const hoy = new Date();
+        const inicioActual = new Date(hoy.getFullYear(), hoy.getMonth(), 1);
+        const inicioAnterior = new Date(hoy.getFullYear(), hoy.getMonth() - 1, 1);
+        const ultimoDiaMesAnterior = new Date(hoy.getFullYear(), hoy.getMonth(), 0).getDate();
+        const finAnterior = new Date(inicioAnterior.getFullYear(), inicioAnterior.getMonth(), Math.min(hoy.getDate(), ultimoDiaMesAnterior));
+        const aFechaISO = fecha => `${fecha.getFullYear()}-${String(fecha.getMonth() + 1).padStart(2, "0")}-${String(fecha.getDate()).padStart(2, "0")}`;
+        const formatoFecha = fecha => fecha.toLocaleDateString("es-DO", { day: "numeric", month: "short" });
+        const fechaFinalActual = formatoFecha(hoy);
+        const fechaFinalAnterior = formatoFecha(finAnterior);
+        return {
+            actualDesde: aFechaISO(inicioActual),
+            actualHasta: aFechaISO(hoy),
+            anteriorDesde: aFechaISO(inicioAnterior),
+            anteriorHasta: aFechaISO(finAnterior),
+            texto: `${fechaFinalAnterior} vs ${fechaFinalActual}`
+        };
+    }
+
+    function porcentajeCambio(actual, anterior) {
+        if (anterior === 0) {
+            return { valor: actual === 0 ? "0%" : "Nuevo", estado: actual === 0 ? "igual" : "subio" };
+        }
+
+        const porcentaje = Math.round((actual - anterior) / anterior * 1000) / 10;
+        return {
+            valor: porcentaje > 0 ? `+${porcentaje}%` : `${porcentaje}%`,
+            estado: porcentaje > 0 ? "subio" : porcentaje < 0 ? "bajo" : "igual"
+        };
+    }
+
+    function mostrarCambio(id, cambio) {
+        const elemento = document.getElementById(id);
+        if (!elemento) return;
+        const icono = elemento.querySelector("i");
+        const valor = elemento.querySelector("span");
+        const iconos = { subio: "fa-arrow-up", bajo: "fa-arrow-down", igual: "fa-minus" };
+        elemento.className = `cf estadistica-variacion estadistica-variacion--${cambio.estado}`;
+        if (icono) icono.className = `fa-solid ${iconos[cambio.estado]}`;
+        if (valor) valor.textContent = cambio.valor;
+    }
+
+    function actualizarEstadisticas() {
+        const facturas = leerLista("facturasAGE").filter(factura => factura.estado !== "Anulada");
+        const clientes = leerLista("clientes");
+        const periodo = document.querySelector(".panel-clientes .header-clientes .tiempo")?.value || "mes";
+        const fechaInicio = fechaDesdePeriodo(periodo);
+        const nuevos = clientes.filter(cliente => cliente.fechaRegistro && cliente.fechaRegistro >= fechaInicio).length;
+        const activos = clientes.filter(cliente => cliente.estado !== "Inactivo").length;
+        const inactivos = clientes.length - activos;
+        const formatoMoneda = new Intl.NumberFormat("es-DO", { style: "currency", currency: "DOP" });
+        const periodoMetodos = document.querySelector(".tarjeta-metodos-pago .header-metodos .tiempo")?.value || "mes";
+        const fechaInicioMetodos = fechaDesdePeriodo(periodoMetodos);
+        const facturasPorMetodo = facturas.filter(factura => factura.fecha >= fechaInicioMetodos && factura.metodoPago);
+        const totalPorMetodo = facturasPorMetodo.reduce((suma, factura) => suma + (Number(factura.total) || 0), 0);
+        const rangos = obtenerRangosMensuales();
+        const facturasActuales = facturas.filter(factura => factura.fecha >= rangos.actualDesde && factura.fecha <= rangos.actualHasta);
+        const facturasAnteriores = facturas.filter(factura => factura.fecha >= rangos.anteriorDesde && factura.fecha <= rangos.anteriorHasta);
+        const clientesActuales = clientes.filter(cliente => cliente.fechaRegistro >= rangos.actualDesde && cliente.fechaRegistro <= rangos.actualHasta);
+        const clientesAnteriores = clientes.filter(cliente => cliente.fechaRegistro >= rangos.anteriorDesde && cliente.fechaRegistro <= rangos.anteriorHasta);
+        const ventasActuales = facturasActuales.reduce((suma, factura) => suma + (Number(factura.total) || 0), 0);
+        const ventasAnteriores = facturasAnteriores.reduce((suma, factura) => suma + (Number(factura.total) || 0), 0);
+
+        if (ventas) ventas.textContent = formatoMoneda.format(facturas.reduce((suma, factura) => suma + (Number(factura.total) || 0), 0));
+        if (pedidos) pedidos.textContent = String(facturas.length);
+        if (clientesNuevos) clientesNuevos.textContent = String(nuevos);
+        if (clientesTotales) clientesTotales.textContent = String(clientes.length);
+        if (clientesActivos) clientesActivos.textContent = String(activos);
+        if (clientesPanelNuevos) clientesPanelNuevos.textContent = String(nuevos);
+        if (clientesInactivos) clientesInactivos.textContent = String(inactivos);
+        mostrarCambio("estadisticas-ventas-periodo", porcentajeCambio(ventasActuales, ventasAnteriores));
+        mostrarCambio("estadisticas-pedidos-periodo", porcentajeCambio(facturasActuales.length, facturasAnteriores.length));
+        mostrarCambio("estadisticas-clientes-periodo", porcentajeCambio(clientesActuales.length, clientesAnteriores.length));
+        rangosTarjetas.forEach(elemento => {
+            if (elemento) elemento.textContent = rangos.texto;
         });
 
-        const celdaAcciones = document.createElement("th");
-        const enlaceVer = document.createElement("a");
-        const iconoVer = document.createElement("i");
-        enlaceVer.href = `verCliente.html?id=${encodeURIComponent(cliente.id || "")}`;
-        iconoVer.className = "fa-regular fa-eye eye";
-        enlaceVer.appendChild(iconoVer);
+        document.querySelectorAll(".lista-metodos .metodo-fila").forEach(fila => {
+            const totalMetodo = facturasPorMetodo
+                .filter(factura => factura.metodoPago === fila.dataset.metodo)
+                .reduce((suma, factura) => suma + (Number(factura.total) || 0), 0);
+            const porcentaje = totalPorMetodo ? Math.round(totalMetodo / totalPorMetodo * 100) : 0;
+            const etiqueta = fila.querySelector(".metodo-porcentaje");
+            const barra = fila.querySelector(".barra-progreso");
+            if (etiqueta) etiqueta.textContent = `${porcentaje}%`;
+            if (barra) barra.style.width = `${porcentaje}%`;
+        });
+    }
 
-        const botonVer = document.createElement("button");
-        botonVer.className = "btn-ver";
-        botonVer.appendChild(enlaceVer);
-        celdaAcciones.appendChild(botonVer);
-        fila.appendChild(celdaAcciones);
-        cuerpoClientes.appendChild(fila);
-    });
+    document.querySelector(".panel-clientes .header-clientes .tiempo")?.addEventListener("change", actualizarEstadisticas);
+    document.querySelector(".tarjeta-metodos-pago .header-metodos .tiempo")?.addEventListener("change", actualizarEstadisticas);
+    window.addEventListener("storage", actualizarEstadisticas);
+    actualizarEstadisticas();
 });
 
 // --------------------------------------------- INVENTARIO ---------------------------------------------------------------------
@@ -861,6 +1019,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const formulario = document.getElementById('formAgregarProducto');
     const cuerpoInventario = document.getElementById('inventario-body');
     const busqueda = document.getElementById('buscar-inventario');
+    const dialogoProducto = document.getElementById('dialogo-producto');
+    const dialogoEliminar = document.getElementById('dialogo-eliminar');
+    let productoPendienteEliminar = null;
+
+    // Muestra los detalles del producto en un diálogo en lugar de usar alert().
+    function mostrarDetalleProducto(producto) {
+        if (!dialogoProducto) return;
+
+        const cantidad = Number(producto.cantidad) || 0;
+        const estado = cantidad <= 0 ? 'Agotado' : cantidad <= 10 ? 'Bajo stock' : 'Disponible';
+        const formatoMoneda = new Intl.NumberFormat('es-DO', {
+            style: 'currency',
+            currency: 'DOP'
+        });
+
+        document.getElementById('detalle-producto-nombre').textContent = producto.nombre || 'Sin nombre';
+        document.getElementById('detalle-producto-codigo').textContent = producto.codigo || 'Sin código';
+        document.getElementById('detalle-producto-categoria').textContent = producto.categoria || 'Sin categoría';
+        document.getElementById('detalle-producto-proveedor').textContent = producto.proveedor || 'Sin proveedor';
+        document.getElementById('detalle-producto-precio').textContent = formatoMoneda.format(Number(producto.precio) || 0);
+        document.getElementById('detalle-producto-cantidad').textContent = String(cantidad);
+        document.getElementById('detalle-producto-descripcion').textContent = producto.descripcion || 'Sin descripción';
+
+        const etiquetaEstado = document.getElementById('detalle-producto-estado');
+        etiquetaEstado.className = `dialogo-producto__estado dialogo-producto__estado--${cantidad <= 0 ? 'agotado' : cantidad <= 10 ? 'bajo' : 'disponible'}`;
+        etiquetaEstado.textContent = estado;
+        dialogoProducto.showModal();
+    }
 
     // Funciones para leer, guardar y asignar códigos a los productos.
     function leerProductos() {
@@ -886,11 +1072,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // TABLA Y BUSQUEDA: filtra productos, actualiza indicadores y dibuja las filas.
     function mostrarInventario() {
-        if (!cuerpoInventario) return;        const acciones = document.createElement('td');
-        acciones.innerHTML = `...`;
-        fila.dataset.id = producto.id;
-        fila.appendChild(acciones);
-        cuerpoInventario.appendChild(fila);
+        if (!cuerpoInventario) return;
 
         const productos = leerProductos();
         const termino = busqueda.value.trim().toLowerCase();
@@ -1019,13 +1201,57 @@ document.addEventListener('DOMContentLoaded', function () {
             if (boton.dataset.accion === 'editar') {
                 window.location.href = `agregarProducto.html?editar=${encodeURIComponent(producto.id)}`;
             } else if (boton.dataset.accion === 'eliminar') {
-                if (confirm(`¿Eliminar el producto ${producto.nombre}?`)) {
-                    guardarProductos(leerProductos().filter(item => item.id !== producto.id));
-                    mostrarInventario();
-                }
-            } else {
-                alert(`Producto: ${producto.nombre}\nCódigo: ${producto.codigo}\nCategoría: ${producto.categoria}\nStock: ${producto.cantidad}\nPrecio: ${producto.precio}`);
+                // Solicita confirmación en el diálogo antes de borrar el producto.
+                productoPendienteEliminar = producto;
+                document.getElementById('nombre-producto-eliminar').textContent = producto.nombre || 'este producto';
+                dialogoEliminar?.showModal();
+            } else if (boton.dataset.accion === 'ver') {
+                mostrarDetalleProducto(producto);
             }
+        });
+
+        dialogoProducto?.querySelectorAll('[data-cerrar-detalle]').forEach(boton => {
+            boton.addEventListener('click', () => dialogoProducto.close());
+        });
+
+        dialogoProducto?.addEventListener('click', function (event) {
+            if (event.target === dialogoProducto) dialogoProducto.close();
+        });
+
+        dialogoProducto?.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                dialogoProducto.close();
+            }
+        });
+
+        dialogoEliminar?.querySelectorAll('[data-cancelar-eliminar]').forEach(boton => {
+            boton.addEventListener('click', () => dialogoEliminar.close());
+        });
+
+        dialogoEliminar?.querySelector('[data-confirmar-eliminar]')?.addEventListener('click', function () {
+            if (!productoPendienteEliminar) return;
+
+            const idProducto = productoPendienteEliminar.id;
+            guardarProductos(leerProductos().filter(item => item.id !== idProducto));
+            productoPendienteEliminar = null;
+            dialogoEliminar.close();
+            mostrarInventario();
+        });
+
+        dialogoEliminar?.addEventListener('click', function (event) {
+            if (event.target === dialogoEliminar) dialogoEliminar.close();
+        });
+
+        dialogoEliminar?.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                dialogoEliminar.close();
+            }
+        });
+
+        dialogoEliminar?.addEventListener('close', function () {
+            productoPendienteEliminar = null;
         });
 
         // EXPORTAR INVENTARIO: descarga el catálogo actual como archivo JSON.

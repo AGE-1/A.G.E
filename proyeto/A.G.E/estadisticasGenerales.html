@@ -60,16 +60,12 @@
                 <div class="card-header-ES">
                     <p>Ventas Totales</p>
                     <div class="body">
-                        <p>$98,750.00</p>
+                        <p id="estadisticas-ventas-totales">RD$ 0.00</p>
                     </div>
                 </div>
                 <div class="stats">
-                    <span class="cp">
-                        <i class="fa-solid fa-arrow-up"></i>
-                        21.5%
-                    </span>
-
-                    <span class="cf">vs. 26 Jun - 26 Jul</span>
+                    <span class="cf estadistica-variacion" id="estadisticas-ventas-periodo"><i class="fa-solid fa-minus" aria-hidden="true"></i><span>0%</span></span>
+                    <span class="cf estadistica-rango" id="estadisticas-ventas-rango"></span>
                 </div>
             </div>
 
@@ -81,16 +77,12 @@
                 <div class="card-header-ES">
                     <p>Ganancias Netas</p>
                     <div class="body">
-                        <p>$32,450.00</p>
+                        <p>No disponible</p>
                     </div>
                 </div>
                 <div class="stats">
-                    <span class="cp">
-                        <i class="fa-solid fa-arrow-up"></i>
-                        18.9%
-                    </span>
-
-                    <span class="cf">vs. 26 Jun - 26 Jul</span>
+                    <span class="cf">Falta registrar costos</span>
+                    <span class="cf estadistica-rango" id="estadisticas-ganancias-rango"></span>
                 </div>
             </div>
 
@@ -102,16 +94,12 @@
                 <div class="card-header-ES">
                     <p>Pedidos Realizados</p>
                     <div class="body">
-                        <p>156</p>
+                        <p id="estadisticas-pedidos">0</p>
                     </div>
                 </div>
                 <div class="stats">
-                    <span class="cp">
-                        <i class="fa-solid fa-arrow-up"></i>
-                        16.3%
-                    </span>
-
-                    <span class="cf">vs. 26 Jun - 26 Jul</span>
+                    <span class="cf estadistica-variacion" id="estadisticas-pedidos-periodo"><i class="fa-solid fa-minus" aria-hidden="true"></i><span>0%</span></span>
+                    <span class="cf estadistica-rango" id="estadisticas-pedidos-rango"></span>
                 </div>
             </div>
 
@@ -123,16 +111,12 @@
                 <div class="card-header-ES">
                     <p>Clientes Nuevos</p>
                     <div class="body">
-                        <p>32</p>
+                        <p id="estadisticas-clientes-nuevos">0</p>
                     </div>
                 </div>
                 <div class="stats">
-                    <span class="cp">
-                        <i class="fa-solid fa-arrow-up"></i>
-                        14.7%
-                    </span>
-
-                    <span class="cf">vs. 26 Jun - 26 Jul</span>
+                    <span class="cf estadistica-variacion" id="estadisticas-clientes-periodo"><i class="fa-solid fa-minus" aria-hidden="true"></i><span>0%</span></span>
+                    <span class="cf estadistica-rango" id="estadisticas-clientes-rango"></span>
                 </div>
             </div>
         </section>
@@ -218,10 +202,7 @@
                             <span class="label-cliente">Clientes totales</span>
                         </div>
                         <div class="col-derecha">
-                            <span class="valor-cliente">1,248</span>
-                            <span class="tendencia-positiva">
-                                <i class="fa-solid fa-arrow-up"></i> 12.6%
-                            </span>
+                            <span class="valor-cliente" id="estadisticas-clientes-totales">0</span>
                         </div>
                     </div>
 
@@ -234,10 +215,7 @@
                             <span class="label-cliente">Clientes activos</span>
                         </div>
                         <div class="col-derecha">
-                            <span class="valor-cliente">842</span>
-                            <span class="tendencia-positiva">
-                                <i class="fa-solid fa-arrow-up"></i> 15.3%
-                            </span>
+                            <span class="valor-cliente" id="estadisticas-clientes-activos">0</span>
                         </div>
                     </div>
 
@@ -250,10 +228,7 @@
                             <span class="label-cliente">Clientes nuevos</span>
                         </div>
                         <div class="col-derecha">
-                            <span class="valor-cliente">32</span>
-                            <span class="tendencia-positiva">
-                                <i class="fa-solid fa-arrow-up"></i> 14.7%
-                            </span>
+                            <span class="valor-cliente" id="estadisticas-panel-clientes-nuevos">0</span>
                         </div>
                     </div>
 
@@ -266,10 +241,7 @@
                             <span class="label-cliente">Clientes inactivos</span>
                         </div>
                         <div class="col-derecha">
-                            <span class="valor-cliente">374</span>
-                            <span class="tendencia-negativa">
-                                <i class="fa-solid fa-arrow-down"></i> -3.2%
-                            </span>
+                            <span class="valor-cliente" id="estadisticas-clientes-inactivos">0</span>
                         </div>
                     </div>
                 </div>
@@ -289,56 +261,56 @@
                 </div>
 
                 <div class="lista-metodos">
-                    <div class="metodo-fila">
+                    <div class="metodo-fila" data-metodo="tarjeta">
                         <div class="icono icono-azul">
                             <i class="fa-regular fa-credit-card"></i>
                         </div>
                         <div class="metodo-contenido">
                             <span class="metodo-nombre">Tarjeta de crédito</span>
                             <div class="contenedor-barra">
-                                <div class="barra-progreso barra-azul" style="width: 52%;"></div>
+                                <div class="barra-progreso barra-azul" style="width: 0%;"></div>
                             </div>
                         </div>
-                        <span class="metodo-porcentaje">52%</span>
+                        <span class="metodo-porcentaje">0%</span>
                     </div>
 
-                    <div class="metodo-fila">
+                    <div class="metodo-fila" data-metodo="transferencia">
                         <div class="icono icono-verde">
                             <i class="fa-solid fa-building-columns"></i>
                         </div>
                         <div class="metodo-contenido">
                             <span class="metodo-nombre">Transferencia bancaria</span>
                             <div class="contenedor-barra">
-                                <div class="barra-progreso barra-verde" style="width: 28%;"></div>
+                                <div class="barra-progreso barra-verde" style="width: 0%;"></div>
                             </div>
                         </div>
-                        <span class="metodo-porcentaje">28%</span>
+                        <span class="metodo-porcentaje">0%</span>
                     </div>
 
-                    <div class="metodo-fila">
+                    <div class="metodo-fila" data-metodo="efectivo">
                         <div class="icono icono-naranja">
                             <i class="fa-solid fa-wallet"></i>
                         </div>
                         <div class="metodo-contenido">
                             <span class="metodo-nombre">Efectivo</span>
                             <div class="contenedor-barra">
-                                <div class="barra-progreso barra-naranja" style="width: 12%;"></div>
+                                <div class="barra-progreso barra-naranja" style="width: 0%;"></div>
                             </div>
                         </div>
-                        <span class="metodo-porcentaje">12%</span>
+                        <span class="metodo-porcentaje">0%</span>
                     </div>
 
-                    <div class="metodo-fila">
+                    <div class="metodo-fila" data-metodo="digital">
                         <div class="icono icono-rojo">
                             <i class="fa-solid fa-qrcode"></i>
                         </div>
                         <div class="metodo-contenido">
                             <span class="metodo-nombre">Billeteras digitales</span>
                             <div class="contenedor-barra">
-                                <div class="barra-progreso barra-roja" style="width: 8%;"></div>
+                                <div class="barra-progreso barra-roja" style="width: 0%;"></div>
                             </div>
                         </div>
-                        <span class="metodo-porcentaje">8%</span>
+                        <span class="metodo-porcentaje">0%</span>
                     </div>
                 </div>
             </div>
